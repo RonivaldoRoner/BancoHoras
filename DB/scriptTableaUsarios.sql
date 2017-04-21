@@ -1,0 +1,7 @@
+CREATE TABLE Usuarios
+(
+	id_user INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	usuarios VARCHAR(50) NOT NULL,
+	senha VARCHAR(50)NOT NULL,
+	fk_ident INT NOT NULL
+);

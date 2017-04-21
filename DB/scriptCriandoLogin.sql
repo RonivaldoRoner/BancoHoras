@@ -1,0 +1,1 @@
+CREATE LOGIN Administrador WITH PASSWORD = '12345'

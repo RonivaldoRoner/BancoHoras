@@ -38,6 +38,7 @@
             this.btn_Cad_Usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -49,6 +50,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -63,15 +65,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(237, 184);
+            this.pictureBox1.Location = new System.Drawing.Point(321, 173);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(599, 254);
+            this.pictureBox1.Size = new System.Drawing.Size(386, 160);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarEmpresaToolStripMenuItem,
@@ -134,6 +137,19 @@
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(90, 25);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.label1.Location = new System.Drawing.Point(187, 336);
+            this.label1.Margin = new System.Windows.Forms.Padding(3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(655, 46);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Contabilidade Integrada ao futuro!";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,5 +183,6 @@
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btn_Cad_Responsavel;
+        private System.Windows.Forms.Label label1;
     }
 }

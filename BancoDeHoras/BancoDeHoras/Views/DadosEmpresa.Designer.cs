@@ -1,6 +1,6 @@
 ﻿namespace BancoDeHoras.Views
 {
-    partial class CadastroEmp
+    partial class DadosEmpresa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.btn_Voltar = new System.Windows.Forms.Button();
+            this.btn_Gravar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_Telefone = new System.Windows.Forms.MaskedTextBox();
             this.tb_CEP = new System.Windows.Forms.MaskedTextBox();
@@ -50,23 +51,33 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_Gravar = new System.Windows.Forms.Button();
-            this.btn_Voltar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // btn_Voltar
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(273, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro de Empresa";
+            this.btn_Voltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Voltar.Location = new System.Drawing.Point(251, 295);
+            this.btn_Voltar.Name = "btn_Voltar";
+            this.btn_Voltar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Voltar.TabIndex = 13;
+            this.btn_Voltar.Text = "Voltar";
+            this.btn_Voltar.UseVisualStyleBackColor = true;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
+            // 
+            // btn_Gravar
+            // 
+            this.btn_Gravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Gravar.Location = new System.Drawing.Point(408, 295);
+            this.btn_Gravar.Name = "btn_Gravar";
+            this.btn_Gravar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Gravar.TabIndex = 12;
+            this.btn_Gravar.Text = "Novo";
+            this.btn_Gravar.UseVisualStyleBackColor = true;
+            this.btn_Gravar.Click += new System.EventHandler(this.btn_Gravar_Click);
             // 
             // panel1
             // 
@@ -93,10 +104,10 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(12, 35);
+            this.panel1.Location = new System.Drawing.Point(12, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(714, 253);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 10;
             // 
             // tb_Telefone
             // 
@@ -280,38 +291,29 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Nome:";
             // 
-            // btn_Gravar
+            // label1
             // 
-            this.btn_Gravar.Location = new System.Drawing.Point(408, 294);
-            this.btn_Gravar.Name = "btn_Gravar";
-            this.btn_Gravar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Gravar.TabIndex = 6;
-            this.btn_Gravar.Text = "Gravar";
-            this.btn_Gravar.UseVisualStyleBackColor = true;
-            this.btn_Gravar.Click += new System.EventHandler(this.btn_Gravar_Click);
-            // 
-            // btn_Voltar
-            // 
-            this.btn_Voltar.Location = new System.Drawing.Point(251, 294);
-            this.btn_Voltar.Name = "btn_Voltar";
-            this.btn_Voltar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Voltar.TabIndex = 8;
-            this.btn_Voltar.Text = "Voltar";
-            this.btn_Voltar.UseVisualStyleBackColor = true;
-            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(273, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 24);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Cadastro de Empresa";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(594, 291);
+            this.pictureBox1.Location = new System.Drawing.Point(594, 295);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 50);
-            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // CadastroEmp
+            // DadosEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -323,12 +325,10 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CadastroEmp";
-            this.Padding = new System.Windows.Forms.Padding(2);
+            this.Name = "DadosEmpresa";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadastroEmp";
-            this.Load += new System.EventHandler(this.CadastroEmp_Load);
+            this.Text = "DadosEmpresa";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -339,8 +339,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Voltar;
+        private System.Windows.Forms.Button btn_Gravar;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MaskedTextBox tb_Telefone;
+        private System.Windows.Forms.MaskedTextBox tb_CEP;
+        private System.Windows.Forms.MaskedTextBox tb_CNPJ;
         private System.Windows.Forms.TextBox tb_UF;
         private System.Windows.Forms.TextBox tb_Cidade;
         private System.Windows.Forms.TextBox tb_Bairro;
@@ -348,7 +353,6 @@
         private System.Windows.Forms.TextBox tb_Num;
         private System.Windows.Forms.TextBox tb_Endereco;
         private System.Windows.Forms.TextBox tb_Nome_Emp;
-        private System.Windows.Forms.MaskedTextBox tb_CNPJ;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -359,10 +363,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_Gravar;
-        private System.Windows.Forms.Button btn_Voltar;
-        private System.Windows.Forms.MaskedTextBox tb_Telefone;
-        private System.Windows.Forms.MaskedTextBox tb_CEP;
+        private System.Windows.Forms.Label label1;
     }
 }

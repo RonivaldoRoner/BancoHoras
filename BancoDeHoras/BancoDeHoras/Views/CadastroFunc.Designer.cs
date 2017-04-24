@@ -324,9 +324,11 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CadastroFunc";
             this.ShowIcon = false;
-            this.Text = "CadastroFunc";
+            this.Text = "Cadastro de Funcionarios";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

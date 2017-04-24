@@ -20,8 +20,8 @@ namespace BancoDeHoras.Views
         //cadastro de empresa
         private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastroEmp cadEmpresa = new CadastroEmp();
-            cadEmpresa.Show();
+            DadosEmpresa empresa = new DadosEmpresa();
+            empresa.Show();
         }
 
         private void btn_Cad_Responsavel_Click(object sender, EventArgs e)

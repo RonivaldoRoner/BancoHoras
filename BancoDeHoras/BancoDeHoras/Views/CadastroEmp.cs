@@ -60,13 +60,17 @@ namespace BancoDeHoras.Views
                 MessageBox.Show("Erro ao gravar dados da Empresa." + erro);
             }
 
+            DadosEmpresa empresa = new DadosEmpresa();
+            empresa.Show();
+            this.Visible = false;
+
             
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
-            Login logUser = new Login();
-            logUser.Show();
+            DadosEmpresa empresa = new DadosEmpresa();
+            empresa.Show();
             this.Visible = false;           
         }
                               

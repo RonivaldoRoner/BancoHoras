@@ -37,6 +37,10 @@
             this.lb_Emp_Nome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,10 +57,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Cadastrar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -131,6 +131,28 @@
             this.panel3.Controls.Add(this.label3);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
+            // 
+            // maskedTextBox4
+            // 
+            resources.ApplyResources(this.maskedTextBox4, "maskedTextBox4");
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            // 
+            // maskedTextBox3
+            // 
+            resources.ApplyResources(this.maskedTextBox3, "maskedTextBox3");
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            // 
+            // maskedTextBox2
+            // 
+            resources.ApplyResources(this.maskedTextBox2, "maskedTextBox2");
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox1
+            // 
+            resources.ApplyResources(this.maskedTextBox1, "maskedTextBox1");
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // textBox8
             // 
@@ -215,28 +237,6 @@
             resources.ApplyResources(this.btn_Cancelar, "btn_Cancelar");
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
-            // 
-            // maskedTextBox1
-            // 
-            resources.ApplyResources(this.maskedTextBox1, "maskedTextBox1");
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // maskedTextBox2
-            // 
-            resources.ApplyResources(this.maskedTextBox2, "maskedTextBox2");
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
-            // 
-            // maskedTextBox3
-            // 
-            resources.ApplyResources(this.maskedTextBox3, "maskedTextBox3");
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            // 
-            // maskedTextBox4
-            // 
-            resources.ApplyResources(this.maskedTextBox4, "maskedTextBox4");
-            this.maskedTextBox4.Name = "maskedTextBox4";
             // 
             // CadastroFunc
             // 

@@ -9,6 +9,7 @@ namespace BancoDeHoras.Uteis
 {
     public class Criptografia
     {
+        const string senha = "123456";
 
         public static string Criptografar(string Message)
         {

@@ -18,7 +18,13 @@ namespace BancoDeHoras.DAL
 
         public void creatDB()
         {
-            conexao = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = sa; pwd=123456");            
+
+            //var usuario = "sa";
+            //var senha = "123456";
+            //conexao = new SqlConnection($@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = {usuario}; pwd={senha}"); 
+            conexao = new SqlConnection($@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = sa; pwd=123456");
+
+
             SqlCommand creatDB = new SqlCommand("IF NOT EXISTS(SELECT * FROM sys.databases WHERE name ='Teste')CREATE DATABASE Teste", conexao);
 
             conexao.Open();

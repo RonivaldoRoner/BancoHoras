@@ -41,31 +41,34 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btn_Cancel_Adm);
             this.panel1.Controls.Add(this.btn_Logar_Adm);
             this.panel1.Controls.Add(this.tb_Senha_AdminDB);
             this.panel1.Controls.Add(this.tb_Admin_DB);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(68, 73);
+            this.panel1.Location = new System.Drawing.Point(33, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(253, 141);
+            this.panel1.Size = new System.Drawing.Size(327, 190);
             this.panel1.TabIndex = 2;
             // 
             // btn_Cancel_Adm
             // 
-            this.btn_Cancel_Adm.Location = new System.Drawing.Point(75, 103);
+            this.btn_Cancel_Adm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel_Adm.Location = new System.Drawing.Point(36, 148);
             this.btn_Cancel_Adm.Name = "btn_Cancel_Adm";
-            this.btn_Cancel_Adm.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel_Adm.Size = new System.Drawing.Size(101, 28);
             this.btn_Cancel_Adm.TabIndex = 5;
             this.btn_Cancel_Adm.Text = "Cancelar";
             this.btn_Cancel_Adm.UseVisualStyleBackColor = true;
             // 
             // btn_Logar_Adm
             // 
-            this.btn_Logar_Adm.Location = new System.Drawing.Point(156, 103);
+            this.btn_Logar_Adm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Logar_Adm.Location = new System.Drawing.Point(189, 148);
             this.btn_Logar_Adm.Name = "btn_Logar_Adm";
-            this.btn_Logar_Adm.Size = new System.Drawing.Size(75, 23);
+            this.btn_Logar_Adm.Size = new System.Drawing.Size(99, 28);
             this.btn_Logar_Adm.TabIndex = 4;
             this.btn_Logar_Adm.Text = "Logar";
             this.btn_Logar_Adm.UseVisualStyleBackColor = true;
@@ -73,24 +76,26 @@
             // 
             // tb_Senha_AdminDB
             // 
-            this.tb_Senha_AdminDB.Location = new System.Drawing.Point(73, 67);
+            this.tb_Senha_AdminDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Senha_AdminDB.Location = new System.Drawing.Point(36, 100);
             this.tb_Senha_AdminDB.Name = "tb_Senha_AdminDB";
             this.tb_Senha_AdminDB.PasswordChar = '*';
-            this.tb_Senha_AdminDB.Size = new System.Drawing.Size(158, 20);
+            this.tb_Senha_AdminDB.Size = new System.Drawing.Size(252, 26);
             this.tb_Senha_AdminDB.TabIndex = 3;
             // 
             // tb_Admin_DB
             // 
-            this.tb_Admin_DB.Location = new System.Drawing.Point(73, 28);
+            this.tb_Admin_DB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Admin_DB.Location = new System.Drawing.Point(36, 34);
             this.tb_Admin_DB.Name = "tb_Admin_DB";
-            this.tb_Admin_DB.Size = new System.Drawing.Size(158, 20);
+            this.tb_Admin_DB.Size = new System.Drawing.Size(252, 26);
             this.tb_Admin_DB.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 70);
+            this.label3.Location = new System.Drawing.Point(33, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 1;
@@ -100,7 +105,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 31);
+            this.label2.Location = new System.Drawing.Point(33, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 0;
@@ -125,6 +130,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "LoginAdmin";
+            this.ShowIcon = false;
             this.Text = "LoginAdmin";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

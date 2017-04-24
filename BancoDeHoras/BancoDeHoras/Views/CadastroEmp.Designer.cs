@@ -93,9 +93,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(12, 35);
+            this.panel1.Location = new System.Drawing.Point(5, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(714, 253);
+            this.panel1.Size = new System.Drawing.Size(721, 253);
             this.panel1.TabIndex = 1;
             // 
             // tb_Telefone
@@ -304,7 +304,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(594, 291);
+            this.pictureBox1.Location = new System.Drawing.Point(594, 294);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 50);
@@ -327,7 +327,7 @@
             this.Padding = new System.Windows.Forms.Padding(2);
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadastroEmp";
+            this.Text = "Cadastro de Empresa";
             this.Load += new System.EventHandler(this.CadastroEmp_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

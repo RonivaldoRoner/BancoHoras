@@ -15,12 +15,13 @@ namespace BancoDeHoras.Views
         public DadosEmpresa()
         {
             InitializeComponent();
+            tb_CNPJ.Text = "02996771000106";
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
-            CadastroEmp cadEmpresa = new CadastroEmp();
-            cadEmpresa.Show();
+            LoginAdmin logAdmin = new LoginAdmin();
+            logAdmin.Show();            
             this.Visible = false;
         }
 

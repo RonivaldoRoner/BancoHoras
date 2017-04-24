@@ -36,7 +36,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(703, 448);
+            this.pictureBox1.Location = new System.Drawing.Point(492, 228);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 50);
@@ -47,7 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 507);
+            this.ClientSize = new System.Drawing.Size(631, 287);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Usuario";
             this.Text = "Banco de Horas / Colaborador";

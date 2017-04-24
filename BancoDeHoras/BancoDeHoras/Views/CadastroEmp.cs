@@ -32,28 +32,24 @@ namespace BancoDeHoras.Views
             EmpresaModel empMod = new EmpresaModel();
             
             //Dados da empresa.
-            empMod.Nome = tb_Nome_Emp.Text;
-            string cnpj = tb_CNPJ.Text.Replace(".", "").Replace("/", "").Replace("-", "").Replace(",","");
-            empMod.CNPJ = cnpj;            
+            empMod.Nome = tb_Nome_Emp.Text;            
+            empMod.CNPJ = tb_CNPJ.Text.Replace(".", "").Replace("/", "").Replace("-", "").Replace(",", "");
             empMod.Endereco = tb_Endereco.Text;
             empMod.End_Num = Convert.ToInt32(tb_Num.Text);
             empMod.End_Comp = tb_Complem.Text;
             empMod.Bairro = tb_Bairro.Text;
             empMod.Cidade = tb_Cidade.Text;
             empMod.Estado = tb_UF.Text;
-            empMod.CEP = tb_CEP.Text;
-            empMod.Telefone = tb_Telefone.Text;
-                                            
+            empMod.CEP = tb_CEP.Text.Replace("-","");
+            empMod.Telefone = tb_Telefone.Text.Replace("(","").Replace(")","").Replace("-","");
+                                                                    
             try
             {
                 EmpresaBLL empBLL = new EmpresaBLL();
                 empBLL.CreatDB();                
                 empBLL.CreatTbEmpresa();
                 empBLL.cadEmpresaBLL(empMod);
-                MessageBox.Show("Informações da empresa inserido ");
-                                               
-                MessageBox.Show("Dados gravados com sucesso.");
-
+                MessageBox.Show("Informações da empresa inserido ");                                                
             }
             catch (Exception erro)
             {

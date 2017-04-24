@@ -41,7 +41,7 @@
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btn_Cancel_Adm);
             this.panel1.Controls.Add(this.btn_Logar_Adm);
             this.panel1.Controls.Add(this.tb_Senha_AdminDB);
@@ -131,6 +131,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "LoginAdmin";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginAdmin";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

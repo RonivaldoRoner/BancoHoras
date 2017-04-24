@@ -12,12 +12,13 @@ namespace BancoDeHoras
 {
     public partial class Usuario : Form
     {
+        // var senhaCript = Criptografia.Criptografar(tb_Senha.Text);
+
+        //  var senhaDecript = Criptografia.Descriptografar(Criptografia.Criptografar(tb_Senha.Text));
         public Usuario()
         {
-            InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            InitializeComponent();            
         }
-
         private void Usuario_Load(object sender, EventArgs e)
         {
 

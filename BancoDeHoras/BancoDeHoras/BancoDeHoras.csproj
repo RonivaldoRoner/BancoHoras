@@ -74,6 +74,18 @@
     <Compile Include="Views\CadastroFunc.Designer.cs">
       <DependentUpon>CadastroFunc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CadastroRespos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CadastroRespos.Designer.cs">
+      <DependentUpon>CadastroRespos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CadUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CadUsuario.Designer.cs">
+      <DependentUpon>CadUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CadastroFunc.resx">
       <DependentUpon>CadastroFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CadastroRespos.resx">
+      <DependentUpon>CadastroRespos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CadUsuario.resx">
+      <DependentUpon>CadUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

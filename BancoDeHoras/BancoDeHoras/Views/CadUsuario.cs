@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BancoDeHoras.Uteis;
 
 namespace BancoDeHoras.Views
 {
-    public partial class CadastroFunc : Form
+    public partial class CadUsuario : Form
     {
-        public CadastroFunc()
+        public CadUsuario()
         {
             InitializeComponent();
-                      
         }
     }
 }

@@ -33,11 +33,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrarEmpresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Cad_Empresa = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Cad_Responsavel = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Cad_Funcionario = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Cad_Usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_Cad_Responsavel = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -101,6 +101,13 @@
             this.btn_Cad_Empresa.Text = "Empresa";
             this.btn_Cad_Empresa.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
+            // btn_Cad_Responsavel
+            // 
+            this.btn_Cad_Responsavel.Name = "btn_Cad_Responsavel";
+            this.btn_Cad_Responsavel.Size = new System.Drawing.Size(169, 26);
+            this.btn_Cad_Responsavel.Text = "Responsável";
+            this.btn_Cad_Responsavel.Click += new System.EventHandler(this.btn_Cad_Responsavel_Click);
+            // 
             // btn_Cad_Funcionario
             // 
             this.btn_Cad_Funcionario.Name = "btn_Cad_Funcionario";
@@ -127,13 +134,6 @@
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(90, 25);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
-            // btn_Cad_Responsavel
-            // 
-            this.btn_Cad_Responsavel.Name = "btn_Cad_Responsavel";
-            this.btn_Cad_Responsavel.Size = new System.Drawing.Size(169, 26);
-            this.btn_Cad_Responsavel.Text = "Responsável";
-            this.btn_Cad_Responsavel.Click += new System.EventHandler(this.btn_Cad_Responsavel_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,7 +143,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal";
             this.ShowIcon = false;
-            this.Text = "Principal";
+            this.Text = "Banco de Horas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -38,7 +38,8 @@ namespace BancoDeHoras.Views
 
         private void btn_Cad_Usuario_Click(object sender, EventArgs e)
         {
-
+            CadUsuario cadUser = new CadUsuario();
+            cadUser.Show();
         }
     }
 }

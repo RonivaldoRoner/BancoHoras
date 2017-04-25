@@ -54,6 +54,7 @@
     <Compile Include="DAL\ResponsavelDAL.cs" />
     <Compile Include="Models\FuncionarioModel.cs" />
     <Compile Include="Models\ResponsavelModel.cs" />
+    <Compile Include="Models\ValidaUsuarioModel.cs" />
     <Compile Include="Uteis\Criptografia.cs" />
     <Compile Include="Uteis\Mascaras.cs" />
     <Compile Include="Uteis\ValidarUsuario.cs" />

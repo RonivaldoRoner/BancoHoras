@@ -53,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Editar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             // btn_Voltar
             // 
             this.btn_Voltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Voltar.Location = new System.Drawing.Point(251, 295);
+            this.btn_Voltar.Location = new System.Drawing.Point(233, 295);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(75, 23);
             this.btn_Voltar.TabIndex = 13;
@@ -71,7 +72,7 @@
             // btn_Gravar
             // 
             this.btn_Gravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Gravar.Location = new System.Drawing.Point(408, 295);
+            this.btn_Gravar.Location = new System.Drawing.Point(423, 295);
             this.btn_Gravar.Name = "btn_Gravar";
             this.btn_Gravar.Size = new System.Drawing.Size(75, 23);
             this.btn_Gravar.TabIndex = 12;
@@ -324,11 +325,21 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_Editar
+            // 
+            this.btn_Editar.Location = new System.Drawing.Point(328, 295);
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Editar.TabIndex = 14;
+            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.UseVisualStyleBackColor = true;
+            // 
             // DadosEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 354);
+            this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Gravar);
             this.Controls.Add(this.pictureBox1);
@@ -375,5 +386,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Editar;
     }
 }

@@ -27,25 +27,30 @@ namespace BancoDeHoras.Views
             string senha = tb_Senha_AdminDB.Text;
 
             ValidarUsuario vdUser = new ValidarUsuario();
-            if(!vdUser.validUser(user, senha))
+            try
             {
-                MessageBox.Show("Usuario ou senha inválidos.");
-                 
-            }else
-            {
-                validUser();
-                                              
-            }
-            
-                                     
-                   
-            
-        }
+                if (!vdUser.validUser(user, senha))
+                {
+                    MessageBox.Show("Usuario ou senha inválidos.");
+                }
+                else
+                {
+                    MessageBox.Show("Usuario e senha corretos.");
 
-        public Boolean validUser()
-        {
-            return true;
+                                                                         
+                    
+
+                    //DadosRespons dadosResp = new DadosRespons();
+                   // dadosResp.Show();
+                }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("Erro na validação de usuario." + erro);
+            }                                                         
+            
         }
+                
                 
 
     }

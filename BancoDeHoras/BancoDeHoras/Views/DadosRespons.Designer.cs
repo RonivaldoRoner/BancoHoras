@@ -45,6 +45,7 @@
             this.tb_Empresa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Editar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -53,7 +54,7 @@
             // btn_Cancelar
             // 
             this.btn_Cancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_Cancelar.Location = new System.Drawing.Point(283, 243);
+            this.btn_Cancelar.Location = new System.Drawing.Point(254, 242);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar.TabIndex = 12;
@@ -64,7 +65,7 @@
             // btn_Novo
             // 
             this.btn_Novo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_Novo.Location = new System.Drawing.Point(423, 244);
+            this.btn_Novo.Location = new System.Drawing.Point(446, 242);
             this.btn_Novo.Name = "btn_Novo";
             this.btn_Novo.Size = new System.Drawing.Size(75, 23);
             this.btn_Novo.TabIndex = 11;
@@ -92,7 +93,8 @@
             // 
             // tb_Email_Resp
             // 
-            this.tb_Email_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Email_Resp.Enabled = false;
+            this.tb_Email_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Email_Resp.Location = new System.Drawing.Point(30, 88);
             this.tb_Email_Resp.Name = "tb_Email_Resp";
             this.tb_Email_Resp.Size = new System.Drawing.Size(333, 26);
@@ -100,25 +102,28 @@
             // 
             // tb_Tel_Resp
             // 
-            this.tb_Tel_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Tel_Resp.Location = new System.Drawing.Point(580, 90);
-            this.tb_Tel_Resp.Mask = "(99) 00000-0000";
+            this.tb_Tel_Resp.Enabled = false;
+            this.tb_Tel_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Tel_Resp.Location = new System.Drawing.Point(561, 90);
+            this.tb_Tel_Resp.Mask = "(99) 0000-0000";
             this.tb_Tel_Resp.Name = "tb_Tel_Resp";
-            this.tb_Tel_Resp.Size = new System.Drawing.Size(131, 26);
+            this.tb_Tel_Resp.Size = new System.Drawing.Size(150, 26);
             this.tb_Tel_Resp.TabIndex = 6;
             // 
             // tb_CPF_Resp
             // 
-            this.tb_CPF_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_CPF_Resp.Location = new System.Drawing.Point(580, 30);
-            this.tb_CPF_Resp.Mask = "000.000.000-00";
+            this.tb_CPF_Resp.Enabled = false;
+            this.tb_CPF_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CPF_Resp.Location = new System.Drawing.Point(571, 30);
+            this.tb_CPF_Resp.Mask = "000,000,000-00";
             this.tb_CPF_Resp.Name = "tb_CPF_Resp";
-            this.tb_CPF_Resp.Size = new System.Drawing.Size(131, 26);
+            this.tb_CPF_Resp.Size = new System.Drawing.Size(140, 26);
             this.tb_CPF_Resp.TabIndex = 5;
             // 
             // tb_Nome_Resp
             // 
-            this.tb_Nome_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Nome_Resp.Enabled = false;
+            this.tb_Nome_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Nome_Resp.Location = new System.Drawing.Point(30, 31);
             this.tb_Nome_Resp.Name = "tb_Nome_Resp";
             this.tb_Nome_Resp.Size = new System.Drawing.Size(333, 26);
@@ -128,7 +133,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(580, 70);
+            this.label6.Location = new System.Drawing.Point(561, 70);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 3;
@@ -148,7 +153,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(583, 10);
+            this.label4.Location = new System.Drawing.Point(571, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 1;
@@ -191,16 +196,18 @@
             // 
             // tb_CNPJ
             // 
-            this.tb_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_CNPJ.Location = new System.Drawing.Point(558, 21);
-            this.tb_CNPJ.Mask = "00.000.000/0000-00";
+            this.tb_CNPJ.Enabled = false;
+            this.tb_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CNPJ.Location = new System.Drawing.Point(534, 21);
+            this.tb_CNPJ.Mask = "00,000,000/0000-00";
             this.tb_CNPJ.Name = "tb_CNPJ";
-            this.tb_CNPJ.Size = new System.Drawing.Size(153, 26);
+            this.tb_CNPJ.Size = new System.Drawing.Size(177, 26);
             this.tb_CNPJ.TabIndex = 3;
             // 
             // tb_Empresa
             // 
-            this.tb_Empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Empresa.Enabled = false;
+            this.tb_Empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Empresa.Location = new System.Drawing.Point(30, 21);
             this.tb_Empresa.Name = "tb_Empresa";
             this.tb_Empresa.Size = new System.Drawing.Size(339, 26);
@@ -210,7 +217,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(558, 0);
+            this.label2.Location = new System.Drawing.Point(534, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 17);
             this.label2.TabIndex = 1;
@@ -226,11 +233,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Empresa";
             // 
+            // btn_Editar
+            // 
+            this.btn_Editar.Location = new System.Drawing.Point(350, 242);
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Editar.TabIndex = 13;
+            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.UseVisualStyleBackColor = true;
+            // 
             // DadosRespons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 301);
+            this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Novo);
             this.Controls.Add(this.panel2);
@@ -270,5 +287,6 @@
         private System.Windows.Forms.TextBox tb_Empresa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Editar;
     }
 }

@@ -12,31 +12,23 @@ using BancoDeHoras.Models;
 namespace BancoDeHoras.Views
 {
     public partial class DadosRespons : Form
-    {
+    {        
         public DadosRespons()
         {
             InitializeComponent();
+
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
         }
 
         private void btn_Novo_Click(object sender, EventArgs e)
         {
-            LoginAdmin logAdmin = new LoginAdmin();
-            
-            logAdmin.Show();
-
-            if (logAdmin.validUser())
-            {
-
-            }
-            
-            
-
-
+            CadastroRespons cadResp = new CadastroRespons();
+            cadResp.Show();
+            this.Visible = false;             
             
         }
     }

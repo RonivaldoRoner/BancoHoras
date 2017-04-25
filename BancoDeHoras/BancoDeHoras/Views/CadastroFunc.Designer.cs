@@ -33,25 +33,25 @@
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.lb_Emp_CNPJ = new System.Windows.Forms.Label();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lb_Emp_Nome = new System.Windows.Forms.Label();
+            this.lb_Emp_CNPJ = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lb_Emp_Nome = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -119,94 +119,59 @@
             this.panel3.Size = new System.Drawing.Size(684, 189);
             this.panel3.TabIndex = 3;
             // 
-            // panel1
+            // maskedTextBox4
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 92);
-            this.panel1.TabIndex = 2;
+            this.maskedTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.maskedTextBox4.Location = new System.Drawing.Point(527, 86);
+            this.maskedTextBox4.Mask = "(999) 00000-0000";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(114, 23);
+            this.maskedTextBox4.TabIndex = 19;
             // 
-            // label1
+            // maskedTextBox3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(18, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Empresa:";
+            this.maskedTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.maskedTextBox3.Location = new System.Drawing.Point(539, 30);
+            this.maskedTextBox3.Mask = "000.000.000-00";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(102, 23);
+            this.maskedTextBox3.TabIndex = 18;
             // 
-            // label2
+            // maskedTextBox2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(432, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "CNPJ:";
+            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.maskedTextBox2.Location = new System.Drawing.Point(566, 142);
+            this.maskedTextBox2.Mask = "00/00/0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(75, 23);
+            this.maskedTextBox2.TabIndex = 17;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
-            // label3
+            // maskedTextBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(18, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Nome:";
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.maskedTextBox1.Location = new System.Drawing.Point(20, 142);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(73, 23);
+            this.maskedTextBox1.TabIndex = 16;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
-            // label4
+            // textBox3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(527, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Telefone:";
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textBox3.Location = new System.Drawing.Point(20, 86);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(366, 22);
+            this.textBox3.TabIndex = 8;
             // 
-            // label5
+            // textBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(539, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "CPF:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(18, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 17);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Email:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(18, 122);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Admissão:";
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textBox1.Location = new System.Drawing.Point(20, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(363, 22);
+            this.textBox1.TabIndex = 6;
             // 
             // label8
             // 
@@ -219,69 +184,72 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Demissão:";
             // 
-            // textBox1
+            // label7
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox1.Location = new System.Drawing.Point(20, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(363, 22);
-            this.textBox1.TabIndex = 6;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(18, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Admissão:";
             // 
-            // textBox3
+            // label6
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox3.Location = new System.Drawing.Point(20, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(366, 22);
-            this.textBox3.TabIndex = 8;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(18, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 17);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Email:";
             // 
-            // maskedTextBox1
+            // label5
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(20, 142);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(73, 23);
-            this.maskedTextBox1.TabIndex = 16;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(539, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "CPF:";
             // 
-            // maskedTextBox2
+            // label4
             // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTextBox2.Location = new System.Drawing.Point(566, 142);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(75, 23);
-            this.maskedTextBox2.TabIndex = 17;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(527, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Telefone:";
             // 
-            // maskedTextBox3
+            // label3
             // 
-            this.maskedTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTextBox3.Location = new System.Drawing.Point(539, 30);
-            this.maskedTextBox3.Mask = "000.000.000-00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(102, 23);
-            this.maskedTextBox3.TabIndex = 18;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(18, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Nome:";
             // 
-            // maskedTextBox4
+            // panel1
             // 
-            this.maskedTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTextBox4.Location = new System.Drawing.Point(527, 86);
-            this.maskedTextBox4.Mask = "(999) 00000-0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(114, 23);
-            this.maskedTextBox4.TabIndex = 19;
-            // 
-            // lb_Emp_CNPJ
-            // 
-            this.lb_Emp_CNPJ.AutoSize = true;
-            this.lb_Emp_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lb_Emp_CNPJ.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lb_Emp_CNPJ.Location = new System.Drawing.Point(3, 1);
-            this.lb_Emp_CNPJ.Name = "lb_Emp_CNPJ";
-            this.lb_Emp_CNPJ.Size = new System.Drawing.Size(0, 20);
-            this.lb_Emp_CNPJ.TabIndex = 1;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(684, 92);
+            this.panel1.TabIndex = 2;
             // 
             // panel4
             // 
@@ -293,15 +261,26 @@
             this.panel4.Size = new System.Drawing.Size(209, 22);
             this.panel4.TabIndex = 12;
             // 
-            // lb_Emp_Nome
+            // lb_Emp_CNPJ
             // 
-            this.lb_Emp_Nome.AutoSize = true;
-            this.lb_Emp_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lb_Emp_Nome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lb_Emp_Nome.Location = new System.Drawing.Point(3, -1);
-            this.lb_Emp_Nome.Name = "lb_Emp_Nome";
-            this.lb_Emp_Nome.Size = new System.Drawing.Size(0, 20);
-            this.lb_Emp_Nome.TabIndex = 0;
+            this.lb_Emp_CNPJ.AutoSize = true;
+            this.lb_Emp_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lb_Emp_CNPJ.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lb_Emp_CNPJ.Location = new System.Drawing.Point(3, 1);
+            this.lb_Emp_CNPJ.Name = "lb_Emp_CNPJ";
+            this.lb_Emp_CNPJ.Size = new System.Drawing.Size(0, 20);
+            this.lb_Emp_CNPJ.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(432, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "CNPJ:";
             // 
             // panel2
             // 
@@ -312,6 +291,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 22);
             this.panel2.TabIndex = 10;
+            // 
+            // lb_Emp_Nome
+            // 
+            this.lb_Emp_Nome.AutoSize = true;
+            this.lb_Emp_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lb_Emp_Nome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lb_Emp_Nome.Location = new System.Drawing.Point(3, -1);
+            this.lb_Emp_Nome.Name = "lb_Emp_Nome";
+            this.lb_Emp_Nome.Size = new System.Drawing.Size(0, 20);
+            this.lb_Emp_Nome.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(18, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Empresa:";
             // 
             // CadastroFunc
             // 

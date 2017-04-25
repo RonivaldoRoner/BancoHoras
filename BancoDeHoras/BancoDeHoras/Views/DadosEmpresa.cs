@@ -20,8 +20,8 @@ namespace BancoDeHoras.Views
 
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
-            LoginAdmin logAdmin = new LoginAdmin();
-            logAdmin.Show();            
+            CadastroEmp cadEmp = new CadastroEmp();
+            cadEmp.Show();           
             this.Visible = false;
         }
 

@@ -42,7 +42,7 @@ namespace BancoDeHoras.Views
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
         }
     }
 }

@@ -9,6 +9,8 @@ namespace BancoDeHoras.Models
     class ValidaUsuarioModel
     {
         string user, senha;
+        int tela;
+        
 
         public string User
         {
@@ -21,5 +23,13 @@ namespace BancoDeHoras.Models
             get { return senha; }
             set { senha = value; }
         }
+
+        public int Tela
+        {
+            get { return tela; }
+            set { tela = value; }
+        }
+
+       
     }
 }

@@ -56,6 +56,7 @@
     <Compile Include="Models\ResponsavelModel.cs" />
     <Compile Include="Uteis\Criptografia.cs" />
     <Compile Include="Uteis\Mascaras.cs" />
+    <Compile Include="Uteis\ValidarUsuario.cs" />
     <Compile Include="Views\Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +75,11 @@
     <Compile Include="Views\CadastroFunc.Designer.cs">
       <DependentUpon>CadastroFunc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CadastroRespos.cs">
+    <Compile Include="Views\CadastroRespons.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CadastroRespos.Designer.cs">
-      <DependentUpon>CadastroRespos.cs</DependentUpon>
+    <Compile Include="Views\CadastroRespons.Designer.cs">
+      <DependentUpon>CadastroRespons.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CadUsuario.cs">
       <SubType>Form</SubType>
@@ -91,6 +92,12 @@
     </Compile>
     <Compile Include="Views\DadosEmpresa.Designer.cs">
       <DependentUpon>DadosEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DadosRespons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DadosRespons.Designer.cs">
+      <DependentUpon>DadosRespons.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
@@ -131,14 +138,17 @@
     <EmbeddedResource Include="Views\CadastroFunc.resx">
       <DependentUpon>CadastroFunc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CadastroRespos.resx">
-      <DependentUpon>CadastroRespos.cs</DependentUpon>
+    <EmbeddedResource Include="Views\CadastroRespons.resx">
+      <DependentUpon>CadastroRespons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CadUsuario.resx">
       <DependentUpon>CadUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DadosEmpresa.resx">
       <DependentUpon>DadosEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DadosRespons.resx">
+      <DependentUpon>DadosRespons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

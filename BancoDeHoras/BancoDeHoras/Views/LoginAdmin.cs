@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BancoDeHoras.BLL;
+using BancoDeHoras.Uteis;
+using BancoDeHoras.Views;
+using BancoDeHoras.Models;
 
 namespace BancoDeHoras.Views
 {
@@ -20,10 +23,30 @@ namespace BancoDeHoras.Views
 
         private void btn_Logar_Adm_Click(object sender, EventArgs e)
         {
+            string user = tb_Admin_DB.Text;
+            string senha = tb_Senha_AdminDB.Text;
+
+            ValidarUsuario vdUser = new ValidarUsuario();
+            if(!vdUser.validUser(user, senha))
+            {
+                MessageBox.Show("Usuario ou senha inválidos.");
+                 
+            }else
+            {
+                validUser();
+                                              
+            }
             
-            CadastroEmp cadEmp = new CadastroEmp();
-            cadEmp.Show();
-            this.Visible = false;
+                                     
+                   
+            
         }
+
+        public Boolean validUser()
+        {
+            return true;
+        }
+                
+
     }
 }

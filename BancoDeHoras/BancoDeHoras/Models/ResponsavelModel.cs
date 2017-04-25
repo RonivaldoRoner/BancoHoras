@@ -8,7 +8,7 @@ namespace BancoDeHoras.Models
 {
     class ResponsavelModel
     {
-        string nome_Resp, cpf, email;
+        string nome_Resp, cpf, email, telefone;
 
         public string Nome_Resp
         {
@@ -26,6 +26,12 @@ namespace BancoDeHoras.Models
         {
             get { return email; }
             set { email = value; }
+        }
+
+        public string Telefone
+        {
+            get { return telefone; }
+            set { telefone = value; }
         }
     }
 }

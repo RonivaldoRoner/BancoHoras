@@ -30,5 +30,21 @@ namespace BancoDeHoras.BLL
                 throw erro;
             }
         }
+
+        public ResponsavelModel consultResponsavel()
+        {
+            ResponsavelModel respModel = new ResponsavelModel();
+
+            try
+            {
+                respDAL = new ResponsavelDAL();
+                respModel = respDAL.consultaResponsavel();
+
+            }catch(Exception erro)
+            {
+                throw erro;
+            }
+            return respModel;
+        }
     }
 }

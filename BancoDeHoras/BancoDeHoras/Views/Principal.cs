@@ -26,8 +26,8 @@ namespace BancoDeHoras.Views
 
         private void btn_Cad_Responsavel_Click(object sender, EventArgs e)
         {
-            CadastroRespos cadResp = new CadastroRespos();
-            cadResp.Show();
+            DadosRespons consultResp = new DadosRespons();
+            consultResp.Show();
         }
 
         private void btn_Cad_Funcionario_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace BancoDeHoras.Views
 {
-    partial class CadastroRespos
+    partial class CadastroRespons
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_Empresa = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tb_Nome_Resp = new System.Windows.Forms.TextBox();
-            this.tb_CPF_Resp = new System.Windows.Forms.MaskedTextBox();
-            this.tb_Tel_Resp = new System.Windows.Forms.MaskedTextBox();
-            this.tb_Email_Resp = new System.Windows.Forms.TextBox();
             this.tb_CNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.tb_Empresa = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tb_Email_Resp = new System.Windows.Forms.TextBox();
+            this.tb_Tel_Resp = new System.Windows.Forms.MaskedTextBox();
+            this.tb_CPF_Resp = new System.Windows.Forms.MaskedTextBox();
+            this.tb_Nome_Resp = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btn_Gravar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -64,26 +64,22 @@
             this.panel1.Size = new System.Drawing.Size(743, 51);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // tb_CNPJ
             // 
-            this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(624, 235);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 50);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.tb_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CNPJ.Location = new System.Drawing.Point(558, 21);
+            this.tb_CNPJ.Mask = "00.000.000/0000-00";
+            this.tb_CNPJ.Name = "tb_CNPJ";
+            this.tb_CNPJ.Size = new System.Drawing.Size(153, 26);
+            this.tb_CNPJ.TabIndex = 3;
             // 
-            // label1
+            // tb_Empresa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Empresa";
+            this.tb_Empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Empresa.Location = new System.Drawing.Point(30, 21);
+            this.tb_Empresa.Name = "tb_Empresa";
+            this.tb_Empresa.Size = new System.Drawing.Size(339, 26);
+            this.tb_Empresa.TabIndex = 2;
             // 
             // label2
             // 
@@ -95,13 +91,26 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "CNPJ";
             // 
-            // tb_Empresa
+            // label1
             // 
-            this.tb_Empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Empresa.Location = new System.Drawing.Point(30, 21);
-            this.tb_Empresa.Name = "tb_Empresa";
-            this.tb_Empresa.Size = new System.Drawing.Size(339, 26);
-            this.tb_Empresa.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Empresa";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(624, 235);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(132, 50);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -121,35 +130,39 @@
             this.panel2.Size = new System.Drawing.Size(743, 157);
             this.panel2.TabIndex = 5;
             // 
-            // label3
+            // tb_Email_Resp
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Nome";
+            this.tb_Email_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Email_Resp.Location = new System.Drawing.Point(30, 88);
+            this.tb_Email_Resp.Name = "tb_Email_Resp";
+            this.tb_Email_Resp.Size = new System.Drawing.Size(333, 26);
+            this.tb_Email_Resp.TabIndex = 7;
             // 
-            // label4
+            // tb_Tel_Resp
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(583, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "CPF";
+            this.tb_Tel_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Tel_Resp.Location = new System.Drawing.Point(580, 90);
+            this.tb_Tel_Resp.Mask = "(99) 00000-0000";
+            this.tb_Tel_Resp.Name = "tb_Tel_Resp";
+            this.tb_Tel_Resp.Size = new System.Drawing.Size(131, 26);
+            this.tb_Tel_Resp.TabIndex = 6;
             // 
-            // label5
+            // tb_CPF_Resp
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "E-mail";
+            this.tb_CPF_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CPF_Resp.Location = new System.Drawing.Point(580, 30);
+            this.tb_CPF_Resp.Mask = "000.000.000-00";
+            this.tb_CPF_Resp.Name = "tb_CPF_Resp";
+            this.tb_CPF_Resp.Size = new System.Drawing.Size(131, 26);
+            this.tb_CPF_Resp.TabIndex = 5;
+            // 
+            // tb_Nome_Resp
+            // 
+            this.tb_Nome_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Nome_Resp.Location = new System.Drawing.Point(30, 31);
+            this.tb_Nome_Resp.Name = "tb_Nome_Resp";
+            this.tb_Nome_Resp.Size = new System.Drawing.Size(333, 26);
+            this.tb_Nome_Resp.TabIndex = 4;
             // 
             // label6
             // 
@@ -161,48 +174,35 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Telefone";
             // 
-            // tb_Nome_Resp
+            // label5
             // 
-            this.tb_Nome_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Nome_Resp.Location = new System.Drawing.Point(30, 31);
-            this.tb_Nome_Resp.Name = "tb_Nome_Resp";
-            this.tb_Nome_Resp.Size = new System.Drawing.Size(333, 26);
-            this.tb_Nome_Resp.TabIndex = 4;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(35, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "E-mail";
             // 
-            // tb_CPF_Resp
+            // label4
             // 
-            this.tb_CPF_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_CPF_Resp.Location = new System.Drawing.Point(580, 30);
-            this.tb_CPF_Resp.Mask = "000.000.000-00";
-            this.tb_CPF_Resp.Name = "tb_CPF_Resp";
-            this.tb_CPF_Resp.Size = new System.Drawing.Size(131, 26);
-            this.tb_CPF_Resp.TabIndex = 5;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(583, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "CPF";
             // 
-            // tb_Tel_Resp
+            // label3
             // 
-            this.tb_Tel_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Tel_Resp.Location = new System.Drawing.Point(580, 90);
-            this.tb_Tel_Resp.Mask = "(99) 00000-0000";
-            this.tb_Tel_Resp.Name = "tb_Tel_Resp";
-            this.tb_Tel_Resp.Size = new System.Drawing.Size(131, 26);
-            this.tb_Tel_Resp.TabIndex = 6;
-            // 
-            // tb_Email_Resp
-            // 
-            this.tb_Email_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Email_Resp.Location = new System.Drawing.Point(30, 88);
-            this.tb_Email_Resp.Name = "tb_Email_Resp";
-            this.tb_Email_Resp.Size = new System.Drawing.Size(333, 26);
-            this.tb_Email_Resp.TabIndex = 7;
-            // 
-            // tb_CNPJ
-            // 
-            this.tb_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_CNPJ.Location = new System.Drawing.Point(558, 21);
-            this.tb_CNPJ.Mask = "00.000.000/0000-00";
-            this.tb_CNPJ.Name = "tb_CNPJ";
-            this.tb_CNPJ.Size = new System.Drawing.Size(153, 26);
-            this.tb_CNPJ.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(35, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Nome";
             // 
             // btn_Gravar
             // 
@@ -213,6 +213,7 @@
             this.btn_Gravar.TabIndex = 6;
             this.btn_Gravar.Text = "Gravar";
             this.btn_Gravar.UseVisualStyleBackColor = true;
+            this.btn_Gravar.Click += new System.EventHandler(this.btn_Gravar_Click);
             // 
             // btn_Cancelar
             // 
@@ -223,8 +224,9 @@
             this.btn_Cancelar.TabIndex = 7;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
-            // CadastroRespos
+            // CadastroRespons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,7 +238,7 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CadastroRespos";
+            this.Name = "CadastroRespons";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Responsável Pela Empresa";

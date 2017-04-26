@@ -51,7 +51,7 @@ namespace BancoDeHoras.DAL
             {
                 conexao = new SqlConnection(conexao_BD);
 
-                SqlCommand cadResponsavel = new SqlCommand("INSERT INTO Responsavel VALUES (@fk_cnpj, @cpf, @nome, @email, @Ttelefone)", conexao);
+                SqlCommand cadResponsavel = new SqlCommand("INSERT INTO Responsavel VALUES (@fk_cnpj, @nome, @cpf, @telefone, @email)", conexao);
                 cadResponsavel.Parameters.AddWithValue("@cpf", responsavel.CPF);
                 cadResponsavel.Parameters.AddWithValue("@nome", responsavel.Nome_Resp);
                 cadResponsavel.Parameters.AddWithValue("@email", responsavel.Email);

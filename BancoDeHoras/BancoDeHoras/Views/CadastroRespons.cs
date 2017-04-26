@@ -40,7 +40,7 @@ namespace BancoDeHoras.Views
                 respBLL.CreatTBbRespons();
                 MessageBox.Show("Tabela Criada ");
                 respBLL.cadResponsavelBLL(respModel);
-
+                MessageBox.Show("Dados Gravados com sucesso.");
             } catch(Exception erro)
             {
                 MessageBox.Show("Erro na gravação dos dados" + erro);

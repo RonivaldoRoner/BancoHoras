@@ -17,15 +17,47 @@ namespace BancoDeHoras.Views
         public DadosRespons()
         {
             InitializeComponent();
+                                   
 
-            EmpresaModel empMod = new EmpresaModel();
-            EmpresaBLL empBLL = new EmpresaBLL();
+            try
+            {
+                EmpresaModel empMod = new EmpresaModel();
+                EmpresaBLL empBLL = new EmpresaBLL();
+                
+                empMod = empBLL.DadosEmpresaBLL();
+                if(empMod != null)
+                {
+                    tb_Empresa.Text = empMod.Nome;
+                    tb_CNPJ.Text = empMod.CNPJ;
+                }                               
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("Favor cadastrar Empresa." + erro);
+            }
+            
 
-            empMod = empBLL.DadosEmpresaBLL();
+            try
+            {
+                ResponsavelModel respMod = new ResponsavelModel();
+                ResponsavelBLL respBLL = new ResponsavelBLL();
+                respMod = respBLL.consultResponsavel();
 
-            tb_Empresa.Text = empMod.Nome;
-            tb_CNPJ.Text = empMod.CNPJ;
+                if(respMod != null)
+                {
+                    tb_Nome_Resp.Text = respMod.Nome_Resp;
+                    tb_CPF_Resp.Text = respMod.CPF;
+                    tb_Email_Resp.Text = respMod.Email;
+                    tb_Tel_Resp.Text = respMod.Telefone;
+                }
 
+                
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("Favor cadastrar Responsável.");
+            }
+                                    
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)

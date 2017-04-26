@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BancoDeHoras.Models;
+using BancoDeHoras.BLL;
 
 namespace BancoDeHoras.Views
 {
@@ -16,6 +17,14 @@ namespace BancoDeHoras.Views
         public DadosRespons()
         {
             InitializeComponent();
+
+            EmpresaModel empMod = new EmpresaModel();
+            EmpresaBLL empBLL = new EmpresaBLL();
+
+            empMod = empBLL.DadosEmpresaBLL();
+
+            tb_Empresa.Text = empMod.Nome;
+            tb_CNPJ.Text = empMod.CNPJ;
 
         }
 

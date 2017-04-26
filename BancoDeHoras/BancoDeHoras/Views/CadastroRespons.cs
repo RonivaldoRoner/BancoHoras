@@ -17,11 +17,18 @@ namespace BancoDeHoras.Views
         public CadastroRespons()
         {
             InitializeComponent();
+            EmpresaBLL empBLL = new EmpresaBLL();
+            EmpresaModel modEmp = new EmpresaModel();
+            modEmp = empBLL.DadosEmpresaBLL();
+            tb_Empresa.Text = modEmp.Nome;
+            tb_CNPJ.Text = modEmp.CNPJ;
+
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
             ResponsavelModel respModel = new ResponsavelModel();
+            respModel.FK_CNPJ = tb_CNPJ.Text.Replace(".", "").Replace(",", "").Replace("/", "").Replace("-", "");
             respModel.Nome_Resp = tb_Nome_Resp.Text;
             respModel.CPF = tb_CPF_Resp.Text.Replace(",", "").Replace(".", "").Replace("-", "");
             respModel.Email = tb_Email_Resp.Text;

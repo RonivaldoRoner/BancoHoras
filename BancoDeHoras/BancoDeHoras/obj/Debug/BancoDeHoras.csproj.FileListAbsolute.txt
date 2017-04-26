@@ -8,7 +8,6 @@ D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.C
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.CadUsuario.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Login.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Properties.Resources.resources
-D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.LoginAdmin.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.Principal.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Usuario.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.CadastroFunc.pt-BR.resources

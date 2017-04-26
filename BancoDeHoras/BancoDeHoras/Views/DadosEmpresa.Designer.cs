@@ -115,7 +115,7 @@
             this.tb_Telefone.Enabled = false;
             this.tb_Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Telefone.Location = new System.Drawing.Point(564, 221);
-            this.tb_Telefone.Mask = "(99) 0000-0000";
+            this.tb_Telefone.Mask = "(999) 0000-0000";
             this.tb_Telefone.Name = "tb_Telefone";
             this.tb_Telefone.Size = new System.Drawing.Size(149, 26);
             this.tb_Telefone.TabIndex = 19;

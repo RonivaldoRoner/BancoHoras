@@ -11,7 +11,7 @@ namespace BancoDeHoras.DAL
 {
     class ResponsavelDAL
     {
-        private string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = BancoHoras; User id = sa; pwd=123456";
+        private string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = Teste; User id = sa; pwd=123456";
         SqlConnection conexao = null;
 
         public void CreatTableResponsavel()
@@ -23,9 +23,11 @@ namespace BancoDeHoras.DAL
                                                       "CREATE TABLE Responsavel " +
                                                       "(" +
                                                             "id_Resp INT NOT NULL  PRIMARY KEY IDENTITY(1, 1)," +
+                                                            "fk_cnpj VARCHAR(14) NOT NULL," +
+                                                            "CONSTRAINT Responsavel_Empresa FOREIGN KEY (fk_cnpj) REFERENCES Empresa(cnpj)," +
                                                             "nome VARCHAR(50) NOT NULL," +
                                                             "cpf VARCHAR(11) NOT NULL," +
-                                                            "telefone VARCHAR(14) NOT NULL" +
+                                                            "telefone VARCHAR(14) NOT NULL," +
                                                             "email VARCHAR(50) NOT NULL" +
                                                        ");", conexao);
                 conexao.Open();
@@ -49,11 +51,12 @@ namespace BancoDeHoras.DAL
             {
                 conexao = new SqlConnection(conexao_BD);
 
-                SqlCommand cadResponsavel = new SqlCommand("INSERT INTO Responsavel VALUES (@cpf, @nome, @email, @Ttelefone)", conexao);
+                SqlCommand cadResponsavel = new SqlCommand("INSERT INTO Responsavel VALUES (@fk_cnpj, @cpf, @nome, @email, @Ttelefone)", conexao);
                 cadResponsavel.Parameters.AddWithValue("@cpf", responsavel.CPF);
                 cadResponsavel.Parameters.AddWithValue("@nome", responsavel.Nome_Resp);
                 cadResponsavel.Parameters.AddWithValue("@email", responsavel.Email);
                 cadResponsavel.Parameters.AddWithValue("@telefone", responsavel.Telefone);
+                cadResponsavel.Parameters.AddWithValue("@fk_cnpj", responsavel.FK_CNPJ);
 
                 conexao.Open();
 

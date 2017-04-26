@@ -66,15 +66,17 @@
             // 
             // tb_CNPJ
             // 
+            this.tb_CNPJ.Enabled = false;
             this.tb_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_CNPJ.Location = new System.Drawing.Point(558, 21);
-            this.tb_CNPJ.Mask = "00.000.000/0000-00";
+            this.tb_CNPJ.Mask = "00,000,000/0000-00";
             this.tb_CNPJ.Name = "tb_CNPJ";
             this.tb_CNPJ.Size = new System.Drawing.Size(153, 26);
             this.tb_CNPJ.TabIndex = 3;
             // 
             // tb_Empresa
             // 
+            this.tb_Empresa.Enabled = false;
             this.tb_Empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Empresa.Location = new System.Drawing.Point(30, 21);
             this.tb_Empresa.Name = "tb_Empresa";
@@ -142,7 +144,7 @@
             // 
             this.tb_Tel_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Tel_Resp.Location = new System.Drawing.Point(580, 90);
-            this.tb_Tel_Resp.Mask = "(99) 00000-0000";
+            this.tb_Tel_Resp.Mask = "(999) 00000-0000";
             this.tb_Tel_Resp.Name = "tb_Tel_Resp";
             this.tb_Tel_Resp.Size = new System.Drawing.Size(131, 26);
             this.tb_Tel_Resp.TabIndex = 6;
@@ -151,7 +153,7 @@
             // 
             this.tb_CPF_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_CPF_Resp.Location = new System.Drawing.Point(580, 30);
-            this.tb_CPF_Resp.Mask = "000.000.000-00";
+            this.tb_CPF_Resp.Mask = "000,000,000-00";
             this.tb_CPF_Resp.Name = "tb_CPF_Resp";
             this.tb_CPF_Resp.Size = new System.Drawing.Size(131, 26);
             this.tb_CPF_Resp.TabIndex = 5;

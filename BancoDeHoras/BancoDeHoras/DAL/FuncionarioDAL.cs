@@ -24,6 +24,8 @@ namespace BancoDeHoras.DAL
                                                           "CREATE TABLE Funcionario " +
                                                           "(" +
                                                                 "id_Func INT NOT NULL PRIMARY KEY IDENTITY(1, 1),"+
+                                                                "fk_cnpj VARCHAR(14) NOT NULL" +
+                                                                "CONSTRAINT Empresa_Funcionario FOREIGN KEY (cnpj) REFERENCES Empresa(cnpj)" +
                                                                 "CPF VARCHAR(14) NOT NULL," +
                                                                 "Nome VARCHAR(50) NOT NULL," +
                                                                 "telefone VARCHAR(14) NOT NULL," +

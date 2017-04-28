@@ -145,7 +145,45 @@ namespace BancoDeHoras.DAL
             
         }
 
+        public void editEmpresa(EmpresaModel empModel)
+        {
+            try
+            {
+                conexao = new SqlConnection(conexao_BD);
+                SqlCommand editEmpresa = new SqlCommand("UPDATE Empresa SET " +
+                                                        "nome = @nome, " +
+                                                        "endereco = @endereco, " +
+                                                        "numero = @numero, " +
+                                                        "end_comp = @end_comp, " +
+                                                        "bairro = @bairro, " +
+                                                        "cidade = @cidade, " +
+                                                        "estado = @estado, " +
+                                                        "cep = @cep, " +
+                                                        "telefone = @telefone " +
+                                                        "WHERE cnpj = @cnpj ", conexao);
+                editEmpresa.Parameters.AddWithValue("@nome", empModel.Nome);
+                editEmpresa.Parameters.AddWithValue("@endereco", empModel.Endereco);
+                editEmpresa.Parameters.AddWithValue("@numero", empModel.End_Num);
+                editEmpresa.Parameters.AddWithValue("@end_comp", empModel.End_Comp);
+                editEmpresa.Parameters.AddWithValue("@bairro", empModel.Bairro);
+                editEmpresa.Parameters.AddWithValue("@cidade", empModel.Cidade);
+                editEmpresa.Parameters.AddWithValue("@estado", empModel.Estado);
+                editEmpresa.Parameters.AddWithValue("@cep", empModel.CEP);
+                editEmpresa.Parameters.AddWithValue("@telefone", empModel.Telefone);
+                editEmpresa.Parameters.AddWithValue("@cnpj", empModel.CNPJ);
 
+                conexao.Open();
+                editEmpresa.ExecuteNonQuery();
+            }
+            catch(Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
        
     }
 }

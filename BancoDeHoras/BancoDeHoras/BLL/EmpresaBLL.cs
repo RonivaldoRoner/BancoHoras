@@ -56,6 +56,19 @@ namespace BancoDeHoras.BLL
             return empModel;
 
         }
+
+        public void editEmpresaBLL(EmpresaModel empModel)
+        {
+            try
+            {
+                empresaDAL = new EmpresaDAL();
+                empresaDAL.editEmpresa(empModel); 
+                
+            }catch(Exception erro)
+            {
+                throw erro; 
+            }
+        }
         
     }
 }

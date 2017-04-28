@@ -99,6 +99,12 @@
     <Compile Include="Views\DadosRespons.Designer.cs">
       <DependentUpon>DadosRespons.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EditEmpresa.Designer.cs">
+      <DependentUpon>EditEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DadosRespons.resx">
       <DependentUpon>DadosRespons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditEmpresa.resx">
+      <DependentUpon>EditEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

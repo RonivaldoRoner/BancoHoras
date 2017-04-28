@@ -19,3 +19,4 @@ D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.csprojR
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.DadosEmpresa.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.CadastroRespons.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.DadosRespons.resources
+D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.EditEmpresa.resources

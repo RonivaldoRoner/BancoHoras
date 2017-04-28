@@ -46,5 +46,12 @@ namespace BancoDeHoras.Views
         {
             this.Visible = false;
         }
+
+        private void btn_Editar_Click(object sender, EventArgs e)
+        {
+            EditEmpresa edtEmp = new EditEmpresa();
+            edtEmp.Show();
+            this.Visible = false;
+        }
     }
 }

@@ -46,5 +46,18 @@ namespace BancoDeHoras.BLL
             }
             return respModel;
         }
+
+        public void edtResponsBLL(ResponsavelModel respMod)
+        {
+            try
+            {
+                respDAL = new ResponsavelDAL();
+                respDAL.editResponsavel(respMod);
+
+            }catch(Exception erro)
+            {
+                throw erro;
+            }
+        }
     }
 }

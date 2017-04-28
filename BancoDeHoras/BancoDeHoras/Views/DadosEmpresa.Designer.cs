@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Voltar = new System.Windows.Forms.Button();
+            this.btn_Fechar = new System.Windows.Forms.Button();
             this.btn_Gravar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_Telefone = new System.Windows.Forms.MaskedTextBox();
@@ -58,16 +58,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_Voltar
+            // btn_Fechar
             // 
-            this.btn_Voltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Voltar.Location = new System.Drawing.Point(233, 295);
-            this.btn_Voltar.Name = "btn_Voltar";
-            this.btn_Voltar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Voltar.TabIndex = 13;
-            this.btn_Voltar.Text = "Voltar";
-            this.btn_Voltar.UseVisualStyleBackColor = true;
-            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
+            this.btn_Fechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Fechar.Location = new System.Drawing.Point(233, 295);
+            this.btn_Fechar.Name = "btn_Fechar";
+            this.btn_Fechar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Fechar.TabIndex = 13;
+            this.btn_Fechar.Text = "Fechar";
+            this.btn_Fechar.UseVisualStyleBackColor = true;
+            this.btn_Fechar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // btn_Gravar
             // 
@@ -341,7 +341,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 354);
             this.Controls.Add(this.btn_Editar);
-            this.Controls.Add(this.btn_Voltar);
+            this.Controls.Add(this.btn_Fechar);
             this.Controls.Add(this.btn_Gravar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -362,7 +362,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_Voltar;
+        private System.Windows.Forms.Button btn_Fechar;
         private System.Windows.Forms.Button btn_Gravar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;

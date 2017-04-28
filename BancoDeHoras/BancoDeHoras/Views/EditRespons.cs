@@ -12,34 +12,31 @@ using BancoDeHoras.BLL;
 
 namespace BancoDeHoras.Views
 {
-    public partial class DadosRespons : Form
+    public partial class EditRespons : Form
     {
         ResponsavelModel respMod = new ResponsavelModel();
         ResponsavelBLL respBLL = new ResponsavelBLL();
-        
 
-        public DadosRespons()
+        public EditRespons()
         {
             InitializeComponent();
-                                   
 
             try
             {
                 EmpresaModel empMod = new EmpresaModel();
                 EmpresaBLL empBLL = new EmpresaBLL();
-                
+
                 empMod = empBLL.DadosEmpresaBLL();
-                if(empMod != null)
+                if (empMod != null)
                 {
                     tb_Empresa.Text = empMod.Nome;
                     tb_CNPJ.Text = empMod.CNPJ;
-                }                               
+                }
             }
-            catch(Exception erro)
+            catch (Exception erro)
             {
                 MessageBox.Show("Favor cadastrar Empresa." + erro);
             }
-            
 
             try
             {
@@ -51,43 +48,42 @@ namespace BancoDeHoras.Views
                     tb_CPF_Resp.Text = respMod.CPF;
                     tb_Email_Resp.Text = respMod.Email;
                     tb_Tel_Resp.Text = respMod.Telefone;
-                }                                
+                }
             }
-            catch(Exception erro)
+            catch (Exception erro)
             {
-                MessageBox.Show("Favor cadastrar Responsável.");
+                MessageBox.Show("Erro ao acessar informações no Banco de Dados.");
             }
-                                    
         }
+            
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
+            DadosRespons dadosResp = new DadosRespons();
+            dadosResp.Show();
             this.Visible = false;
-        }
 
-        private void btn_Novo_Click(object sender, EventArgs e)
-        {
-            respMod = respBLL.consultResponsavel();
-
-            if (respMod == null)
-            {
-                CadastroRespons cadResp = new CadastroRespons();
-                cadResp.Show();
-                this.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("Já existe Responsavel Cadastrado.");
-            }
-                       
-            
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)
         {
-            EditRespons edtResp = new EditRespons();
-            edtResp.Show();
-            this.Visible = false;
+            try
+            {
+                respMod.Nome_Resp = tb_Nome_Resp.Text;
+                respMod.CPF = tb_CPF_Resp.Text.Replace(",", "").Replace(".", "").Replace("-", "");
+                respMod.Email = tb_Email_Resp.Text;
+                respMod.Telefone = tb_Tel_Resp.Text.Replace("(", "").Replace(")", "").Replace("-", "");
+
+                respBLL.edtResponsBLL(respMod);
+
+                MessageBox.Show("Dados gravados com sucesso.");
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("Erro na atualização dos dados." + erro);
+            }        
+           
+            
         }
     }
 }

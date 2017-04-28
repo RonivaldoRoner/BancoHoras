@@ -47,8 +47,8 @@ namespace BancoDeHoras.Views
             empModel.Bairro = tb_Bairro.Text;
             empModel.Cidade = tb_Cidade.Text;
             empModel.Estado = tb_UF.Text;
-            empModel.CEP = tb_CEP.Text;
-            empModel.Telefone = tb_Telefone.Text;
+            empModel.CEP = tb_CEP.Text.Replace("-", "");
+            empModel.Telefone = tb_Telefone.Text.Replace("(", "").Replace(")", "").Replace("-", "");
 
             try
             {

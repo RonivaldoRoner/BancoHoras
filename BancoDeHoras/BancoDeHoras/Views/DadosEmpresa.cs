@@ -14,12 +14,13 @@ namespace BancoDeHoras.Views
 {
     public partial class DadosEmpresa : Form
     {
+        EmpresaBLL empBLL = new EmpresaBLL();
+        EmpresaModel empMod = new EmpresaModel();
+
+        
         public DadosEmpresa()
         {
             InitializeComponent();
-            EmpresaBLL empBLL = new EmpresaBLL();
-            EmpresaModel empMod = new EmpresaModel();
-
             empMod = empBLL.DadosEmpresaBLL();
 
             tb_Nome_Emp.Text = empMod.Nome;
@@ -37,9 +38,17 @@ namespace BancoDeHoras.Views
 
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
-            CadastroEmp cadEmp = new CadastroEmp();
-            cadEmp.Show();           
-            this.Visible = false;
+            empMod = empBLL.DadosEmpresaBLL();
+            if (empMod == null)
+            {
+                CadastroEmp cadEmp = new CadastroEmp();
+                cadEmp.Show();
+                this.Visible = false;
+            }else
+            {
+                MessageBox.Show("Já existe empresa Cadastrada.");
+            }
+            
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)

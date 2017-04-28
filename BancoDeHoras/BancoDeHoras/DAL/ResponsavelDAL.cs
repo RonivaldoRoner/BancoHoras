@@ -108,5 +108,35 @@ namespace BancoDeHoras.DAL
                 conexao.Close();
             }
         }
+
+        public void editResponsavel(ResponsavelModel respMod)
+        {            
+            try
+            {
+                conexao = new SqlConnection(conexao_BD);
+                SqlCommand edtRespo = new SqlCommand("UPDATE Responsavel SET " +
+                                                     "cpf = @cpf," +
+                                                     "nome = @nome," +
+                                                     "email = @email," +
+                                                     "telefone = @telefone " +
+                                                     "WHERE id_Resp = @id", conexao);
+                edtRespo.Parameters.AddWithValue("@id", 1);
+                edtRespo.Parameters.AddWithValue("@cpf", respMod.CPF);
+                edtRespo.Parameters.AddWithValue("@nome", respMod.Nome_Resp);
+                edtRespo.Parameters.AddWithValue("@email", respMod.Email);
+                edtRespo.Parameters.AddWithValue("@telefone", respMod.Telefone);
+
+                conexao.Open();
+                edtRespo.ExecuteNonQuery();
+            }
+            catch(Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

@@ -165,11 +165,17 @@
     <EmbeddedResource Include="Views\DadosEmpresa.resx">
       <DependentUpon>DadosEmpresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\DadosFuncionario.resx">
+      <DependentUpon>DadosFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DadosRespons.resx">
       <DependentUpon>DadosRespons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditEmpresa.resx">
       <DependentUpon>EditEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditFuncionario.resx">
+      <DependentUpon>EditFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditRespons.resx">
       <DependentUpon>EditRespons.cs</DependentUpon>

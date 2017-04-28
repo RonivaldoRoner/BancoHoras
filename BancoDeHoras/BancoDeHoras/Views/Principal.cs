@@ -32,8 +32,9 @@ namespace BancoDeHoras.Views
 
         private void btn_Cad_Funcionario_Click(object sender, EventArgs e)
         {
-            CadastroFunc cadFunc = new CadastroFunc();
-            cadFunc.Show();
+            DadosFuncionario dadosFunc = new DadosFuncionario();
+            dadosFunc.Show();
+            
         }
 
         private void btn_Cad_Usuario_Click(object sender, EventArgs e)

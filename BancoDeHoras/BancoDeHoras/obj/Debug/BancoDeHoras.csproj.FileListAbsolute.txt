@@ -21,3 +21,5 @@ D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.C
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.DadosRespons.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.EditEmpresa.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.EditRespons.resources
+D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.DadosFuncionario.resources
+D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.EditFuncionario.resources

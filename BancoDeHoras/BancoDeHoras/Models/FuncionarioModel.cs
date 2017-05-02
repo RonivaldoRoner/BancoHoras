@@ -9,7 +9,8 @@ namespace BancoDeHoras.Models
     class FuncionarioModel
     {
         string nome, cpf, fk_cnpj, email, telefone, login, senha;
-        DateTime dt_Admissao, dt_Demissao;
+        DateTime dt_Admissao;
+        DateTime dt_Demissao;
 
         public string CPF
         {

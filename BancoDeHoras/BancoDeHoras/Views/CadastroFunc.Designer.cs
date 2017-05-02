@@ -31,12 +31,12 @@
             this.tb_CNPJ = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_Telefone = new System.Windows.Forms.MaskedTextBox();
+            this.tb_CPF_Func = new System.Windows.Forms.MaskedTextBox();
+            this.tb_Data_Demissao = new System.Windows.Forms.MaskedTextBox();
+            this.tb_Data_Admissao = new System.Windows.Forms.MaskedTextBox();
+            this.tb_Email = new System.Windows.Forms.TextBox();
+            this.tb_Nome = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,17 +48,16 @@
             this.btn_Cadastrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lb_Emp_Nome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tb_Nome_Emp = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tb_CNPJ
             // 
+            this.tb_CNPJ.Enabled = false;
             this.tb_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_CNPJ.Location = new System.Drawing.Point(468, 27);
             this.tb_CNPJ.Mask = "00,000,000/0000-00";
@@ -80,12 +79,12 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.maskedTextBox4);
-            this.panel3.Controls.Add(this.maskedTextBox3);
-            this.panel3.Controls.Add(this.maskedTextBox2);
-            this.panel3.Controls.Add(this.maskedTextBox1);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.tb_Telefone);
+            this.panel3.Controls.Add(this.tb_CPF_Func);
+            this.panel3.Controls.Add(this.tb_Data_Demissao);
+            this.panel3.Controls.Add(this.tb_Data_Admissao);
+            this.panel3.Controls.Add(this.tb_Email);
+            this.panel3.Controls.Add(this.tb_Nome);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
@@ -97,65 +96,60 @@
             this.panel3.Size = new System.Drawing.Size(684, 189);
             this.panel3.TabIndex = 18;
             // 
-            // maskedTextBox4
+            // tb_Telefone
             // 
-            this.maskedTextBox4.Enabled = false;
-            this.maskedTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.maskedTextBox4.Location = new System.Drawing.Point(490, 86);
-            this.maskedTextBox4.Mask = "(999) 00000-0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(151, 26);
-            this.maskedTextBox4.TabIndex = 19;
+            this.tb_Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_Telefone.Location = new System.Drawing.Point(490, 86);
+            this.tb_Telefone.Mask = "(999) 00000-0000";
+            this.tb_Telefone.Name = "tb_Telefone";
+            this.tb_Telefone.Size = new System.Drawing.Size(151, 26);
+            this.tb_Telefone.TabIndex = 4;
             // 
-            // maskedTextBox3
+            // tb_CPF_Func
             // 
-            this.maskedTextBox3.Enabled = false;
-            this.maskedTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.maskedTextBox3.Location = new System.Drawing.Point(505, 30);
-            this.maskedTextBox3.Mask = "000,000,000-00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(136, 26);
-            this.maskedTextBox3.TabIndex = 18;
+            this.tb_CPF_Func.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_CPF_Func.Location = new System.Drawing.Point(505, 30);
+            this.tb_CPF_Func.Mask = "000,000,000-00";
+            this.tb_CPF_Func.Name = "tb_CPF_Func";
+            this.tb_CPF_Func.Size = new System.Drawing.Size(136, 26);
+            this.tb_CPF_Func.TabIndex = 2;
             // 
-            // maskedTextBox2
+            // tb_Data_Demissao
             // 
-            this.maskedTextBox2.Enabled = false;
-            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.maskedTextBox2.Location = new System.Drawing.Point(550, 142);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(91, 26);
-            this.maskedTextBox2.TabIndex = 17;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.tb_Data_Demissao.Enabled = false;
+            this.tb_Data_Demissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_Data_Demissao.Location = new System.Drawing.Point(550, 142);
+            this.tb_Data_Demissao.Mask = "00/00/0000";
+            this.tb_Data_Demissao.Name = "tb_Data_Demissao";
+            this.tb_Data_Demissao.Size = new System.Drawing.Size(91, 26);
+            this.tb_Data_Demissao.TabIndex = 6;
+            this.tb_Data_Demissao.ValidatingType = typeof(System.DateTime);
             // 
-            // maskedTextBox1
+            // tb_Data_Admissao
             // 
-            this.maskedTextBox1.Enabled = false;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(20, 142);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(93, 26);
-            this.maskedTextBox1.TabIndex = 16;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.tb_Data_Admissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_Data_Admissao.Location = new System.Drawing.Point(20, 142);
+            this.tb_Data_Admissao.Mask = "00/00/0000";
+            this.tb_Data_Admissao.Name = "tb_Data_Admissao";
+            this.tb_Data_Admissao.Size = new System.Drawing.Size(93, 26);
+            this.tb_Data_Admissao.TabIndex = 5;
+            this.tb_Data_Admissao.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox3
+            // tb_Email
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(20, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(366, 26);
-            this.textBox3.TabIndex = 8;
+            this.tb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_Email.Location = new System.Drawing.Point(20, 86);
+            this.tb_Email.Name = "tb_Email";
+            this.tb_Email.Size = new System.Drawing.Size(366, 26);
+            this.tb_Email.TabIndex = 3;
             // 
-            // textBox1
+            // tb_Nome
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(20, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(363, 26);
-            this.textBox1.TabIndex = 6;
+            this.tb_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_Nome.Location = new System.Drawing.Point(20, 31);
+            this.tb_Nome.Name = "tb_Nome";
+            this.tb_Nome.Size = new System.Drawing.Size(366, 26);
+            this.tb_Nome.TabIndex = 1;
             // 
             // label8
             // 
@@ -208,9 +202,9 @@
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label4.Location = new System.Drawing.Point(490, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Telefone:";
+            this.label4.Text = "Celular:";
             // 
             // label3
             // 
@@ -242,6 +236,7 @@
             this.btn_Cancelar.TabIndex = 22;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // btn_Cadastrar
             // 
@@ -251,13 +246,14 @@
             this.btn_Cadastrar.TabIndex = 21;
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.UseVisualStyleBackColor = true;
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.tb_Nome_Emp);
             this.panel1.Controls.Add(this.tb_CNPJ);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(14, 11);
             this.panel1.Name = "panel1";
@@ -275,28 +271,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "CNPJ:";
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lb_Emp_Nome);
-            this.panel2.Enabled = false;
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(20, 26);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(329, 22);
-            this.panel2.TabIndex = 10;
-            // 
-            // lb_Emp_Nome
-            // 
-            this.lb_Emp_Nome.AutoSize = true;
-            this.lb_Emp_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lb_Emp_Nome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lb_Emp_Nome.Location = new System.Drawing.Point(3, -1);
-            this.lb_Emp_Nome.Name = "lb_Emp_Nome";
-            this.lb_Emp_Nome.Size = new System.Drawing.Size(0, 20);
-            this.lb_Emp_Nome.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -307,6 +281,15 @@
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Empresa:";
+            // 
+            // tb_Nome_Emp
+            // 
+            this.tb_Nome_Emp.Enabled = false;
+            this.tb_Nome_Emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Nome_Emp.Location = new System.Drawing.Point(20, 27);
+            this.tb_Nome_Emp.Name = "tb_Nome_Emp";
+            this.tb_Nome_Emp.Size = new System.Drawing.Size(365, 26);
+            this.tb_Nome_Emp.TabIndex = 12;
             // 
             // CadastroFunc
             // 
@@ -330,8 +313,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,12 +323,12 @@
         private System.Windows.Forms.MaskedTextBox tb_CNPJ;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.MaskedTextBox tb_Telefone;
+        private System.Windows.Forms.MaskedTextBox tb_CPF_Func;
+        private System.Windows.Forms.MaskedTextBox tb_Data_Demissao;
+        private System.Windows.Forms.MaskedTextBox tb_Data_Admissao;
+        private System.Windows.Forms.TextBox tb_Email;
+        private System.Windows.Forms.TextBox tb_Nome;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -359,8 +340,7 @@
         private System.Windows.Forms.Button btn_Cadastrar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lb_Emp_Nome;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_Nome_Emp;
     }
 }

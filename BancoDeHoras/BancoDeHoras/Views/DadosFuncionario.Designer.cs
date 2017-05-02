@@ -37,6 +37,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_Nome_Emp = new System.Windows.Forms.TextBox();
+            this.tb_CNPJ = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Editar = new System.Windows.Forms.Button();
-            this.tb_CNPJ = new System.Windows.Forms.MaskedTextBox();
-            this.tb_Nome_Emp = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -150,6 +150,25 @@
             this.panel1.Size = new System.Drawing.Size(684, 74);
             this.panel1.TabIndex = 10;
             // 
+            // tb_Nome_Emp
+            // 
+            this.tb_Nome_Emp.Enabled = false;
+            this.tb_Nome_Emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Nome_Emp.Location = new System.Drawing.Point(20, 27);
+            this.tb_Nome_Emp.Name = "tb_Nome_Emp";
+            this.tb_Nome_Emp.Size = new System.Drawing.Size(376, 26);
+            this.tb_Nome_Emp.TabIndex = 13;
+            // 
+            // tb_CNPJ
+            // 
+            this.tb_CNPJ.Enabled = false;
+            this.tb_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CNPJ.Location = new System.Drawing.Point(468, 27);
+            this.tb_CNPJ.Mask = "00,000,000/0000-00";
+            this.tb_CNPJ.Name = "tb_CNPJ";
+            this.tb_CNPJ.Size = new System.Drawing.Size(173, 26);
+            this.tb_CNPJ.TabIndex = 11;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -223,6 +242,7 @@
             this.btn_Cadastrar.TabIndex = 14;
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.UseVisualStyleBackColor = true;
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
             // 
             // label9
             // 
@@ -287,25 +307,6 @@
             this.btn_Editar.UseVisualStyleBackColor = true;
             this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
-            // tb_CNPJ
-            // 
-            this.tb_CNPJ.Enabled = false;
-            this.tb_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_CNPJ.Location = new System.Drawing.Point(468, 27);
-            this.tb_CNPJ.Mask = "00,000,000/0000-00";
-            this.tb_CNPJ.Name = "tb_CNPJ";
-            this.tb_CNPJ.Size = new System.Drawing.Size(173, 26);
-            this.tb_CNPJ.TabIndex = 11;
-            // 
-            // tb_Nome_Emp
-            // 
-            this.tb_Nome_Emp.Enabled = false;
-            this.tb_Nome_Emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Nome_Emp.Location = new System.Drawing.Point(20, 27);
-            this.tb_Nome_Emp.Name = "tb_Nome_Emp";
-            this.tb_Nome_Emp.Size = new System.Drawing.Size(376, 26);
-            this.tb_Nome_Emp.TabIndex = 13;
-            // 
             // DadosFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,7 +319,10 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DadosFuncionario";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DadosFuncionario";
             this.panel1.ResumeLayout(false);

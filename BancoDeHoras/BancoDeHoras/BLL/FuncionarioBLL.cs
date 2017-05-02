@@ -31,5 +31,21 @@ namespace BancoDeHoras.BLL
                 throw erro;
             }
         }
+
+        public FuncionarioModel consultaFuncBLL(string cpf)
+        {            
+            try
+            {
+                funcDAL = new FuncionarioDAL();
+                FuncionarioModel funcMod = new FuncionarioModel();
+                funcMod = funcDAL.consultaFunc(cpf);
+
+                return funcMod;
+            }
+            catch(Exception erro)
+            {
+                throw erro;
+            }
+        }
     }
 }

@@ -25,6 +25,10 @@ namespace BancoDeHoras.Views
 
             tb_Nome_Emp.Text = empMod.Nome;
             tb_CNPJ.Text = empMod.CNPJ;
+
+            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            FuncionarioModel funcMod = new FuncionarioModel();
+            //funcMod = funcBLL
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)
@@ -38,6 +42,15 @@ namespace BancoDeHoras.Views
         {
             this.Visible = false;
             
+        }
+
+        private void btn_Cadastrar_Click(object sender, EventArgs e)
+        {
+            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            funcBLL.CreatTableFuncionarioBLL();
+            CadastroFunc cadFunc = new CadastroFunc();
+            cadFunc.Show();
+            this.Visible = false;
         }
     }
 }

@@ -14,6 +14,7 @@ namespace BancoDeHoras.Views
 {
     public partial class DadosEmpresa : Form
     {
+       
         EmpresaBLL empBLL = new EmpresaBLL();
         EmpresaModel empMod = new EmpresaModel();
 
@@ -21,6 +22,7 @@ namespace BancoDeHoras.Views
         public DadosEmpresa()
         {
             InitializeComponent();
+            
             empMod = empBLL.DadosEmpresaBLL();
 
             tb_Nome_Emp.Text = empMod.Nome;

@@ -37,40 +37,28 @@ namespace BancoDeHoras.Views
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
             FuncionarioModel funcMod = new FuncionarioModel();
-            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            FuncionarioBLL funcBLL = new FuncionarioBLL();                                  
 
-            string cpf = tb_CPF_Func.Text.Replace(".", "").Replace(",", "").Replace("-", "");
-            funcBLL.consultaFuncBLL(cpf);
-
-            if((funcMod.CPF != null)||(funcMod.CPF != ""))
-            {                
-                MessageBox.Show("CPF já cadastrado");
-                MessageBox.Show("" + funcMod.CPF);
-            }else
+            funcMod.FK_CNPJ = tb_CNPJ.Text.Replace(".", "").Replace(",", "").Replace("/", "").Replace("-", "");
+            funcMod.Nome = tb_Nome.Text;
+            funcMod.CPF = tb_CPF_Func.Text.Replace(".", "").Replace(",", "").Replace("-", "");
+            funcMod.Email = tb_Email.Text;
+            funcMod.Telefone = tb_Telefone.Text.Replace("(", "").Replace(")", "").Replace("-", "");
+            funcMod.Dt_Admissao = Convert.ToDateTime(tb_Data_Admissao.Text);                                     
+            
+            try
             {
-
-                funcMod.FK_CNPJ = tb_CNPJ.Text.Replace(".", "").Replace(",", "").Replace("/", "").Replace("-", "");
-                funcMod.Nome = tb_Nome.Text;
-                funcMod.CPF = tb_CPF_Func.Text.Replace(".", "").Replace(",", "").Replace("-", "");
-                funcMod.Email = tb_Email.Text;
-                funcMod.Telefone = tb_Telefone.Text.Replace("(", "").Replace(")", "").Replace("-", "");
-                funcMod.Dt_Admissao = Convert.ToDateTime(tb_Data_Admissao.Text);
-
-                // funcMod.Dt_Demissao = Convert.ToDateTime(tb_Data_Demissao.Text);
-                               
-
-                try
-                {
-                    funcBLL.CadFuncionarioBLL(funcMod);
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show("Não foi posssível cadastrar funcionario." + erro);
-                }
-
+                funcBLL.CadFuncionarioBLL(funcMod);
+            }catch (Exception erro)
+            {
+                MessageBox.Show("Não foi posssível cadastrar funcionario." + erro);
             }
 
-            
+            DadosFuncionario dadosFunc = new DadosFuncionario();
+            dadosFunc.Show();
+
+            this.Visible = false;          
+                        
         }
     }
 }

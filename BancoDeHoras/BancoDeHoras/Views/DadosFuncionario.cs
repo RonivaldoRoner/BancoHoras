@@ -25,10 +25,34 @@ namespace BancoDeHoras.Views
 
             tb_Nome_Emp.Text = empMod.Nome;
             tb_CNPJ.Text = empMod.CNPJ;
-
+            string cpf = "12345678912";
             FuncionarioBLL funcBLL = new FuncionarioBLL();
             FuncionarioModel funcMod = new FuncionarioModel();
-            //funcMod = funcBLL
+            funcMod = funcBLL.consultaFuncBLL(cpf);
+
+            try
+            {
+                tb_Nome_Func.Text = funcMod.Nome;
+                tb_CPF.Text = funcMod.CPF;
+                tb_Email.Text = funcMod.Email;
+                tb_Telefone.Text = funcMod.Telefone.Replace(" ","");
+                tb_Admissao.Text = funcMod.Dt_Admissao.ToString("ddMMyyyy").Replace("-", "/");
+                
+                if(funcMod.STR_dt_Demissao == null)
+                {
+                    tb_Demissao.Text = funcMod.Dt_Demissao.ToString("ddMMyyyy").Replace("-", "/");
+                }else
+                {
+                    tb_Test.Text = funcMod.STR_dt_Demissao;
+                }              
+
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("Não foi possivel recuperar informações.");
+            }
+
+            
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)

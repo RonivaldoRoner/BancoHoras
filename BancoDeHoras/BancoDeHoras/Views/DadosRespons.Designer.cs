@@ -248,11 +248,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(212, 9);
+            this.label7.Location = new System.Drawing.Point(223, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(348, 24);
+            this.label7.Size = new System.Drawing.Size(328, 24);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Cadastro do Responsável Pela Empresa";
+            this.label7.Text = "Dados do Responsável Pela Empresa";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // DadosRespons
@@ -272,7 +272,7 @@
             this.Name = "DadosRespons";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DadosRespons";
+            this.Text = "Banco de Horas / Dados do Responsável";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

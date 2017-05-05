@@ -105,7 +105,7 @@ namespace BancoDeHoras.DAL
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand selectEmpresa = new SqlCommand("SELECT * FROM Empresa", conexao);
+                SqlCommand selectEmpresa = new SqlCommand("SELECT * FROM Empresa", conexao);                
                 conexao.Open();
 
 

@@ -351,7 +351,7 @@
             this.Name = "DadosEmpresa";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dados da Empresa";
+            this.Text = "Banco de Horas / Dados da Empresa";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

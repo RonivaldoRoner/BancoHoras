@@ -38,12 +38,9 @@ namespace BancoDeHoras.Views
                 tb_Telefone.Text = funcMod.Telefone.Replace(" ","");
                 tb_Admissao.Text = funcMod.Dt_Admissao.ToString("ddMMyyyy").Replace("-", "/");
                 
-                if(funcMod.STR_dt_Demissao == null)
+                if(funcMod.STR_dt_Demissao != null)
                 {
                     tb_Demissao.Text = funcMod.Dt_Demissao.ToString("ddMMyyyy").Replace("-", "/");
-                }else
-                {
-                    tb_Test.Text = funcMod.STR_dt_Demissao;
                 }              
 
             }

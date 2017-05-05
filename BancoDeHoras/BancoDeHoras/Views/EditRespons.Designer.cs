@@ -255,7 +255,7 @@
             this.Name = "EditRespons";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditRespons";
+            this.Text = "Banco de Horas /Editar Dados do Responsável";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -51,7 +51,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Editar = new System.Windows.Forms.Button();
-            this.tb_Test = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -250,11 +249,11 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(249, 114);
+            this.label9.Location = new System.Drawing.Point(253, 114);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(226, 24);
+            this.label9.Size = new System.Drawing.Size(206, 24);
             this.label9.TabIndex = 12;
-            this.label9.Text = "Cadastro de Funcionarios";
+            this.label9.Text = "Dados do Funcionarios";
             // 
             // panel3
             // 
@@ -308,19 +307,11 @@
             this.btn_Editar.UseVisualStyleBackColor = true;
             this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
-            // tb_Test
-            // 
-            this.tb_Test.Location = new System.Drawing.Point(198, 338);
-            this.tb_Test.Name = "tb_Test";
-            this.tb_Test.Size = new System.Drawing.Size(287, 20);
-            this.tb_Test.TabIndex = 20;
-            // 
             // DadosFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 464);
-            this.Controls.Add(this.tb_Test);
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Cancelar);
@@ -333,7 +324,7 @@
             this.Name = "DadosFuncionario";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DadosFuncionario";
+            this.Text = "Banco de Horas / Dados da Funcionário";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -369,6 +360,5 @@
         private System.Windows.Forms.Button btn_Editar;
         private System.Windows.Forms.MaskedTextBox tb_CNPJ;
         private System.Windows.Forms.TextBox tb_Nome_Emp;
-        private System.Windows.Forms.TextBox tb_Test;
     }
 }

@@ -47,6 +47,7 @@
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Gravar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_Nome_Emp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.tb_Nome_Pesquisa = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.tb_Nome_Emp = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -77,11 +77,11 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(298, 195);
+            this.label9.Location = new System.Drawing.Point(231, 195);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 24);
+            this.label9.Size = new System.Drawing.Size(250, 24);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Editar Dados";
+            this.label9.Text = "Editar Dados do Funcionário";
             // 
             // panel3
             // 
@@ -264,6 +264,15 @@
             this.panel1.Size = new System.Drawing.Size(684, 92);
             this.panel1.TabIndex = 17;
             // 
+            // tb_Nome_Emp
+            // 
+            this.tb_Nome_Emp.Enabled = false;
+            this.tb_Nome_Emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Nome_Emp.Location = new System.Drawing.Point(20, 27);
+            this.tb_Nome_Emp.Name = "tb_Nome_Emp";
+            this.tb_Nome_Emp.Size = new System.Drawing.Size(376, 26);
+            this.tb_Nome_Emp.TabIndex = 12;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -361,15 +370,6 @@
             this.label12.TabIndex = 19;
             this.label12.Text = "Nome:";
             // 
-            // tb_Nome_Emp
-            // 
-            this.tb_Nome_Emp.Enabled = false;
-            this.tb_Nome_Emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Nome_Emp.Location = new System.Drawing.Point(20, 27);
-            this.tb_Nome_Emp.Name = "tb_Nome_Emp";
-            this.tb_Nome_Emp.Size = new System.Drawing.Size(376, 26);
-            this.tb_Nome_Emp.TabIndex = 12;
-            // 
             // EditFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,9 +383,12 @@
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Gravar);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EditFuncionario";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditFuncionario";
+            this.Text = "Banco de Horas /Editar Dados do Funcionário";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -243,7 +243,7 @@
             this.Name = "CadastroRespons";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Responsável Pela Empresa";
+            this.Text = "Banco de Horas / Cadastro de Responsável";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -37,22 +37,7 @@ namespace BancoDeHoras.Views
 
             try
             {
-
-                Mascaras masc = new Mascaras();
-                EmpresaBLL empBLL = new EmpresaBLL();
-                empModel = empBLL.DadosEmpresaBLL();
-               
-
-                lb_Emp_Nome.Text = empModel.Nome;
-                lb_Emp_CNPJ.Text =  masc.MascCNPJ(empModel.CNPJ);
-                lb_Emp_Tel.Text = masc.MascTel(empModel.Telefone);
-
-                FuncionarioBLL funcBLL = new FuncionarioBLL();
                 
-
-                lb_Responsavel.Text = funcModel.Nome;
-                lb_CPF.Text = masc.MascCPF(funcModel.CPF);
-                lb_Email.Text = funcModel.Email;
                              
             }
             catch (Exception erro)

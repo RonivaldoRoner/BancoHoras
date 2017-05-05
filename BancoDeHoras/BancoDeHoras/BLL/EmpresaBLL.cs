@@ -38,7 +38,7 @@ namespace BancoDeHoras.BLL
             }
         }              
 
-        public EmpresaModel DadosEmpresaBLL()
+        public EmpresaModel DadosEmpresaBLL( )
         {
             EmpresaModel empModel = new EmpresaModel();
 

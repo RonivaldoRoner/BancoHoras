@@ -47,9 +47,9 @@
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Cadastrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_Nome_Emp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_Nome_Emp = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -260,6 +260,15 @@
             this.panel1.Size = new System.Drawing.Size(684, 92);
             this.panel1.TabIndex = 17;
             // 
+            // tb_Nome_Emp
+            // 
+            this.tb_Nome_Emp.Enabled = false;
+            this.tb_Nome_Emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Nome_Emp.Location = new System.Drawing.Point(20, 27);
+            this.tb_Nome_Emp.Name = "tb_Nome_Emp";
+            this.tb_Nome_Emp.Size = new System.Drawing.Size(365, 26);
+            this.tb_Nome_Emp.TabIndex = 12;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -282,15 +291,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Empresa:";
             // 
-            // tb_Nome_Emp
-            // 
-            this.tb_Nome_Emp.Enabled = false;
-            this.tb_Nome_Emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Nome_Emp.Location = new System.Drawing.Point(20, 27);
-            this.tb_Nome_Emp.Name = "tb_Nome_Emp";
-            this.tb_Nome_Emp.Size = new System.Drawing.Size(365, 26);
-            this.tb_Nome_Emp.TabIndex = 12;
-            // 
             // CadastroFunc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,7 +307,7 @@
             this.Name = "CadastroFunc";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Funcionarios";
+            this.Text = "Banco de Horas / Cadastro de Funcionário";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

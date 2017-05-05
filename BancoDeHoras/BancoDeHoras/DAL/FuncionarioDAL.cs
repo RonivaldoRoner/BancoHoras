@@ -42,7 +42,6 @@ namespace BancoDeHoras.DAL
             {
                 throw erro;
             }
-
             finally
             {
                 conexao.Close();
@@ -82,7 +81,7 @@ namespace BancoDeHoras.DAL
 
         //Verifica informações cadastrais.
         public FuncionarioModel consultaFunc(string cpf)
-        {            
+        {
             try
             {
                 conexao = new SqlConnection(conexao_BD);
@@ -93,28 +92,26 @@ namespace BancoDeHoras.DAL
                 SqlDataReader leitor;
 
                 FuncionarioModel funcModel = new FuncionarioModel();
-                leitor = selectFunc.ExecuteReader(CommandBehavior.CloseConnection);              
+                leitor = selectFunc.ExecuteReader(CommandBehavior.CloseConnection);
 
                 while (leitor.Read())
                 {
-                    
                     funcModel.Nome = leitor["nome"].ToString();
                     funcModel.CPF = leitor["cpf"].ToString();
                     funcModel.Email = leitor["email"].ToString();
                     funcModel.Telefone = leitor["telefone"].ToString();
                     funcModel.Dt_Admissao = Convert.ToDateTime(leitor["dt_Admissao"]);
+                    string validaData = leitor["dt_Demissao"].ToString();
                     
-                    if (leitor["dt_Demissao"].Equals(10))
-                    {
-                        //funcModel.Dt_Demissao = Convert.ToDateTime(leitor["dt_Demissao"]);
-                        funcModel.STR_dt_Demissao = "Tamanho da variavel 10";
-                    }else
-                    {
-                        //funcModel.STR_dt_Demissao = leitor["dt_Demissao"].ToString();
-                        funcModel.STR_dt_Demissao = "Tamanho da variavel desconhecido";
+                    if(string.IsNullOrEmpty(validaData))
+                    {                        
+                        funcModel.STR_dt_Demissao = null;
                     }
-
-
+                    else
+                    {
+                        funcModel.STR_dt_Demissao = "Não está branco nem vazia" + validaData;
+                        funcModel.Dt_Demissao = Convert.ToDateTime(leitor["dt_Demissao"]);
+                    }                  
                 }
                 leitor.Close();
 
@@ -125,15 +122,11 @@ namespace BancoDeHoras.DAL
             {
                 throw erro;
             }
-
             finally
             {
 
                 conexao.Close();
             }
-
         }
-
-
     }
 }

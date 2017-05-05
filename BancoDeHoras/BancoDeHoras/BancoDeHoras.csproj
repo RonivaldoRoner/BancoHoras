@@ -49,14 +49,15 @@
     <Compile Include="BLL\EmpresaBLL.cs" />
     <Compile Include="BLL\FuncionarioBLL.cs" />
     <Compile Include="BLL\ResponsavelBLL.cs" />
+    <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="DAL\EmpresaDAL.cs" />
     <Compile Include="DAL\FuncionarioDAL.cs" />
     <Compile Include="DAL\ResponsavelDAL.cs" />
+    <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="Models\FuncionarioModel.cs" />
     <Compile Include="Models\ResponsavelModel.cs" />
+    <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Uteis\Criptografia.cs" />
-    <Compile Include="Uteis\Mascaras.cs" />
-    <Compile Include="Uteis\ValidarUsuario.cs" />
     <Compile Include="Views\Administrador.cs">
       <SubType>Form</SubType>
     </Compile>

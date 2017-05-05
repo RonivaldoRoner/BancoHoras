@@ -328,7 +328,7 @@
             this.Padding = new System.Windows.Forms.Padding(2);
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditEmpresa";
+            this.Text = "Banco de Horas /Editar Dados da Empresa";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

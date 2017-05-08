@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_Salvar = new System.Windows.Forms.Button();
+            this.rb_Gerente = new System.Windows.Forms.RadioButton();
+            this.btn_Gravar = new System.Windows.Forms.Button();
             this.tb_senha = new System.Windows.Forms.TextBox();
             this.tb_usuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.rb_Gerente = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,8 +45,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.rb_Gerente);
-            this.panel1.Controls.Add(this.btn_cancelar);
-            this.panel1.Controls.Add(this.btn_Salvar);
+            this.panel1.Controls.Add(this.btn_Gravar);
             this.panel1.Controls.Add(this.tb_senha);
             this.panel1.Controls.Add(this.tb_usuario);
             this.panel1.Controls.Add(this.label3);
@@ -57,23 +55,26 @@
             this.panel1.Size = new System.Drawing.Size(325, 196);
             this.panel1.TabIndex = 7;
             // 
-            // btn_cancelar
+            // rb_Gerente
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(36, 150);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(109, 23);
-            this.btn_cancelar.TabIndex = 5;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.rb_Gerente.AutoSize = true;
+            this.rb_Gerente.Location = new System.Drawing.Point(215, 117);
+            this.rb_Gerente.Name = "rb_Gerente";
+            this.rb_Gerente.Size = new System.Drawing.Size(63, 17);
+            this.rb_Gerente.TabIndex = 7;
+            this.rb_Gerente.TabStop = true;
+            this.rb_Gerente.Text = "Gerente";
+            this.rb_Gerente.UseVisualStyleBackColor = true;
             // 
-            // btn_Salvar
+            // btn_Gravar
             // 
-            this.btn_Salvar.Location = new System.Drawing.Point(169, 150);
-            this.btn_Salvar.Name = "btn_Salvar";
-            this.btn_Salvar.Size = new System.Drawing.Size(109, 23);
-            this.btn_Salvar.TabIndex = 4;
-            this.btn_Salvar.Text = "Salvar";
-            this.btn_Salvar.UseVisualStyleBackColor = true;
+            this.btn_Gravar.Location = new System.Drawing.Point(169, 150);
+            this.btn_Gravar.Name = "btn_Gravar";
+            this.btn_Gravar.Size = new System.Drawing.Size(109, 23);
+            this.btn_Gravar.TabIndex = 4;
+            this.btn_Gravar.Text = "Gravar";
+            this.btn_Gravar.UseVisualStyleBackColor = true;
+            this.btn_Gravar.Click += new System.EventHandler(this.btn_Gravar_Click);
             // 
             // tb_senha
             // 
@@ -134,17 +135,6 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // rb_Gerente
-            // 
-            this.rb_Gerente.AutoSize = true;
-            this.rb_Gerente.Location = new System.Drawing.Point(215, 117);
-            this.rb_Gerente.Name = "rb_Gerente";
-            this.rb_Gerente.Size = new System.Drawing.Size(63, 17);
-            this.rb_Gerente.TabIndex = 7;
-            this.rb_Gerente.TabStop = true;
-            this.rb_Gerente.Text = "Gerente";
-            this.rb_Gerente.UseVisualStyleBackColor = true;
-            // 
             // CadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +147,7 @@
             this.MinimizeBox = false;
             this.Name = "CadUsuario";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Banco de Horas / Cadastro de Usuario";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -169,8 +160,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Button btn_Salvar;
+        private System.Windows.Forms.Button btn_Gravar;
         private System.Windows.Forms.TextBox tb_senha;
         private System.Windows.Forms.TextBox tb_usuario;
         private System.Windows.Forms.Label label3;

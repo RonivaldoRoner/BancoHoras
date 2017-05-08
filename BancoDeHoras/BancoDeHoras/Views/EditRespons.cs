@@ -52,7 +52,7 @@ namespace BancoDeHoras.Views
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro ao acessar informações no Banco de Dados.");
+                MessageBox.Show("Erro ao acessar informações no Banco de Dados.  -- " + erro);
             }
         }
             

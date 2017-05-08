@@ -24,9 +24,9 @@ namespace BancoDeHoras.DAL
                                                           "CREATE TABLE Usuarios " +
                                                           "(" +
                                                                 "id_User INT NOT NULL PRIMARY KEY IDENTITY(1, 1)," +
-                                                                "fk_cpf VARCHAR(14) NOT NULL," +
-                                                                "CONSTRAINT Funcionario_Usuario FOREIGN KEY (fk_cpf) REFERENCES Funcionarios(cpf)," +
-                                                                "user VARCHAR(20) NOT NULL," +
+                                                                "fk_id_Func INT NOT NULL," +
+                                                                "CONSTRAINT Funcionario_Usuario FOREIGN KEY (fk_id_Func) REFERENCES Funcionarios(id_Func)," +
+                                                                "usuario VARCHAR(20) NOT NULL," +
                                                                 "pw VARCHAR(50) NOT NULL," +
                                                                 "tipo INT NOT NULL," +
                                                                 "situacao VARCHAR(10)" +
@@ -50,11 +50,11 @@ namespace BancoDeHoras.DAL
             {
                 conexao = new SqlConnection(conexao_BD);
 
-                SqlCommand insereUsuario = new SqlCommand("INSERT INTO Usuarios(fk_cpf, user, pw, tipo, situacao) " +
-                                                                       "VALUES(@fk_cpf, @user, @pw, @tipo, @situacao)", conexao);
+                SqlCommand insereUsuario = new SqlCommand("INSERT INTO Usuarios(fk_id_Func, usuario, pw, tipo, situacao) " +
+                                                                       "VALUES(@fk_id_Func, @usuario, @pw, @tipo, @situacao)", conexao);
 
-                insereUsuario.Parameters.AddWithValue("@fk_cpf", userMod.FK_CPF);
-                insereUsuario.Parameters.AddWithValue("@user", userMod.Usuario);
+                insereUsuario.Parameters.AddWithValue("@fk_id_Func", userMod.FK_ID_Func);
+                insereUsuario.Parameters.AddWithValue("@usuario", userMod.Usuario);
                 insereUsuario.Parameters.AddWithValue("@pw", userMod.PW);
                 insereUsuario.Parameters.AddWithValue("@tipo", userMod.Tipo_Usuario);
                 insereUsuario.Parameters.AddWithValue("@situacao", userMod.Situacao);
@@ -77,9 +77,11 @@ namespace BancoDeHoras.DAL
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand selectUser = new SqlCommand("SELECT * FROM Usuarios WHERE user = @user AND pw = @pw", conexao);
-                selectUser.Parameters.AddWithValue("@user", usuario);
+                SqlCommand selectUser = new SqlCommand("SELECT * FROM Usuarios WHERE usuario = @usuario AND pw = @pw", conexao);
+                selectUser.Parameters.AddWithValue("@usuario", usuario);
                 selectUser.Parameters.AddWithValue("@pw", senha);
+
+                conexao.Open();
 
                 SqlDataReader leitor;
 
@@ -89,8 +91,8 @@ namespace BancoDeHoras.DAL
 
                 while (leitor.Read())
                 {
-                    userMod.FK_CPF = leitor["fk_cpf"].ToString();
-                    userMod.Usuario = leitor["user"].ToString();
+                    userMod.FK_ID_Func = Convert.ToInt32(leitor["fk_id_Func"]);
+                    userMod.Usuario = leitor["usuario"].ToString();
                     userMod.PW = leitor["pw"].ToString();
                     userMod.Tipo_Usuario = Convert.ToInt32(leitor["tipo"]);
                     userMod.Situacao = leitor["situacao"].ToString();
@@ -133,5 +135,7 @@ namespace BancoDeHoras.DAL
                 conexao.Close();
             }
         }
+
+        
     }
 }

@@ -37,7 +37,7 @@ namespace BancoDeHoras.Views
             }
             catch(Exception erro)
             {
-                MessageBox.Show("Favor cadastrar Empresa." + erro);
+                MessageBox.Show("Favor cadastrar Empresa. --- " + erro);
             }
             
 
@@ -55,7 +55,7 @@ namespace BancoDeHoras.Views
             }
             catch(Exception erro)
             {
-                MessageBox.Show("Favor cadastrar Responsável.");
+                MessageBox.Show("Favor cadastrar Responsável. --- " + erro);
             }
                                     
         }

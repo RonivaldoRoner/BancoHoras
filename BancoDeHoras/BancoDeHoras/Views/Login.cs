@@ -8,27 +8,59 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BancoDeHoras.Views;
+using BancoDeHoras.Models;
+using BancoDeHoras.BLL;
+using BancoDeHoras.Uteis;
 
 namespace BancoDeHoras
 {
     public partial class Login : Form
     {
+        public static int tipo_usuario;
+        string situacao = "Ativo";
         public Login()
         {
             InitializeComponent();
         }
 
         private void btn_logar_Click(object sender, EventArgs e)
-        {
-            if((tb_usuario.TextLength > 0) && (tb_senha.TextLength > 0))
+        {            
+            UsuarioModel userMod = new UsuarioModel();
+            UsuarioBLL userBLL = new UsuarioBLL();
+            string pwCripto = Criptografia.Criptografar(tb_senha.Text);
+            try
             {
-                Principal pagPrincipal = new Principal();
-                pagPrincipal.Show();
-                this.Visible = false;
-            }else
-            {
-                MessageBox.Show("Favor preencher os campos corretamente.");
+                userMod = userBLL.DadosUsuario(tb_usuario.Text, pwCripto);
+                
+
+                if ((tb_usuario.Text == userMod.Usuario) && (pwCripto == userMod.PW))
+                {
+                    tipo_usuario = userMod.Tipo_Usuario;
+                    if (userMod.Situacao == situacao)
+                    {
+                        MessageBox.Show("Login efetuado");                        
+                        Principal principal = new Principal(userMod.Tipo_Usuario);
+                        principal.Show();
+                        
+                        this.Visible = false;
+                    }else
+                    {
+                        MessageBox.Show("Usuário desativado.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha invalido.");
+                }
+
+
+
             }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao buscar Usuário e Senha." + erro);
+            }
+
         }
                 
 

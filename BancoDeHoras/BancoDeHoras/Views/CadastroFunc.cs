@@ -66,10 +66,11 @@ namespace BancoDeHoras.Views
                 }
 
                 
-            }                                                                                      
-                                                 
-            DadosFuncionario dadosFunc = new DadosFuncionario();
-            dadosFunc.Show();
+            }
+
+            CadUsuario cadUser = new CadUsuario(funcMod.CPF);
+            
+            cadUser.Show();
 
             this.Visible = false;          
                        

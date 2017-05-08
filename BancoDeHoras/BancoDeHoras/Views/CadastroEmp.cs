@@ -58,9 +58,7 @@ namespace BancoDeHoras.Views
 
             DadosEmpresa empresa = new DadosEmpresa();
             empresa.Show();
-            this.Visible = false;
-
-            
+            this.Visible = false;            
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)

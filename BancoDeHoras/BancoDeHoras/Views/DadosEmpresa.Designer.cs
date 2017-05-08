@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_Fechar = new System.Windows.Forms.Button();
-            this.btn_Gravar = new System.Windows.Forms.Button();
+            this.btn_Novo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_Telefone = new System.Windows.Forms.MaskedTextBox();
             this.tb_CEP = new System.Windows.Forms.MaskedTextBox();
@@ -69,16 +69,16 @@
             this.btn_Fechar.UseVisualStyleBackColor = true;
             this.btn_Fechar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
-            // btn_Gravar
+            // btn_Novo
             // 
-            this.btn_Gravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Gravar.Location = new System.Drawing.Point(423, 295);
-            this.btn_Gravar.Name = "btn_Gravar";
-            this.btn_Gravar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Gravar.TabIndex = 12;
-            this.btn_Gravar.Text = "Novo";
-            this.btn_Gravar.UseVisualStyleBackColor = true;
-            this.btn_Gravar.Click += new System.EventHandler(this.btn_Gravar_Click);
+            this.btn_Novo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Novo.Location = new System.Drawing.Point(423, 295);
+            this.btn_Novo.Name = "btn_Novo";
+            this.btn_Novo.Size = new System.Drawing.Size(75, 23);
+            this.btn_Novo.TabIndex = 12;
+            this.btn_Novo.Text = "Novo";
+            this.btn_Novo.UseVisualStyleBackColor = true;
+            this.btn_Novo.Click += new System.EventHandler(this.btn_Gravar_Click);
             // 
             // panel1
             // 
@@ -342,7 +342,7 @@
             this.ClientSize = new System.Drawing.Size(731, 354);
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.btn_Fechar);
-            this.Controls.Add(this.btn_Gravar);
+            this.Controls.Add(this.btn_Novo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -363,7 +363,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_Fechar;
-        private System.Windows.Forms.Button btn_Gravar;
+        private System.Windows.Forms.Button btn_Novo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MaskedTextBox tb_Telefone;

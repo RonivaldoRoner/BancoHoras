@@ -96,6 +96,7 @@ namespace BancoDeHoras.DAL
 
                 while (leitor.Read())
                 {
+                    funcModel.ID = Convert.ToInt32(leitor["id_Func"]);
                     funcModel.Nome = leitor["nome"].ToString();
                     funcModel.CPF = leitor["cpf"].ToString();
                     funcModel.Email = leitor["email"].ToString();

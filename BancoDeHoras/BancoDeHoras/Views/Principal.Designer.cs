@@ -36,9 +36,9 @@
             this.btn_Cad_Empresa = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Cad_Responsavel = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Cad_Funcionario = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_Cad_Usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -105,7 +105,7 @@
             this.btn_Cad_Empresa,
             this.btn_Cad_Responsavel,
             this.btn_Cad_Funcionario,
-            this.btn_Cad_Usuario});
+            this.usuáriosToolStripMenuItem});
             this.cadastrarEmpresaToolStripMenuItem.Name = "cadastrarEmpresaToolStripMenuItem";
             this.cadastrarEmpresaToolStripMenuItem.Size = new System.Drawing.Size(91, 25);
             this.cadastrarEmpresaToolStripMenuItem.Text = "Cadastros";
@@ -131,13 +131,6 @@
             this.btn_Cad_Funcionario.Text = "Funcionários";
             this.btn_Cad_Funcionario.Click += new System.EventHandler(this.btn_Cad_Funcionario_Click);
             // 
-            // btn_Cad_Usuario
-            // 
-            this.btn_Cad_Usuario.Name = "btn_Cad_Usuario";
-            this.btn_Cad_Usuario.Size = new System.Drawing.Size(169, 26);
-            this.btn_Cad_Usuario.Text = "Usuários";
-            this.btn_Cad_Usuario.Click += new System.EventHandler(this.btn_Cad_Usuario_Click);
-            // 
             // registrosToolStripMenuItem
             // 
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
@@ -149,6 +142,13 @@
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(90, 25);
             this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // usuáriosToolStripMenuItem
+            // 
+            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.usuáriosToolStripMenuItem.Text = "Usuários";
+            this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -179,10 +179,10 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrarEmpresaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btn_Cad_Empresa;
         private System.Windows.Forms.ToolStripMenuItem btn_Cad_Funcionario;
-        private System.Windows.Forms.ToolStripMenuItem btn_Cad_Usuario;
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btn_Cad_Responsavel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
     }
 }

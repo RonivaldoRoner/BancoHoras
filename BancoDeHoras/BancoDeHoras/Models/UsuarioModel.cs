@@ -8,13 +8,15 @@ namespace BancoDeHoras.Models
 {
     class UsuarioModel
     {
-        string fk_cpf, usuario, pw, situacao;
-        int tipo_Usuario;
+        //If(tipo_Usuario == 1){Usuario administrador}
+        //if(tipo_Usuario == 2){Usuario simples}
+        string usuario, pw, situacao;
+        int tipo_Usuario, fk_id_Func;
 
-        public string FK_CPF
+        public int FK_ID_Func
         {
-            get { return fk_cpf; }
-            set { fk_cpf = value; }
+            get { return fk_id_Func; }
+            set { fk_id_Func = value; }
         }
 
         public string Usuario

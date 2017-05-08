@@ -36,6 +36,14 @@ namespace BancoDeHoras.Views
             tb_CEP.Text = empMod.CEP;
             tb_Telefone.Text = empMod.Telefone.Replace(" ","");
 
+
+            
+            if(Login.tipo_usuario != 1)
+            {
+                this.btn_Editar.Visible = false;
+                this.btn_Novo.Visible = false;
+            }
+
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)

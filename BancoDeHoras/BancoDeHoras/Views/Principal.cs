@@ -12,10 +12,14 @@ namespace BancoDeHoras.Views
 {
     public partial class Principal : Form
     {
-        public Principal()
+        int tipo_user;
+        public Principal(int tipo_user)
         {
             InitializeComponent();
+            this.tipo_user = tipo_user;            
             this.WindowState = FormWindowState.Maximized;
+                        
+
         }
         //cadastro de empresa
         private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,10 +41,10 @@ namespace BancoDeHoras.Views
             
         }
 
-        private void btn_Cad_Usuario_Click(object sender, EventArgs e)
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadUsuario cadUser = new CadUsuario();
-            cadUser.Show();
+            EditarUsuario edtUser = new EditarUsuario();
+            edtUser.Show();
         }
     }
 }

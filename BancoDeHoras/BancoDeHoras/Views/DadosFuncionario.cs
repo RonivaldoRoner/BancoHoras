@@ -18,6 +18,15 @@ namespace BancoDeHoras.Views
         {
             InitializeComponent();
 
+            if(Login.tipo_usuario != 1)
+            {
+                this.btn_Cadastrar.Visible = false;
+                this.btn_Editar.Visible = false;
+            }
+
+            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            funcBLL.CreatTableFuncionarioBLL();
+
             EmpresaBLL empBLL = new EmpresaBLL();
             EmpresaModel empMod = new EmpresaModel();
 
@@ -25,8 +34,8 @@ namespace BancoDeHoras.Views
 
             tb_Nome_Emp.Text = empMod.Nome;
             tb_CNPJ.Text = empMod.CNPJ;
-            string cpf = "12345678912";
-            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            string cpf = "08599533606";           
+            
             FuncionarioModel funcMod = new FuncionarioModel();
             funcMod = funcBLL.consultaFuncBLL(cpf);
 
@@ -46,7 +55,7 @@ namespace BancoDeHoras.Views
             }
             catch(Exception erro)
             {
-                MessageBox.Show("Não foi possivel recuperar informações.");
+                MessageBox.Show("Não foi possivel recuperar informações. --- " + erro);
             }
 
             
@@ -66,9 +75,7 @@ namespace BancoDeHoras.Views
         }
 
         private void btn_Cadastrar_Click(object sender, EventArgs e)
-        {
-            FuncionarioBLL funcBLL = new FuncionarioBLL();
-            funcBLL.CreatTableFuncionarioBLL();
+        {            
             CadastroFunc cadFunc = new CadastroFunc();
             cadFunc.Show();
             this.Visible = false;

@@ -9,6 +9,7 @@ namespace BancoDeHoras.Models
     class FuncionarioModel
     {
         string nome, cpf, fk_cnpj, email, telefone, login, senha, str_dt_Demissao;
+        int id;
         DateTime dt_Admissao;
         DateTime dt_Demissao;
 
@@ -70,6 +71,12 @@ namespace BancoDeHoras.Models
         {
             get { return str_dt_Demissao; }
             set { str_dt_Demissao = value; }
+        }
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
         }
     }
 }

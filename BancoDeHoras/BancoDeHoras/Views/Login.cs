@@ -18,49 +18,71 @@ namespace BancoDeHoras
     {
         public static int tipo_usuario;
         public static int id_user;
+        public static string userSystem, pwSystem;
         string situacao = "Ativo";
         public Login()
         {
             InitializeComponent();
+           
         }
 
         private void btn_logar_Click(object sender, EventArgs e)
         {            
             UsuarioModel userMod = new UsuarioModel();
             UsuarioBLL userBLL = new UsuarioBLL();
-            string pwCripto = Criptografia.Criptografar(tb_senha.Text);
-            try
+            if (rb_Admin_BD.Checked)
             {
-                userMod = userBLL.DadosUsuario(tb_usuario.Text, pwCripto);                
-
-                if ((tb_usuario.Text == userMod.Usuario) && (pwCripto == userMod.PW))
+                try
                 {
-                    id_user = userMod.FK_ID_Func;
-                    tipo_usuario = userMod.Tipo_Usuario;
-                    if (userMod.Situacao == situacao)
+                    tipo_usuario = 1;
+                    userSystem = tb_usuario.Text;
+                    pwSystem = tb_senha.Text;                    
+                    EmpresaBLL empBLL = new EmpresaBLL();
+                    empBLL.CreatDB(tb_usuario.Text, tb_senha.Text);                    
+                    Principal principal = new Principal();
+                    principal.Show();
+                    this.Visible = false;
+                }
+                catch(Exception erro)
+                {
+                    MessageBox.Show("Usuário ou Senha de sistema inválido --- " + erro);
+                }
+            }else
+            {
+                string pwCripto = Criptografia.Criptografar(tb_senha.Text);
+                try
+                {
+                    userMod = userBLL.DadosUsuario(tb_usuario.Text, pwCripto);
+
+                    if ((tb_usuario.Text == userMod.Usuario) && (pwCripto == userMod.PW))
                     {
-                        MessageBox.Show("Login efetuado");                        
-                        Principal principal = new Principal(userMod.Tipo_Usuario);
-                        principal.Show();
-                        
-                        this.Visible = false;
-                    }else
+                        id_user = userMod.FK_ID_Func;
+                        tipo_usuario = userMod.Tipo_Usuario;
+                        if (userMod.Situacao == situacao)
+                        {
+                            MessageBox.Show("Login efetuado");
+                            Principal principal = new Principal();
+                            principal.Show();
+
+                            this.Visible = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuário desativado.");
+                        }
+                    }
+                    else
                     {
-                        MessageBox.Show("Usuário desativado.");
+                        MessageBox.Show("Usuário ou senha invalido.");
                     }
                 }
-                else
+                catch (Exception erro)
                 {
-                    MessageBox.Show("Usuário ou senha invalido.");
+                    MessageBox.Show("Erro ao buscar Usuário e Senha." + erro);
                 }
-
-
-
             }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro ao buscar Usuário e Senha." + erro);
-            }
+
+            
 
         }
                 

@@ -12,21 +12,14 @@ namespace BancoDeHoras.DAL
     class EmpresaDAL
     {
         EmpresaModel empModel = new EmpresaModel();
-        private static string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = sa; pwd=123456";
+        private static string conexao_BD = $@"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = {Login.userSystem}; pwd={Login.pwSystem}";
         SqlConnection conexao = null;
 
 
-        public void creatDB()
-        {
-
-            //var usuario = "sa";
-            //var senha = "123456";
-            //conexao = new SqlConnection($@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = {usuario}; pwd={senha}"); 
-            conexao = new SqlConnection($@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = sa; pwd=123456");
-
-
+        public void creatDB(string userSystem, string senhaSystem)
+        { 
+            conexao = new SqlConnection($@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = {userSystem}; pwd={senhaSystem}");
             SqlCommand creatDB = new SqlCommand("IF NOT EXISTS(SELECT * FROM sys.databases WHERE name ='BancoDeHoras')CREATE DATABASE BancoDeHoras", conexao);
-
             conexao.Open();
             creatDB.ExecuteNonQuery();
         }

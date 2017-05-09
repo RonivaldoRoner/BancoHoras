@@ -23,16 +23,7 @@ namespace BancoDeHoras.Views
         public CadUsuario(string cpf)
         {
             InitializeComponent();
-
-            cpfFunc = cpf;
-            try
-            {
-                userBLL.CreatTableBLL();
-                
-            }catch(Exception erro)
-            {
-                MessageBox.Show("Erro ao criar tabela de usuários." + erro);
-            }
+            cpfFunc = cpf;      
 
         }
 
@@ -62,6 +53,7 @@ namespace BancoDeHoras.Views
 
             try
             {
+                userBLL.CreatUserSstem(tb_usuario.Text, senhaCrip);
                 userBLL.CadUser(userMod);
             }catch(Exception erro)
             {

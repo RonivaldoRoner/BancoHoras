@@ -13,10 +13,10 @@ namespace BancoDeHoras.BLL
     {
         EmpresaDAL empresaDAL = null;
 
-        public void CreatDB()
+        public void CreatDB(string userSystem, string senhaSystem)
         {
             empresaDAL = new EmpresaDAL();
-            empresaDAL.creatDB();            
+            empresaDAL.creatDB(userSystem, senhaSystem);            
         }
         
         public void CreatTbEmpresa()

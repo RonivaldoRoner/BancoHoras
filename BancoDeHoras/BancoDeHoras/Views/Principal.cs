@@ -7,35 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BancoDeHoras.BLL;
 
 namespace BancoDeHoras.Views
 {
     public partial class Principal : Form
     {
-        int tipo_user;
-        public Principal(int tipo_user)
+        
+        public Principal()
         {
-            InitializeComponent();
-            this.tipo_user = tipo_user;            
-            this.WindowState = FormWindowState.Maximized;
-                        
-
+            InitializeComponent();                      
+            this.WindowState = FormWindowState.Maximized;                      
         }
         //cadastro de empresa
         private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            EmpresaBLL empBLL = new EmpresaBLL();
+            empBLL.CreatTbEmpresa();
             DadosEmpresa empresa = new DadosEmpresa();
             empresa.Show();
         }
 
         private void btn_Cad_Responsavel_Click(object sender, EventArgs e)
         {
+            ResponsavelBLL respBLL = new ResponsavelBLL();
+            respBLL.CreatTBbRespons();
             DadosRespons consultResp = new DadosRespons();
             consultResp.Show();
         }
 
         private void btn_Cad_Funcionario_Click(object sender, EventArgs e)
         {
+            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            funcBLL.CreatTableFuncionarioBLL();
             DadosFuncionario dadosFunc = new DadosFuncionario();
             dadosFunc.Show();
             
@@ -45,6 +49,11 @@ namespace BancoDeHoras.Views
         {
             EditarUsuario edtUser = new EditarUsuario();
             edtUser.Show();
+        }
+
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

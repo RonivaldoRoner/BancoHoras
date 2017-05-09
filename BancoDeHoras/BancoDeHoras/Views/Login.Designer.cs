@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rb_Admin_BD = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +135,17 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // rb_Admin_BD
+            // 
+            this.rb_Admin_BD.AutoSize = true;
+            this.rb_Admin_BD.Location = new System.Drawing.Point(184, 259);
+            this.rb_Admin_BD.Name = "rb_Admin_BD";
+            this.rb_Admin_BD.Size = new System.Drawing.Size(109, 17);
+            this.rb_Admin_BD.TabIndex = 4;
+            this.rb_Admin_BD.TabStop = true;
+            this.rb_Admin_BD.Text = "Administrador BD.";
+            this.rb_Admin_BD.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +153,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(467, 318);
             this.ControlBox = false;
+            this.Controls.Add(this.rb_Admin_BD);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -170,6 +183,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rb_Admin_BD;
     }
 }
 

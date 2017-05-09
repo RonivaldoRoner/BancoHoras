@@ -144,7 +144,7 @@
             // 
             this.tb_Tel_Resp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Tel_Resp.Location = new System.Drawing.Point(580, 90);
-            this.tb_Tel_Resp.Mask = "(999) 00000-0000";
+            this.tb_Tel_Resp.Mask = "(999) 0000-0000";
             this.tb_Tel_Resp.Name = "tb_Tel_Resp";
             this.tb_Tel_Resp.Size = new System.Drawing.Size(131, 26);
             this.tb_Tel_Resp.TabIndex = 7;

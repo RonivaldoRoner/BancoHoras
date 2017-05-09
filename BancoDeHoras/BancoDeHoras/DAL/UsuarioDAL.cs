@@ -11,7 +11,7 @@ namespace BancoDeHoras.DAL
 {
     class UsuarioDAL
     {
-        private string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = sa; pwd=123456";
+        private string conexao_BD = $@"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = {Login.userSystem}; pwd={Login.pwSystem}";
 
         SqlConnection conexao = null;
 
@@ -74,7 +74,7 @@ namespace BancoDeHoras.DAL
             }
         }
 
-        public UsuarioModel buscaUser (string usuario, string senha)
+        public UsuarioModel buscaUser(string usuario, string senha)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace BancoDeHoras.DAL
                 conexao = new SqlConnection(conexao_BD);
 
                 SqlCommand editUser = new SqlCommand("UPDATE Usuarios SET" +
-                                                       "user = @user," +
+                                                       "usuario = @usuario," +
                                                        "pw = @pw," +
                                                        "tipo = @tipo" +
                                                        "WHERE fk_cpf = @fk_cpf", conexao);
@@ -136,8 +136,29 @@ namespace BancoDeHoras.DAL
             {
                 conexao.Close();
             }
-        }
+        }                  
 
-        
+        public void CriaUsuarioSystem(string userSystem, string pwSystem)
+        {
+            
+            try
+            {
+                conexao = new SqlConnection(conexao_BD);
+                SqlCommand creatUserSystem = new SqlCommand("CREATE LOGIN "+userSystem+"% WITH PASSWORD = '"+ pwSystem +"%' " +
+                                                                "CREATE USER " + userSystem + " FOR LOGIN " + userSystem, conexao);
+                //creatUserSystem.Parameters.AddWithValue("@login", userSystem);
+                //creatUserSystem.Parameters.AddWithValue("@pw",pwSystem);            
+                conexao.Open();
+                creatUserSystem.ExecuteNonQuery();
+
+            } catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

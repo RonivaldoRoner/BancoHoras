@@ -53,7 +53,7 @@ namespace BancoDeHoras.Views
                     tb_Nome_Resp.Text = respMod.Nome_Resp;
                     tb_CPF_Resp.Text = respMod.CPF;
                     tb_Email_Resp.Text = respMod.Email;
-                    tb_Tel_Resp.Text = respMod.Telefone;
+                    tb_Tel_Resp.Text = respMod.Telefone.Replace(" ", "");
                 }                                
             }
             catch(Exception erro)
@@ -72,7 +72,7 @@ namespace BancoDeHoras.Views
         {
             respMod = respBLL.consultResponsavel();
 
-            if (respMod == null)
+            if (string.IsNullOrEmpty(respMod.CPF))
             {
                 CadastroRespons cadResp = new CadastroRespons();
                 cadResp.Show();

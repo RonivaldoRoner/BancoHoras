@@ -50,5 +50,17 @@ namespace BancoDeHoras.BLL
             }
             return userModel;
         }
+        
+        public void CreatUserSstem(string userSystem, string pwSystem)
+        {
+            try
+            {
+                userDAL = new UsuarioDAL();
+                userDAL.CriaUsuarioSystem(userSystem, pwSystem);
+            }catch(Exception erro)
+            {
+                throw erro;
+            }
+        }
     }
 }

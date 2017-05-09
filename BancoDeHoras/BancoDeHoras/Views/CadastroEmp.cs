@@ -24,10 +24,7 @@ namespace BancoDeHoras.Views
         private void CadastroEmp_Load(object sender, EventArgs e) {   }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
-        {
-           // var senhaCript = Criptografia.Criptografar(tb_Senha.Text);
-
-          //  var senhaDecript = Criptografia.Descriptografar(Criptografia.Criptografar(tb_Senha.Text));
+        {          
 
             EmpresaModel empMod = new EmpresaModel();
             
@@ -46,8 +43,8 @@ namespace BancoDeHoras.Views
             try
             {
                 EmpresaBLL empBLL = new EmpresaBLL();
-                empBLL.CreatDB();                
-                empBLL.CreatTbEmpresa();
+                //empBLL.CreatDB();                
+                //empBLL.CreatTbEmpresa();
                 empBLL.cadEmpresaBLL(empMod);
                 MessageBox.Show("Informações da empresa inserido ");                                                
             }

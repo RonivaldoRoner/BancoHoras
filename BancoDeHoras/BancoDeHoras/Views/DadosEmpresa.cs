@@ -25,19 +25,23 @@ namespace BancoDeHoras.Views
             
             empMod = empBLL.DadosEmpresaBLL();
 
-            tb_Nome_Emp.Text = empMod.Nome;
-            tb_CNPJ.Text = empMod.CNPJ;
-            tb_Endereco.Text = empMod.Endereco;
-            tb_Num.Text = empMod.End_Num.ToString();
-            tb_Complem.Text = empMod.End_Comp;
-            tb_Bairro.Text = empMod.Bairro;
-            tb_Cidade.Text = empMod.Cidade;
-            tb_UF.Text = empMod.Estado;
-            tb_CEP.Text = empMod.CEP;
-            tb_Telefone.Text = empMod.Telefone.Replace(" ","");
+            if (String.IsNullOrEmpty(empMod.CNPJ))
+            {
 
-
-            
+            }else
+            {
+                tb_Nome_Emp.Text = empMod.Nome;
+                tb_CNPJ.Text = empMod.CNPJ;
+                tb_Endereco.Text = empMod.Endereco;
+                tb_Num.Text = empMod.End_Num.ToString();
+                tb_Complem.Text = empMod.End_Comp;
+                tb_Bairro.Text = empMod.Bairro;
+                tb_Cidade.Text = empMod.Cidade;
+                tb_UF.Text = empMod.Estado;
+                tb_CEP.Text = empMod.CEP;
+                tb_Telefone.Text = empMod.Telefone.Replace(" ", "");
+            }
+                        
             if(Login.tipo_usuario != 1)
             {
                 this.btn_Editar.Visible = false;
@@ -49,7 +53,7 @@ namespace BancoDeHoras.Views
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
             empMod = empBLL.DadosEmpresaBLL();
-            if (empMod == null)
+            if (string.IsNullOrEmpty(empMod.CNPJ))
             {
                 CadastroEmp cadEmp = new CadastroEmp();
                 cadEmp.Show();

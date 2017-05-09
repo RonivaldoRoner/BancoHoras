@@ -11,7 +11,7 @@ namespace BancoDeHoras.DAL
 {
     class ResponsavelDAL
     {
-        private string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = sa; pwd=123456";
+        private string conexao_BD = $@"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = {Login.userSystem}; pwd={Login.pwSystem}";
         SqlConnection conexao = null;
 
         public void CreatTableResponsavel()

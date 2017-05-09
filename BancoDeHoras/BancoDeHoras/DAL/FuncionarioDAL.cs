@@ -13,7 +13,7 @@ namespace BancoDeHoras.DAL
     class FuncionarioDAL
     {
 
-        private string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = sa; pwd=123456";
+        private string conexao_BD = $@"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = {Login.userSystem}; pwd={Login.pwSystem}";
 
         SqlConnection conexao = null;
 
@@ -34,7 +34,7 @@ namespace BancoDeHoras.DAL
                                                                 "email VARCHAR(40) NOT NULL," +
                                                                 "dt_Admissao DATE NOT NULL," +
                                                                 "dt_Demissao DATE" +
-                                                           ");", conexao); //19/04/2017/16/05/2008.
+                                                           ");", conexao); //19042017/16/05/2008.
                 conexao.Open();
                 creatTable.ExecuteNonQuery();
             }
@@ -136,7 +136,7 @@ namespace BancoDeHoras.DAL
             {
                 conexao = new SqlConnection(conexao_BD);
                 SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE cpf = @cpf", conexao);
-                selectFunc.Parameters.AddWithValue("@id_Func", cpf);
+                selectFunc.Parameters.AddWithValue("@cpf", cpf);
                 conexao.Open();
 
                 SqlDataReader leitor;

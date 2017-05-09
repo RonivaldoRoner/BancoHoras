@@ -37,14 +37,18 @@ namespace BancoDeHoras.Views
             try
             {
                 ResponsavelBLL respBLL = new ResponsavelBLL();
-                respBLL.CreatTBbRespons();
-                MessageBox.Show("Tabela Criada ");
+                //respBLL.CreatTBbRespons();
+                //MessageBox.Show("Tabela Criada ");
                 respBLL.cadResponsavelBLL(respModel);
                 MessageBox.Show("Dados Gravados com sucesso.");
             } catch(Exception erro)
             {
                 MessageBox.Show("Erro na gravação dos dados" + erro);
             };
+
+            DadosRespons dadosResp = new DadosRespons();
+            dadosResp.Show();
+            this.Visible = false;
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)

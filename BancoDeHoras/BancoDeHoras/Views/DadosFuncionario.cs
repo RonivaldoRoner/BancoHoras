@@ -33,11 +33,10 @@ namespace BancoDeHoras.Views
             empMod = empBLL.DadosEmpresaBLL();
 
             tb_Nome_Emp.Text = empMod.Nome;
-            tb_CNPJ.Text = empMod.CNPJ;
-            string cpf = "08599533606";           
+            tb_CNPJ.Text = empMod.CNPJ;                      
             
             FuncionarioModel funcMod = new FuncionarioModel();
-            funcMod = funcBLL.consultaFuncBLL(cpf);
+            funcMod = funcBLL.consultaFuncBLL(Login.id_user);
 
             try
             {

@@ -15,13 +15,17 @@ namespace BancoDeHoras.Views
     public partial class DadosRespons : Form
     {
         ResponsavelModel respMod = new ResponsavelModel();
-        ResponsavelBLL respBLL = new ResponsavelBLL();
-        
+        ResponsavelBLL respBLL = new ResponsavelBLL();        
 
         public DadosRespons()
         {
             InitializeComponent();
-                                   
+            
+            if(Login.tipo_usuario != 1)
+            {
+                this.btn_Editar.Visible = false;
+                this.btn_Novo.Visible = false;
+            }                                  
 
             try
             {
@@ -38,8 +42,7 @@ namespace BancoDeHoras.Views
             catch(Exception erro)
             {
                 MessageBox.Show("Favor cadastrar Empresa. --- " + erro);
-            }
-            
+            }            
 
             try
             {
@@ -78,9 +81,7 @@ namespace BancoDeHoras.Views
             else
             {
                 MessageBox.Show("Já existe Responsavel Cadastrado.");
-            }
-                       
-            
+            }                                
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)

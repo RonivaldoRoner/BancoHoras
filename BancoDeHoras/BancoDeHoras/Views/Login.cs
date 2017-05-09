@@ -17,6 +17,7 @@ namespace BancoDeHoras
     public partial class Login : Form
     {
         public static int tipo_usuario;
+        public static int id_user;
         string situacao = "Ativo";
         public Login()
         {
@@ -30,11 +31,11 @@ namespace BancoDeHoras
             string pwCripto = Criptografia.Criptografar(tb_senha.Text);
             try
             {
-                userMod = userBLL.DadosUsuario(tb_usuario.Text, pwCripto);
-                
+                userMod = userBLL.DadosUsuario(tb_usuario.Text, pwCripto);                
 
                 if ((tb_usuario.Text == userMod.Usuario) && (pwCripto == userMod.PW))
                 {
+                    id_user = userMod.FK_ID_Func;
                     tipo_usuario = userMod.Tipo_Usuario;
                     if (userMod.Situacao == situacao)
                     {

@@ -41,7 +41,7 @@ namespace BancoDeHoras.Views
             CadastroFunc cadFunc = new CadastroFunc();            
             FuncionarioBLL funcBLL = new FuncionarioBLL();
             FuncionarioModel funcMod = new FuncionarioModel();
-            funcMod = funcBLL.consultaFuncBLL(cpfFunc);
+            funcMod = funcBLL.verificaFunc(cpfFunc);
 
             UsuarioModel userMod = new UsuarioModel();
             userMod.FK_ID_Func = funcMod.ID;

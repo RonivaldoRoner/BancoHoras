@@ -12,7 +12,7 @@ namespace BancoDeHoras.DAL
     class EmpresaDAL
     {
         EmpresaModel empModel = new EmpresaModel();
-        private static string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = Teste; User id = sa; pwd=123456";
+        private static string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = sa; pwd=123456";
         SqlConnection conexao = null;
 
 
@@ -25,7 +25,7 @@ namespace BancoDeHoras.DAL
             conexao = new SqlConnection($@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = sa; pwd=123456");
 
 
-            SqlCommand creatDB = new SqlCommand("IF NOT EXISTS(SELECT * FROM sys.databases WHERE name ='Teste')CREATE DATABASE Teste", conexao);
+            SqlCommand creatDB = new SqlCommand("IF NOT EXISTS(SELECT * FROM sys.databases WHERE name ='BancoDeHoras')CREATE DATABASE BancoDeHoras", conexao);
 
             conexao.Open();
             creatDB.ExecuteNonQuery();

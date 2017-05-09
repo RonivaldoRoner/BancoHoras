@@ -11,7 +11,7 @@ namespace BancoDeHoras.DAL
 {
     class UsuarioDAL
     {
-        private string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = Teste; User id = sa; pwd=123456";
+        private string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = sa; pwd=123456";
 
         SqlConnection conexao = null;
 
@@ -28,6 +28,8 @@ namespace BancoDeHoras.DAL
                                                                 "CONSTRAINT Funcionario_Usuario FOREIGN KEY (fk_id_Func) REFERENCES Funcionarios(id_Func)," +
                                                                 "usuario VARCHAR(20) NOT NULL," +
                                                                 "pw VARCHAR(50) NOT NULL," +
+                                                                "userSystem VARCHAR(50) NOT NULL," +
+                                                                "pwSystem VARCHAR(50) NOT NULL," +
                                                                 "tipo INT NOT NULL," +
                                                                 "situacao VARCHAR(10)" +
                                                            ");", conexao); //45/2017/16/05/2008.

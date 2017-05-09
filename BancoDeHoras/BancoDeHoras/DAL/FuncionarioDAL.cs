@@ -13,7 +13,7 @@ namespace BancoDeHoras.DAL
     class FuncionarioDAL
     {
 
-        private string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = Teste; User id = sa; pwd=123456";
+        private string conexao_BD = @"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = sa; pwd=123456";
 
         SqlConnection conexao = null;
 
@@ -80,13 +80,13 @@ namespace BancoDeHoras.DAL
         }
 
         //Verifica informações cadastrais.
-        public FuncionarioModel consultaFunc(string cpf)
+        public FuncionarioModel consultaFunc(int id_Func)
         {
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE cpf = @cpf", conexao);
-                selectFunc.Parameters.AddWithValue("@cpf", cpf);
+                SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE id_Func = @id_Func", conexao);
+                selectFunc.Parameters.AddWithValue("@id_Func", id_Func);
                 conexao.Open();
 
                 SqlDataReader leitor;
@@ -113,6 +113,56 @@ namespace BancoDeHoras.DAL
                         funcModel.STR_dt_Demissao = "Não está branco nem vazia" + validaData;
                         funcModel.Dt_Demissao = Convert.ToDateTime(leitor["dt_Demissao"]);
                     }                  
+                }
+                leitor.Close();
+
+                return funcModel;
+
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+
+                conexao.Close();
+            }
+        }
+
+        public FuncionarioModel verificaFunc(string cpf)
+        {
+            try
+            {
+                conexao = new SqlConnection(conexao_BD);
+                SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE cpf = @cpf", conexao);
+                selectFunc.Parameters.AddWithValue("@id_Func", cpf);
+                conexao.Open();
+
+                SqlDataReader leitor;
+
+                FuncionarioModel funcModel = new FuncionarioModel();
+                leitor = selectFunc.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (leitor.Read())
+                {
+                    funcModel.ID = Convert.ToInt32(leitor["id_Func"]);
+                    funcModel.Nome = leitor["nome"].ToString();
+                    funcModel.CPF = leitor["cpf"].ToString();
+                    funcModel.Email = leitor["email"].ToString();
+                    funcModel.Telefone = leitor["telefone"].ToString();
+                    funcModel.Dt_Admissao = Convert.ToDateTime(leitor["dt_Admissao"]);
+                    string validaData = leitor["dt_Demissao"].ToString();
+
+                    if (string.IsNullOrEmpty(validaData))
+                    {
+                        funcModel.STR_dt_Demissao = null;
+                    }
+                    else
+                    {
+                        funcModel.STR_dt_Demissao = "Não está branco nem vazia" + validaData;
+                        funcModel.Dt_Demissao = Convert.ToDateTime(leitor["dt_Demissao"]);
+                    }
                 }
                 leitor.Close();
 

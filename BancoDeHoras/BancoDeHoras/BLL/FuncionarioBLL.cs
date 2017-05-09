@@ -32,17 +32,32 @@ namespace BancoDeHoras.BLL
             }
         }
 
-        public FuncionarioModel consultaFuncBLL(string cpf)
+        public FuncionarioModel consultaFuncBLL(int id_Func)
         {            
             try
             {
                 funcDAL = new FuncionarioDAL();
                 FuncionarioModel funcMod = new FuncionarioModel();
-                funcMod = funcDAL.consultaFunc(cpf);
+                funcMod = funcDAL.consultaFunc(id_Func);
 
                 return funcMod;
             }
             catch(Exception erro)
+            {
+                throw erro;
+            }
+        }
+        public FuncionarioModel verificaFunc(string cpf)
+        {
+            try
+            {
+                funcDAL = new FuncionarioDAL();
+                FuncionarioModel funcMod = new FuncionarioModel();
+                funcMod = funcDAL.verificaFunc(cpf);
+
+                return funcMod;
+
+            }catch(Exception erro)
             {
                 throw erro;
             }

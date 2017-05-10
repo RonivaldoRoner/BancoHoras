@@ -30,9 +30,20 @@ namespace BancoDeHoras
         {            
             UsuarioModel userMod = new UsuarioModel();
             UsuarioBLL userBLL = new UsuarioBLL();
+            string Administrador = "Administrador";
+            string senha = "rrmbancodehoras";
             if (rb_Admin_BD.Checked)
             {
-                try
+                if((tb_usuario.Text == Administrador)&&(tb_senha.Text == senha))
+                {
+                    Usuario userDB = new Usuario();
+                    userDB.Show();
+                    this.Visible = false;
+                }else
+                {
+                    MessageBox.Show("Usuario ou senha incorretos.");
+                }
+               /* try
                 {
                     tipo_usuario = 1;
                     userSystem = tb_usuario.Text;
@@ -46,7 +57,8 @@ namespace BancoDeHoras
                 catch(Exception erro)
                 {
                     MessageBox.Show("Usuário ou Senha de sistema inválido --- " + erro);
-                }
+                }*/
+
             }else
             {
                 string pwCripto = Criptografia.Criptografar(tb_senha.Text);

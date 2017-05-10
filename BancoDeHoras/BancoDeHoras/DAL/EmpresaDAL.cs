@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data;
 using BancoDeHoras.Models;
 
+
 namespace BancoDeHoras.DAL
 {
     class EmpresaDAL
@@ -16,9 +17,9 @@ namespace BancoDeHoras.DAL
         SqlConnection conexao = null;
 
 
-        public void creatDB(string userSystem, string senhaSystem)
+        public void creatDB()
         { 
-            conexao = new SqlConnection($@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = {userSystem}; pwd={senhaSystem}");
+            conexao = new SqlConnection($@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = sa; pwd='123456'");
             SqlCommand creatDB = new SqlCommand("IF NOT EXISTS(SELECT * FROM sys.databases WHERE name ='BancoDeHoras')CREATE DATABASE BancoDeHoras", conexao);
             conexao.Open();
             creatDB.ExecuteNonQuery();

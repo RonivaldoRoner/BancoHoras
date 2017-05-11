@@ -11,7 +11,8 @@ namespace BancoDeHoras.Models
         //If(tipo_Usuario == 1){Usuario administrador}
         //if(tipo_Usuario == 2){Usuario simples}
         string usuario, pw, situacao;
-        int tipo_Usuario, fk_id_Func;
+        int tipo_Usuario, fk_id_Func, id_user;
+
 
         public int FK_ID_Func
         {
@@ -41,6 +42,12 @@ namespace BancoDeHoras.Models
         {
             get { return tipo_Usuario; }
             set { tipo_Usuario = value; }
+        }
+
+        public int ID_User
+        {
+            get { return id_user; }
+            set { id_user = value; }
         }
     }
 }

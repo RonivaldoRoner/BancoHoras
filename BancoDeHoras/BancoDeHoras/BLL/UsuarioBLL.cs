@@ -29,7 +29,7 @@ namespace BancoDeHoras.BLL
             try
             {
                 UsuarioDAL AddUser = new UsuarioDAL();
-                AddUser.criaUser(userModel);
+                AddUser.CriaUsuario(userModel);
             }catch(Exception erro)
             {
                 throw erro;
@@ -42,21 +42,35 @@ namespace BancoDeHoras.BLL
             try
             {
                 userDAL = new UsuarioDAL();
-                userModel = userDAL.buscaUser(user, pw);
+                userModel = userDAL.ValidaUsuario(user, pw);
+                return userModel;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }        
 
+        public UsuarioModel BuscaUsuario(int fk_id_Func)
+        {
+            UsuarioModel userMod = new UsuarioModel();
+            try
+            {
+                userDAL = new UsuarioDAL();
+                userMod = userDAL.BuscaUsuario(fk_id_Func);
+                return userMod;
             }catch(Exception erro)
             {
                 throw erro;
             }
-            return userModel;
         }
-        
-        public void CreatUserSstem(string userSystem, string pwSystem)
+
+        public void EditaUsuario(UsuarioModel userMod)
         {
             try
             {
                 userDAL = new UsuarioDAL();
-                userDAL.CriaUsuarioSystem(userSystem, pwSystem);
+                userDAL.EditaUsuario(userMod);
             }catch(Exception erro)
             {
                 throw erro;

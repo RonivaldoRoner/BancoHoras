@@ -62,6 +62,10 @@ namespace BancoDeHoras
                         principal.Show();
                         this.Visible = false;
 
+                        MessageBox.Show("Teste Instancia --- " + Properties.Settings.Default.InstanciaSQLServer);
+                        MessageBox.Show("Teste Usuario ---" + Properties.Settings.Default.UserSQL);
+                        MessageBox.Show("Teste Senha ---" + Properties.Settings.Default.PWSQL);
+
                         EmpresaBLL empBLL = new EmpresaBLL();
                         empBLL.CreatDB();
                         empBLL.CreatTbEmpresa();

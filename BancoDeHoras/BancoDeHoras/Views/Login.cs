@@ -17,13 +17,11 @@ namespace BancoDeHoras
     public partial class Login : Form
     {
         public static int tipo_usuario;
-        public static int id_user;
-        public static string userSystem, pwSystem;
+        public static int id_user; //ID Usuario que é igual ao FK_ID_User da tabela Usuarios.      
         string situacao = "Ativo";
         public Login()
         {
             InitializeComponent();
-           
         }
 
         private void btn_logar_Click(object sender, EventArgs e)
@@ -32,72 +30,65 @@ namespace BancoDeHoras
             UsuarioBLL userBLL = new UsuarioBLL();
             string Administrador = "Administrador";
             string senha = "rrmbancodehoras";
+            
+
             if (rb_Admin_BD.Checked)
             {
                 if((tb_usuario.Text == Administrador)&&(tb_senha.Text == senha))
                 {
+                    tipo_usuario = 1;
                     Usuario userDB = new Usuario();
                     userDB.Show();
                     this.Visible = false;
                 }else
                 {
                     MessageBox.Show("Usuario ou senha incorretos.");
-                }
-               /* try
-                {
-                    tipo_usuario = 1;
-                    userSystem = tb_usuario.Text;
-                    pwSystem = tb_senha.Text;                    
-                    EmpresaBLL empBLL = new EmpresaBLL();
-                    empBLL.CreatDB(tb_usuario.Text, tb_senha.Text);                    
-                    Principal principal = new Principal();
-                    principal.Show();
-                    this.Visible = false;
-                }
-                catch(Exception erro)
-                {
-                    MessageBox.Show("Usuário ou Senha de sistema inválido --- " + erro);
-                }*/
-
+                }            
             }else
             {
                 string pwCripto = Criptografia.Criptografar(tb_senha.Text);
-                try
+                if((tb_usuario.Text == Administrador)&&(tb_senha.Text == senha))
                 {
-                    userMod = userBLL.DadosUsuario(tb_usuario.Text, pwCripto);
-
-                    if ((tb_usuario.Text == userMod.Usuario) && (pwCripto == userMod.PW))
+                    Principal principal = new Principal();
+                    tipo_usuario = 1;
+                    principal.Show();
+                    this.Visible = false;
+                }else
+                {
+                    try
                     {
-                        id_user = userMod.FK_ID_Func;
-                        tipo_usuario = userMod.Tipo_Usuario;
-                        if (userMod.Situacao == situacao)
-                        {
-                            MessageBox.Show("Login efetuado");
-                            Principal principal = new Principal();
-                            principal.Show();
+                        userMod = userBLL.DadosUsuario(tb_usuario.Text, pwCripto);
 
-                            this.Visible = false;
+                        if ((tb_usuario.Text == userMod.Usuario) && (pwCripto == userMod.PW))
+                        {
+                            id_user = userMod.FK_ID_Func;
+                            tipo_usuario = userMod.Tipo_Usuario;
+                            
+                            if (userMod.Situacao == situacao)
+                            {
+                                MessageBox.Show("Login efetuado");
+                                Principal principal = new Principal();
+                                principal.Show();
+
+                                this.Visible = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Usuário desativado.");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Usuário desativado.");
+                            MessageBox.Show("Usuário ou senha invalido.");
                         }
                     }
-                    else
+                    catch (Exception erro)
                     {
-                        MessageBox.Show("Usuário ou senha invalido.");
+                        MessageBox.Show("Erro ao buscar Usuário e Senha." + erro);
                     }
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show("Erro ao buscar Usuário e Senha." + erro);
-                }
-            }
-
-            
-
-        }
-                
+                }               
+            }          
+        }               
 
         private void Login_Load(object sender, EventArgs e)
         {

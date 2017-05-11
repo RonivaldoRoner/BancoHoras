@@ -6,20 +6,28 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using BancoDeHoras.Models;
+using System.Configuration;
 
 
 namespace BancoDeHoras.DAL
 {
     class EmpresaDAL
-    {
+    {     
         EmpresaModel empModel = new EmpresaModel();
-        private static string conexao_BD = $@"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = {Login.userSystem}; pwd={Login.pwSystem}";
+
+        private static string instSQLServer = Properties.Settings.Default.InstanciaSQLServer;
+        private static string UserSQL = Properties.Settings.Default.UserSQL;
+        private static string PWSQL = Properties.Settings.Default.PWSQL;
+        private static string conexao_BD_Master = $@"Data Source = {Properties.Settings.Default.InstanciaSQLServer}; Initial Catalog = master; User id = {Properties.Settings.Default.UserSQL}; pwd={Properties.Settings.Default.PWSQL}";
+        private static string conexao_BD = $@"Data Source = {Properties.Settings.Default.InstanciaSQLServer}; Initial Catalog = BancoDeHoras; User id = {Properties.Settings.Default.UserSQL}; pwd={Properties.Settings.Default.PWSQL}";
+
+
         SqlConnection conexao = null;
 
 
         public void creatDB()
         { 
-            conexao = new SqlConnection($@"Data Source =.\SQLEXPRESS; Initial Catalog = master; User id = sa; pwd='123456'");
+            conexao = new SqlConnection(conexao_BD_Master);
             SqlCommand creatDB = new SqlCommand("IF NOT EXISTS(SELECT * FROM sys.databases WHERE name ='BancoDeHoras')CREATE DATABASE BancoDeHoras", conexao);
             conexao.Open();
             creatDB.ExecuteNonQuery();

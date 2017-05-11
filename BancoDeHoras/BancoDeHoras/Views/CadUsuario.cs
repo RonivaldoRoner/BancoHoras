@@ -23,8 +23,9 @@ namespace BancoDeHoras.Views
         public CadUsuario(string cpf)
         {
             InitializeComponent();
-            cpfFunc = cpf;      
-
+            cpfFunc = cpf;
+            tb_CPF.Text = cpf;            
+            tb_CPF.Enabled = false;                
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
@@ -53,16 +54,15 @@ namespace BancoDeHoras.Views
 
             try
             {
-                userBLL.CreatUserSstem(tb_usuario.Text, senhaCrip);
                 userBLL.CadUser(userMod);
             }catch(Exception erro)
             {
-                MessageBox.Show("Erro na criação de usuário." + erro);
+                MessageBox.Show("Erro ao gravar usuário. --- " + erro.Message);
             }
 
-
-            this.Visible = false;
+           
             
+            this.Visible = false;            
         }
     }
 }

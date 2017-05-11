@@ -11,7 +11,8 @@ namespace BancoDeHoras.DAL
 {
     class UsuarioDAL
     {
-        private string conexao_BD = $@"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = {Login.userSystem}; pwd={Login.pwSystem}";
+        //private string conexao_BD = $@"Data Source =.\SQLEXPRESS; Initial Catalog = BancoDeHoras; User id = {Login.userSystem}; pwd={Login.pwSystem}";
+        private static string conexao_BD = $@"Data Source = {Properties.Settings.Default.InstanciaSQLServer}; Initial Catalog = BancoDeHoras; User id = {Properties.Settings.Default.UserSQL}; pwd={Properties.Settings.Default.PWSQL}";
 
         SqlConnection conexao = null;
 
@@ -28,8 +29,6 @@ namespace BancoDeHoras.DAL
                                                                 "CONSTRAINT Funcionario_Usuario FOREIGN KEY (fk_id_Func) REFERENCES Funcionarios(id_Func)," +
                                                                 "usuario VARCHAR(20) NOT NULL," +
                                                                 "pw VARCHAR(50) NOT NULL," +
-                                                                "userSystem VARCHAR(50) NOT NULL," +
-                                                                "pwSystem VARCHAR(50) NOT NULL," +
                                                                 "tipo INT NOT NULL," +
                                                                 "situacao VARCHAR(10)" +
                                                            ");", conexao); //45/2017/16/05/2008.
@@ -46,7 +45,7 @@ namespace BancoDeHoras.DAL
             }
         }
 
-        public void criaUser(UsuarioModel userMod)
+        public void CriaUsuario(UsuarioModel userMod)
         {
             try
             {
@@ -74,7 +73,7 @@ namespace BancoDeHoras.DAL
             }
         }
 
-        public UsuarioModel buscaUser(string usuario, string senha)
+        public UsuarioModel ValidaUsuario(string usuario, string senha)
         {
             try
             {
@@ -113,17 +112,23 @@ namespace BancoDeHoras.DAL
             }
         }
 
-        public void editUser(UsuarioModel modUser)
+        public void EditaUsuario(UsuarioModel userMod)
         {            
             try
             {
                 conexao = new SqlConnection(conexao_BD);
 
-                SqlCommand editUser = new SqlCommand("UPDATE Usuarios SET" +
-                                                       "usuario = @usuario," +
-                                                       "pw = @pw," +
-                                                       "tipo = @tipo" +
-                                                       "WHERE fk_cpf = @fk_cpf", conexao);
+                SqlCommand editUser = new SqlCommand("UPDATE Usuarios SET " +
+                                                       "usuario = @usuario, " +
+                                                       "pw = @pw, " +
+                                                       "tipo = @tipo, " +
+                                                       "situacao = @situacao " +
+                                                       "WHERE fk_id_Func = @fk_id_Func ", conexao);
+                editUser.Parameters.AddWithValue("@fk_id_Func", userMod.FK_ID_Func);
+                editUser.Parameters.AddWithValue("@usuario", userMod.Usuario);
+                editUser.Parameters.AddWithValue("@pw", userMod.PW);
+                editUser.Parameters.AddWithValue("@tipo", userMod.Tipo_Usuario);
+                editUser.Parameters.AddWithValue("@situacao", userMod.Situacao);
 
                 conexao.Open();
                 editUser.ExecuteNonQuery();
@@ -136,22 +141,40 @@ namespace BancoDeHoras.DAL
             {
                 conexao.Close();
             }
-        }                  
+        }                                  
 
-        public void CriaUsuarioSystem(string userSystem, string pwSystem)
+        public UsuarioModel BuscaUsuario(int fk_id_Func)
         {
-            
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand creatUserSystem = new SqlCommand("CREATE LOGIN "+userSystem+"% WITH PASSWORD = '"+ pwSystem +"%' " +
-                                                                "CREATE USER " + userSystem + " FOR LOGIN " + userSystem, conexao);
-                //creatUserSystem.Parameters.AddWithValue("@login", userSystem);
-                //creatUserSystem.Parameters.AddWithValue("@pw",pwSystem);            
-                conexao.Open();
-                creatUserSystem.ExecuteNonQuery();
+                SqlCommand selectUser = new SqlCommand("SELECT * FROM Usuarios WHERE fk_id_Func = @fk_id_Func", conexao);
+                selectUser.Parameters.AddWithValue("@fk_id_Func", fk_id_Func);
+                
 
-            } catch (Exception erro)
+                conexao.Open();
+
+                SqlDataReader leitor;
+
+                leitor = selectUser.ExecuteReader(CommandBehavior.CloseConnection);
+
+                UsuarioModel userMod = new UsuarioModel();
+
+                while (leitor.Read())
+                {
+                    userMod.ID_User = Convert.ToInt32(leitor["id_User"]);
+                    userMod.FK_ID_Func = Convert.ToInt32(leitor["fk_id_Func"]);
+                    userMod.Usuario = leitor["usuario"].ToString();
+                    userMod.PW = leitor["pw"].ToString();
+                    userMod.Tipo_Usuario = Convert.ToInt32(leitor["tipo"]);
+                    userMod.Situacao = leitor["situacao"].ToString();
+                }
+
+                leitor.Close();
+                return userMod;
+
+            }
+            catch (Exception erro)
             {
                 throw erro;
             }

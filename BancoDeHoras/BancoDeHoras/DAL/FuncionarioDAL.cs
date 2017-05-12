@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -81,7 +82,7 @@ namespace BancoDeHoras.DAL
         }
 
         //Verifica informações cadastrais.
-        public FuncionarioModel consultaFunc(int id_Func)
+        public FuncionarioModel VerificaFuncID(int id_Func)
         {
             try
             {
@@ -131,13 +132,63 @@ namespace BancoDeHoras.DAL
             }
         }
 
-        public FuncionarioModel verificaFunc(string cpf)
+        public FuncionarioModel VerificaFuncCPF(string cpf)
         {
             try
             {
                 conexao = new SqlConnection(conexao_BD);
                 SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE cpf = @cpf", conexao);
                 selectFunc.Parameters.AddWithValue("@cpf", cpf);
+                conexao.Open();
+
+                SqlDataReader leitor;
+
+                FuncionarioModel funcModel = new FuncionarioModel();
+                leitor = selectFunc.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (leitor.Read())
+                {
+                    funcModel.ID = Convert.ToInt32(leitor["id_Func"]);
+                    funcModel.Nome = leitor["nome"].ToString();
+                    funcModel.CPF = leitor["cpf"].ToString();
+                    funcModel.Email = leitor["email"].ToString();
+                    funcModel.Telefone = leitor["telefone"].ToString();
+                    funcModel.Dt_Admissao = Convert.ToDateTime(leitor["dt_Admissao"]);
+                    string validaData = leitor["dt_Demissao"].ToString();
+
+                    if (string.IsNullOrEmpty(validaData))
+                    {
+                        funcModel.STR_dt_Demissao = null;
+                    }
+                    else
+                    {
+                        funcModel.STR_dt_Demissao = "Não está branco nem vazia" + validaData;
+                        funcModel.Dt_Demissao = Convert.ToDateTime(leitor["dt_Demissao"]);
+                    }
+                }
+                leitor.Close();
+
+                return funcModel;
+
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+
+                conexao.Close();
+            }
+        }
+
+        public FuncionarioModel VerificaFuncNome(string nome)
+        {
+            try
+            {
+                conexao = new SqlConnection(conexao_BD);
+                SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE nome = '%@nome%'", conexao);
+                selectFunc.Parameters.AddWithValue("@nome", nome);
                 conexao.Open();
 
                 SqlDataReader leitor;

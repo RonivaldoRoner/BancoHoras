@@ -41,7 +41,7 @@ namespace BancoDeHoras.Views
         {
             
             string cpf = tb_CPF_Func.Text.Replace(".", "").Replace(",", "").Replace("-", "");
-            funcMod = funcBLL.verificaFunc(cpf);         
+            funcMod = funcBLL.ConsultaFuncByCPF(cpf);         
 
             if (string.IsNullOrEmpty(funcMod.CPF))
             {                

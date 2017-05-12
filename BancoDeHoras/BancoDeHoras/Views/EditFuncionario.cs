@@ -14,6 +14,7 @@ namespace BancoDeHoras.Views
 {
     public partial class EditFuncionario : Form
     {
+        FuncionarioModel funcMod = new FuncionarioModel();
         public EditFuncionario()
         {
             InitializeComponent();
@@ -24,12 +25,34 @@ namespace BancoDeHoras.Views
             empMod = empBLL.DadosEmpresaBLL();
 
             tb_Nome_Emp.Text = empMod.Nome;
-            tb_CNPJ.Text = empMod.CNPJ;          
+            tb_CNPJ.Text = empMod.CNPJ;
+            tb_Nome_Emp.Enabled = false;
+            tb_CNPJ.Enabled = false;
+            tb_Nome_Pesquisa.Text = null;
+            tb_CPF_Pesquisa.Text = null;       
         }
 
         private void btn_Pesquisar_Func_Click(object sender, EventArgs e)
         {
+            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            
+            string cpf = tb_CPF_Pesquisa.Text.Replace(",", "").Replace(".", "").Replace("-", "");
+            funcBLL.ConsultaFuncByCPF(cpf);
 
+           try
+            {
+                
+                
+            }catch(Exception erro)
+            {
+                MessageBox.Show("Erro ao localizar Funcionário. --- " + erro.Message);
+            }
+            
+        }
+        
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

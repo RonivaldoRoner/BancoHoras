@@ -17,6 +17,7 @@ namespace BancoDeHoras.BLL
             funcDAL = new FuncionarioDAL();
             funcDAL.CreatTableFuncionario();
         }
+
         public void CadFuncionarioBLL(FuncionarioModel funcModel)
         {
 
@@ -32,13 +33,13 @@ namespace BancoDeHoras.BLL
             }
         }
 
-        public FuncionarioModel consultaFuncBLL(int id_Func)
+        public FuncionarioModel ConsultaFuncByID(int id_Func)
         {            
             try
             {
                 funcDAL = new FuncionarioDAL();
                 FuncionarioModel funcMod = new FuncionarioModel();
-                funcMod = funcDAL.consultaFunc(id_Func);
+                funcMod = funcDAL.VerificaFuncID(id_Func);
 
                 return funcMod;
             }
@@ -47,16 +48,32 @@ namespace BancoDeHoras.BLL
                 throw erro;
             }
         }
-        public FuncionarioModel verificaFunc(string cpf)
+
+        public FuncionarioModel ConsultaFuncByCPF(string cpf)
         {
             try
             {
                 funcDAL = new FuncionarioDAL();
                 FuncionarioModel funcMod = new FuncionarioModel();
-                funcMod = funcDAL.verificaFunc(cpf);
+                funcMod = funcDAL.VerificaFuncCPF(cpf);
 
                 return funcMod;
 
+            }catch(Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+        public FuncionarioModel ConsultaFuncByNome(string nome)
+        {
+            try
+            {
+                funcDAL = new FuncionarioDAL();
+                FuncionarioModel funcMod = new FuncionarioModel();
+                funcMod = funcDAL.VerificaFuncNome(nome);
+
+                return funcMod;
             }catch(Exception erro)
             {
                 throw erro;

@@ -15,7 +15,7 @@ namespace BancoDeHoras.Views
 {
     public partial class EditarUsuario : Form
     {       
-        int id_Func;
+        
         FuncionarioModel funcMod = new FuncionarioModel();
         UsuarioModel userMod = new UsuarioModel();
         FuncionarioBLL funcBLL = new FuncionarioBLL();
@@ -29,43 +29,50 @@ namespace BancoDeHoras.Views
                 rb_Gerente.Enabled = false;
                 tb_CPF_Busca.Enabled = false;
                 btn_Novo_Usuario.Enabled = false;
+                btn_LocalizaUsuario.Enabled = false;
             }
             userMod = userBLL.BuscaUsuario(Login.id_user);
 
-            funcMod = funcBLL.consultaFuncBLL(Login.id_user);
+            funcMod = funcBLL.ConsultaFuncByID(Login.id_user);
             tb_CPF_Busca.Text = funcMod.CPF;
             tb_usuario.Text = userMod.Usuario;
-            tb_senha.Text = Criptografia.Descriptografar(userMod.PW);            
-            
+            tb_senha.Text = Criptografia.Descriptografar(userMod.PW);
+            if(Login.tipo_usuario != 1)
+            {
+                tb_CPF_Busca.Enabled = false;
+            }                  
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string cpf = tb_CPF_Busca.Text.Replace(",", "").Replace(".", "").Replace("-", "");
-            funcMod = funcBLL.verificaFunc(cpf);
+            funcMod = funcBLL.ConsultaFuncByCPF(cpf);
+            MessageBox.Show("Usuario localizado--- " + funcMod.Nome);
+
             if (string.IsNullOrEmpty(funcMod.STR_dt_Demissao))
             {
-                id_Func = funcMod.ID;
-            }else
-            {
-                MessageBox.Show("Funcionário inativo.");
-            }                     
-            
-
-            if (string.IsNullOrEmpty(userMod.Usuario))
-            {
-                MessageBox.Show("Usuario não cadastrado. Favor gravar Usuário e senha para novo cadastro.");
-            }else
-            {
+                MessageBox.Show("Data de Demissão Vazia " + funcMod.STR_dt_Demissao);
                 try
                 {
-                    tb_usuario.Text = userMod.Usuario;
-                }
-                catch (Exception erro)
+                    userMod = userBLL.BuscaUsuario(funcMod.ID);
+                    if (string.IsNullOrEmpty(userMod.Usuario))
+                    {
+                        MessageBox.Show("Usuário não cadastrado.");
+                    }else
+                    {
+                        tb_usuario.Text = userMod.Usuario;
+                        tb_senha.Text = Criptografia.Descriptografar(userMod.PW);
+                    }
+                }catch(Exception erro)
                 {
-                    MessageBox.Show("Usuário não encontrado. --- " + erro.Message);
+                    MessageBox.Show("" + erro.Message);
                 }
-            }                     
+            }
+            else
+            {
+                MessageBox.Show("Funcionário demitido.");
+                btn_Gravar.Enabled = false;
+            }                                                
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
@@ -79,7 +86,7 @@ namespace BancoDeHoras.Views
                 this.Visible = false;
             }catch(Exception erro)
             {
-                MessageBox.Show("Erro ao gravar alterações. --- " + erro);
+                MessageBox.Show("Erro ao gravar alterações. --- " + erro.Message);
             }
         }
 

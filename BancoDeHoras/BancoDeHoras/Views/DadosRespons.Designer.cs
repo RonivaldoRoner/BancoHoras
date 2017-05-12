@@ -55,7 +55,7 @@
             // btn_Cancelar
             // 
             this.btn_Cancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_Cancelar.Location = new System.Drawing.Point(254, 281);
+            this.btn_Cancelar.Location = new System.Drawing.Point(254, 274);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar.TabIndex = 12;
@@ -66,7 +66,7 @@
             // btn_Novo
             // 
             this.btn_Novo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_Novo.Location = new System.Drawing.Point(446, 281);
+            this.btn_Novo.Location = new System.Drawing.Point(446, 274);
             this.btn_Novo.Name = "btn_Novo";
             this.btn_Novo.Size = new System.Drawing.Size(75, 23);
             this.btn_Novo.TabIndex = 11;
@@ -87,9 +87,9 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(12, 94);
+            this.panel2.Location = new System.Drawing.Point(12, 93);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(751, 157);
+            this.panel2.Size = new System.Drawing.Size(751, 175);
             this.panel2.TabIndex = 10;
             // 
             // tb_Email_Resp
@@ -174,7 +174,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(631, 281);
+            this.pictureBox1.Location = new System.Drawing.Point(631, 274);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 50);
@@ -190,7 +190,7 @@
             this.panel1.Controls.Add(this.tb_Empresa);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 36);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(751, 51);
             this.panel1.TabIndex = 8;
@@ -236,7 +236,7 @@
             // 
             // btn_Editar
             // 
-            this.btn_Editar.Location = new System.Drawing.Point(350, 281);
+            this.btn_Editar.Location = new System.Drawing.Point(350, 274);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(75, 23);
             this.btn_Editar.TabIndex = 13;
@@ -248,7 +248,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(223, 9);
+            this.label7.Location = new System.Drawing.Point(223, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(328, 24);
             this.label7.TabIndex = 14;
@@ -259,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 340);
+            this.ClientSize = new System.Drawing.Size(775, 331);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.btn_Cancelar);

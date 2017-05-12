@@ -23,8 +23,8 @@ namespace BancoDeHoras.Views
             
             if(Login.tipo_usuario != 1)
             {
-                this.btn_Editar.Visible = false;
-                this.btn_Novo.Visible = false;
+                this.btn_Editar.Enabled = false;
+                this.btn_Novo.Enabled = false;
             }                                  
 
             try

@@ -20,8 +20,8 @@ namespace BancoDeHoras.Views
 
             if(Login.tipo_usuario != 1)
             {
-                this.btn_Cadastrar.Visible = false;
-                this.btn_Editar.Visible = false;
+                this.btn_Cadastrar.Enabled = false;
+                this.btn_Editar.Enabled = false;
             }
 
             FuncionarioBLL funcBLL = new FuncionarioBLL();
@@ -36,7 +36,7 @@ namespace BancoDeHoras.Views
             tb_CNPJ.Text = empMod.CNPJ;                      
             
             FuncionarioModel funcMod = new FuncionarioModel();
-            funcMod = funcBLL.consultaFuncBLL(Login.id_user);
+            funcMod = funcBLL.ConsultaFuncByID(Login.id_user);
 
             try
             {

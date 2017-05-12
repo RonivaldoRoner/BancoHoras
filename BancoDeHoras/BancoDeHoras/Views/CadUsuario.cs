@@ -25,7 +25,8 @@ namespace BancoDeHoras.Views
             InitializeComponent();
             cpfFunc = cpf;
             tb_CPF.Text = cpf;            
-            tb_CPF.Enabled = false;                
+            tb_CPF.Enabled = false;
+            MessageBox.Show("Favor cadastrar usuário e senha para acesso do funcionário.");               
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace BancoDeHoras.Views
             CadastroFunc cadFunc = new CadastroFunc();            
             FuncionarioBLL funcBLL = new FuncionarioBLL();
             FuncionarioModel funcMod = new FuncionarioModel();
-            funcMod = funcBLL.verificaFunc(cpfFunc);
+            funcMod = funcBLL.ConsultaFuncByCPF(cpfFunc);
 
             UsuarioModel userMod = new UsuarioModel();
             userMod.FK_ID_Func = funcMod.ID;
@@ -55,13 +56,11 @@ namespace BancoDeHoras.Views
             try
             {
                 userBLL.CadUser(userMod);
+                MessageBox.Show("Usuário gravado com sucesso.");
             }catch(Exception erro)
             {
                 MessageBox.Show("Erro ao gravar usuário. --- " + erro.Message);
-            }
-
-           
-            
+            }                       
             this.Visible = false;            
         }
     }

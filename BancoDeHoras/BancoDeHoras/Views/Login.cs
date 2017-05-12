@@ -66,7 +66,7 @@ namespace BancoDeHoras
                             
                             if (userMod.Situacao == situacao)
                             {
-                                MessageBox.Show("Login efetuado");
+                                //MessageBox.Show("Login efetuado");
                                 Principal principal = new Principal();
                                 principal.Show();
 

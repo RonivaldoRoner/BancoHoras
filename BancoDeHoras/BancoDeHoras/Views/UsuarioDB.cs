@@ -62,9 +62,9 @@ namespace BancoDeHoras
                         principal.Show();
                         this.Visible = false;
 
-                        MessageBox.Show("Teste Instancia --- " + Properties.Settings.Default.InstanciaSQLServer);
-                        MessageBox.Show("Teste Usuario ---" + Properties.Settings.Default.UserSQL);
-                        MessageBox.Show("Teste Senha ---" + Properties.Settings.Default.PWSQL);
+                        //MessageBox.Show("Teste Instancia --- " + Properties.Settings.Default.InstanciaSQLServer);
+                        //MessageBox.Show("Teste Usuario ---" + Properties.Settings.Default.UserSQL);
+                        //MessageBox.Show("Teste Senha ---" + Properties.Settings.Default.PWSQL);
 
                         EmpresaBLL empBLL = new EmpresaBLL();
                         empBLL.CreatDB();
@@ -77,7 +77,10 @@ namespace BancoDeHoras
                         funcBLL.CreatTableFuncionarioBLL();
 
                         UsuarioBLL userBLL = new UsuarioBLL();
-                        userBLL.CreatTableBLL();                        
+                        userBLL.CreatTableBLL();
+
+                        RegistroBLL regBLL = new RegistroBLL();
+                        regBLL.CreateTableReg();           
                     }
                     catch(Exception erro)
                     {

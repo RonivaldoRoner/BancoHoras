@@ -37,13 +37,35 @@ namespace BancoDeHoras.Views
             FuncionarioBLL funcBLL = new FuncionarioBLL();
             
             string cpf = tb_CPF_Pesquisa.Text.Replace(",", "").Replace(".", "").Replace("-", "");
-            funcBLL.ConsultaFuncByCPF(cpf);
+            try
+            {
 
-           try
+                if (string.IsNullOrEmpty(cpf))
+                {
+                    funcMod = funcBLL.ConsultaFuncByNome(tb_Nome_Pesquisa.Text);
+                }else
+                {
+                    funcMod = funcBLL.ConsultaFuncByCPF(cpf);
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Funcionário não encontrado. --- " + erro.Message);
+            }
+
+            tb_Nome.Text = funcMod.Nome;
+            tb_CPF.Text = funcMod.CPF;
+            tb_Email.Text = funcMod.Email;
+            tb_Celular.Text = funcMod.Telefone.Replace(" ", "");
+            tb_Admissao.Text = funcMod.Dt_Admissao.ToString("ddMMyyyy").Replace("-", "/");
+
+            try
             {
                 
-                
-            }catch(Exception erro)
+               
+
+            }
+            catch(Exception erro)
             {
                 MessageBox.Show("Erro ao localizar Funcionário. --- " + erro.Message);
             }

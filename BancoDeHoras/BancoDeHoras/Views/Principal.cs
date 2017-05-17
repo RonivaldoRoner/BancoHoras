@@ -17,32 +17,29 @@ namespace BancoDeHoras.Views
         public Principal()
         {
             InitializeComponent();                      
-            this.WindowState = FormWindowState.Maximized;                      
+            this.WindowState = FormWindowState.Maximized;    
+            if(Login.tipo_usuario != 1)
+            {
+                btn_Reg_Analise.Enabled = false;
+            }                  
         }
         //cadastro de empresa
         private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            EmpresaBLL empBLL = new EmpresaBLL();
-            empBLL.CreatTbEmpresa();
+        {            
             DadosEmpresa empresa = new DadosEmpresa();
             empresa.Show();
         }
 
         private void btn_Cad_Responsavel_Click(object sender, EventArgs e)
-        {
-            ResponsavelBLL respBLL = new ResponsavelBLL();
-            respBLL.CreatTBbRespons();
+        {            
             DadosRespons consultResp = new DadosRespons();
             consultResp.Show();
         }
 
         private void btn_Cad_Funcionario_Click(object sender, EventArgs e)
         {
-            FuncionarioBLL funcBLL = new FuncionarioBLL();
-            funcBLL.CreatTableFuncionarioBLL();
             DadosFuncionario dadosFunc = new DadosFuncionario();
-            dadosFunc.Show();
-            
+            dadosFunc.Show();            
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,6 +51,12 @@ namespace BancoDeHoras.Views
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void btn_Novo_Reg_Click(object sender, EventArgs e)
+        {
+            CadRegistros novoRegistro = new CadRegistros();
+            novoRegistro.Show();
         }
     }
 }

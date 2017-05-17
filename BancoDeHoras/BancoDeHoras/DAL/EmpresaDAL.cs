@@ -14,10 +14,7 @@ namespace BancoDeHoras.DAL
     class EmpresaDAL
     {     
         EmpresaModel empModel = new EmpresaModel();
-
-        private static string instSQLServer = Properties.Settings.Default.InstanciaSQLServer;
-        private static string UserSQL = Properties.Settings.Default.UserSQL;
-        private static string PWSQL = Properties.Settings.Default.PWSQL;
+        
         private static string conexao_BD_Master = $@"Data Source = {Properties.Settings.Default.InstanciaSQLServer}; Initial Catalog = master; User id = {Properties.Settings.Default.UserSQL}; pwd={Properties.Settings.Default.PWSQL}";
         private static string conexao_BD = $@"Data Source = {Properties.Settings.Default.InstanciaSQLServer}; Initial Catalog = BancoDeHoras; User id = {Properties.Settings.Default.UserSQL}; pwd={Properties.Settings.Default.PWSQL}";
 

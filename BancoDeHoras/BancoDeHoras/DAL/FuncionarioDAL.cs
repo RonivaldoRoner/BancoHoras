@@ -187,7 +187,7 @@ namespace BancoDeHoras.DAL
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE nome = '%@nome%'", conexao);
+                SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE nome LIKE %@nome%", conexao);
                 selectFunc.Parameters.AddWithValue("@nome", nome);
                 conexao.Open();
 

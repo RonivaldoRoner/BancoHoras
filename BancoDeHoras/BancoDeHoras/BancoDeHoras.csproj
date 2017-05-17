@@ -50,15 +50,19 @@
   <ItemGroup>
     <Compile Include="BLL\EmpresaBLL.cs" />
     <Compile Include="BLL\FuncionarioBLL.cs" />
+    <Compile Include="BLL\RegistroBLL.cs" />
     <Compile Include="BLL\ResponsavelBLL.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="DAL\EmpresaDAL.cs" />
     <Compile Include="DAL\FuncionarioDAL.cs" />
+    <Compile Include="DAL\RegistroDAL.cs" />
     <Compile Include="DAL\ResponsavelDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="Models\FuncionarioModel.cs" />
+    <Compile Include="Models\RegistroModel.cs" />
     <Compile Include="Models\ResponsavelModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
+    <Compile Include="Uteis\CalculaHE.cs" />
     <Compile Include="Uteis\Criptografia.cs" />
     <Compile Include="Views\Administrador.cs">
       <SubType>Form</SubType>
@@ -83,6 +87,12 @@
     </Compile>
     <Compile Include="Views\CadastroRespons.Designer.cs">
       <DependentUpon>CadastroRespons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CadRegistros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CadRegistros.Designer.cs">
+      <DependentUpon>CadRegistros.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CadUsuario.cs">
       <SubType>Form</SubType>
@@ -167,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CadastroRespons.resx">
       <DependentUpon>CadastroRespons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CadRegistros.resx">
+      <DependentUpon>CadRegistros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CadUsuario.resx">
       <DependentUpon>CadUsuario.cs</DependentUpon>

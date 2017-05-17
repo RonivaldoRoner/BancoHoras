@@ -38,6 +38,8 @@
             this.btn_Cad_Funcionario = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Novo_Reg = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Reg_Analise = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -139,9 +141,25 @@
             // 
             // registrosToolStripMenuItem
             // 
+            this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_Novo_Reg,
+            this.btn_Reg_Analise});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
             this.registrosToolStripMenuItem.Text = "Registros";
+            // 
+            // btn_Novo_Reg
+            // 
+            this.btn_Novo_Reg.Name = "btn_Novo_Reg";
+            this.btn_Novo_Reg.Size = new System.Drawing.Size(176, 30);
+            this.btn_Novo_Reg.Text = "Novo";
+            this.btn_Novo_Reg.Click += new System.EventHandler(this.btn_Novo_Reg_Click);
+            // 
+            // btn_Reg_Analise
+            // 
+            this.btn_Reg_Analise.Name = "btn_Reg_Analise";
+            this.btn_Reg_Analise.Size = new System.Drawing.Size(176, 30);
+            this.btn_Reg_Analise.Text = "Em Análise";
             // 
             // consultasToolStripMenuItem
             // 
@@ -156,6 +174,7 @@
             this.ClientSize = new System.Drawing.Size(1028, 515);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Principal";
             this.ShowIcon = false;
             this.Text = "Banco de Horas";
@@ -184,5 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem btn_Cad_Responsavel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btn_Novo_Reg;
+        private System.Windows.Forms.ToolStripMenuItem btn_Reg_Analise;
     }
 }

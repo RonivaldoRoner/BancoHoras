@@ -80,7 +80,8 @@ namespace BancoDeHoras
                         userBLL.CreatTableBLL();
 
                         RegistroBLL regBLL = new RegistroBLL();
-                        regBLL.CreateTableReg();           
+                        regBLL.CreateTableReg();
+                        
                     }
                     catch(Exception erro)
                     {

@@ -31,6 +31,7 @@
             this.tb_CNPJ = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cb_Gerente = new System.Windows.Forms.CheckBox();
             this.tb_Telefone = new System.Windows.Forms.MaskedTextBox();
             this.tb_CPF_Func = new System.Windows.Forms.MaskedTextBox();
             this.tb_Data_Demissao = new System.Windows.Forms.MaskedTextBox();
@@ -79,6 +80,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.cb_Gerente);
             this.panel3.Controls.Add(this.tb_Telefone);
             this.panel3.Controls.Add(this.tb_CPF_Func);
             this.panel3.Controls.Add(this.tb_Data_Demissao);
@@ -93,8 +95,19 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(14, 143);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(684, 189);
+            this.panel3.Size = new System.Drawing.Size(684, 235);
             this.panel3.TabIndex = 18;
+            // 
+            // cb_Gerente
+            // 
+            this.cb_Gerente.AutoSize = true;
+            this.cb_Gerente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Gerente.Location = new System.Drawing.Point(313, 183);
+            this.cb_Gerente.Name = "cb_Gerente";
+            this.cb_Gerente.Size = new System.Drawing.Size(87, 24);
+            this.cb_Gerente.TabIndex = 7;
+            this.cb_Gerente.Text = "Gerente";
+            this.cb_Gerente.UseVisualStyleBackColor = true;
             // 
             // tb_Telefone
             // 
@@ -167,7 +180,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(18, 122);
+            this.label7.Location = new System.Drawing.Point(20, 122);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 4;
@@ -342,5 +355,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_Nome_Emp;
+        private System.Windows.Forms.CheckBox cb_Gerente;
     }
 }

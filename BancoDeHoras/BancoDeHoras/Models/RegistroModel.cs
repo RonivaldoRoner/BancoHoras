@@ -11,7 +11,7 @@ namespace BancoDeHoras.Models
         DateTime data_Reg;
         TimeSpan qtd_Horas, inicio_HE, fim_HE;
         string responsavel, descricao;
-        int fk_id_Func;
+        int fk_id_Func, id_Reg;
 
         public DateTime Data_Reg
         {
@@ -53,6 +53,12 @@ namespace BancoDeHoras.Models
         {
             get { return fk_id_Func; }
             set { fk_id_Func = value; }
+        }
+
+        public int ID_Reg
+        {
+            get { return id_Reg; }
+            set { id_Reg = value; }
         }
         
     }

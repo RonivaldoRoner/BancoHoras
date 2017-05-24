@@ -16,7 +16,7 @@ namespace BancoDeHoras.BLL
         public void CreatDB()
         {
             empresaDAL = new EmpresaDAL();
-            empresaDAL.creatDB();            
+            empresaDAL.CreatDB();            
         }
         
         public void CreatTbEmpresa()
@@ -30,7 +30,7 @@ namespace BancoDeHoras.BLL
             try
             {
                 empresaDAL = new EmpresaDAL();
-                empresaDAL.cadEmpresa(empModel);                
+                empresaDAL.CadEmpresa(empModel);                
                 
             }catch(Exception erro)
             {
@@ -62,7 +62,7 @@ namespace BancoDeHoras.BLL
             try
             {
                 empresaDAL = new EmpresaDAL();
-                empresaDAL.editEmpresa(empModel); 
+                empresaDAL.EditEmpresa(empModel); 
                 
             }catch(Exception erro)
             {

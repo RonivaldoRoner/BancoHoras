@@ -1,16 +1,15 @@
-﻿using System;
+﻿using BancoDeHoras.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using BancoDeHoras.Models;
-using System.Collections;
-using System.Data;
 
-namespace BancoDeHoras.DAL
+namespace BancoDeHoras.BLL
 {
-    class RegistroDAL
+    class RegistroDefinitivoBLL
     {
         private static string conexao_BD = $@"Data Source = {Properties.Settings.Default.InstanciaSQLServer}; Initial Catalog = BancoDeHoras; User id = {Properties.Settings.Default.UserSQL}; pwd={Properties.Settings.Default.PWSQL}";
 
@@ -21,9 +20,9 @@ namespace BancoDeHoras.DAL
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand createTable = new SqlCommand("IF NOT EXISTS(SELECT * FROM sys.objects WHERE name = 'Registros')" +
-                                                     "CREATE TABLE Registros" +
-                                                        "("+
+                SqlCommand createTable = new SqlCommand("IF NOT EXISTS(SELECT * FROM sys.objects WHERE name = 'RegDefinitivo')" +
+                                                     "CREATE TABLE RegDefinitivo" +
+                                                        "(" +
                                                         "id_Reg INT NOT NULL PRIMARY KEY IDENTITY(1, 1)," +
                                                         "fk_id_Func INT NOT NULL," +
                                                         "dt_Reg DATE NOT NULL," +
@@ -32,11 +31,12 @@ namespace BancoDeHoras.DAL
                                                         "fim_HE TIME NOT NULL," +
                                                         "qtd_HE TIME NOT NULL," +
                                                         "responsavel VARCHAR(40) NOT NULL," +
-                                                        "descricao VARCHAR(420) NOT NULL" +                                                        
+                                                        "descricao VARCHAR(420) NOT NULL" +
                                                         ");", conexao);
                 conexao.Open();
                 createTable.ExecuteNonQuery();
-            }catch(Exception erro)
+            }
+            catch (Exception erro)
             {
                 throw erro;
             }
@@ -51,7 +51,7 @@ namespace BancoDeHoras.DAL
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand inseriReg = new SqlCommand("INSERT INTO Registros(fk_id_Func, dt_Reg, inicio_HE, fim_HE, qtd_HE, responsavel, descricao)" +
+                SqlCommand inseriReg = new SqlCommand("INSERT INTO RegDefinitivo(fk_id_Func, dt_Reg, inicio_HE, fim_HE, qtd_HE, responsavel, descricao)" +
                                                                     "VALUES(@fk_id_Func, @dt_Reg, @inicio_HE, @fim_HE, @qtd_HE, @responsavel, @descricao)", conexao);
 
                 inseriReg.Parameters.AddWithValue("@fk_id_Func", regMod.FK_Id_Func);
@@ -65,33 +65,6 @@ namespace BancoDeHoras.DAL
                 conexao.Open();
                 inseriReg.ExecuteNonQuery();
 
-            }catch(Exception erro)
-            {
-                throw erro;
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
-        public ArrayList RegAnalise(string responsavel)
-        {
-            conexao = new SqlConnection(conexao_BD);
-            SqlCommand selectRegistros = new SqlCommand("SELECT * FROM Registros WHERE responsavel = @responsavel", conexao);
-            selectRegistros.Parameters.AddWithValue("@responsavel", responsavel);
-            SqlDataReader leitor;
-            conexao.Open();
-            leitor = selectRegistros.ExecuteReader(CommandBehavior.CloseConnection);
-            ArrayList registros = new ArrayList();
-
-            try
-            {
-                while (leitor.Read())
-                {
-                    registros.Add(Convert.ToInt32(leitor["fk_id_Func"]));
-                }
-
-                return registros;
             }
             catch (Exception erro)
             {
@@ -101,15 +74,15 @@ namespace BancoDeHoras.DAL
             {
                 conexao.Close();
             }
-        }
+        }       
 
         public RegistroModel InfoRegistro(int id)
-        {           
-            
+        {
+
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand selectRegistros = new SqlCommand("SELECT * FROM Registros WHERE fk_id_Func = @fk_id_Func", conexao);
+                SqlCommand selectRegistros = new SqlCommand("SELECT * FROM RegDefinitivo WHERE fk_id_Func = @fk_id_Func", conexao);
                 selectRegistros.Parameters.AddWithValue("@fk_id_Func", id);
                 SqlDataReader leitor;
                 conexao.Open();
@@ -120,7 +93,7 @@ namespace BancoDeHoras.DAL
 
                 while (leitor.Read())
                 {
-                    if(i > Convert.ToInt32(leitor["id_Reg"]))
+                    if (i > Convert.ToInt32(leitor["id_Reg"]))
                     {
                         regMod.Data_Reg = Convert.ToDateTime(leitor["dt_Reg"]);
                         regMod.Inicio_HE = TimeSpan.Parse(leitor["inicio_HE"].ToString());
@@ -131,7 +104,7 @@ namespace BancoDeHoras.DAL
                         regMod.ID_Reg = Convert.ToInt32(leitor["id_Reg"]);
                         i = Convert.ToInt32(leitor["id_Reg"]);
                     }
-                    
+
                 }
 
                 return regMod;

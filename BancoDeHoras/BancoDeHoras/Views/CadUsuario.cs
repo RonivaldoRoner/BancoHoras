@@ -24,8 +24,11 @@ namespace BancoDeHoras.Views
         {
             InitializeComponent();
             cpfFunc = cpf;
-            tb_CPF.Text = cpf;            
-            tb_CPF.Enabled = false;
+            tb_CPF.Text = cpf;
+            if(Login.tipo_usuario != 1)
+            {
+                tb_CPF.Enabled = false;
+            }
             MessageBox.Show("Favor cadastrar usuário e senha para acesso do funcionário.");               
         }
 
@@ -61,7 +64,13 @@ namespace BancoDeHoras.Views
             {
                 MessageBox.Show("Erro ao gravar usuário. --- " + erro.Message);
             }                       
-            this.Visible = false;            
+            this.Visible = false;
+            cadFunc.Visible = false;           
+        }
+
+        private void btn_Voltar_Click(object sender, EventArgs e)
+        {            
+            this.Visible = false;
         }
     }
 }

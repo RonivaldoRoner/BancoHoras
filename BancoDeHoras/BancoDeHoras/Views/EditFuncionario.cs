@@ -15,6 +15,7 @@ namespace BancoDeHoras.Views
     public partial class EditFuncionario : Form
     {
         FuncionarioModel funcMod = new FuncionarioModel();
+        int idFunc;
         public EditFuncionario()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace BancoDeHoras.Views
             EmpresaBLL empBLL = new EmpresaBLL();
             EmpresaModel empMod = new EmpresaModel();
 
-            empMod = empBLL.DadosEmpresaBLL();
+            empMod = empBLL.DadosEmpresaBLL();            
 
             tb_Nome_Emp.Text = empMod.Nome;
             tb_CNPJ.Text = empMod.CNPJ;
@@ -52,6 +53,7 @@ namespace BancoDeHoras.Views
             {
                 MessageBox.Show("Funcionário não encontrado. --- " + erro.Message);
             }
+            idFunc = funcMod.ID;
 
             tb_Nome.Text = funcMod.Nome;
             tb_CPF.Text = funcMod.CPF;
@@ -59,22 +61,60 @@ namespace BancoDeHoras.Views
             tb_Celular.Text = funcMod.Telefone.Replace(" ", "");
             tb_Admissao.Text = funcMod.Dt_Admissao.ToString("ddMMyyyy").Replace("-", "/");
 
-            try
+            if (!string.IsNullOrEmpty(funcMod.STR_dt_Demissao))
             {
-                
-               
-
-            }
-            catch(Exception erro)
+                tb_Demissao.Text = funcMod.Dt_Demissao.ToString("ddMMyyyy").Replace("-", "/");
+            }else
             {
-                MessageBox.Show("Erro ao localizar Funcionário. --- " + erro.Message);
-            }
-            
+                tb_Demissao.Text = null;
+            }                     
         }
         
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Gravar_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                FuncionarioModel funcioMod = new FuncionarioModel();
+
+                funcioMod.ID = idFunc;
+                funcioMod.CPF = tb_CPF_Pesquisa.Text.Replace(",", "").Replace(".", "").Replace("-", "");
+                MessageBox.Show("CPF: " + funcioMod.CPF);
+                funcioMod.Nome = tb_Nome.Text;
+                funcioMod.Email = tb_Email.Text;
+                funcioMod.Telefone = tb_Celular.Text.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
+                funcioMod.Dt_Admissao = Convert.ToDateTime(tb_Admissao.Text);
+                string dt_Demissao = tb_Demissao.Text.Replace("/", "").Replace(" ","");
+
+                if (!string.IsNullOrEmpty(dt_Demissao))
+                {
+                    MessageBox.Show("Data Demissão: -- " + dt_Demissao);
+                    DateTime demissao = Convert.ToDateTime(tb_Demissao.Text);
+                    funcioMod.Dt_Demissao = demissao;
+                    //funcioMod.STR_dt_Demissao = tb_Demissao.Text;
+                }                                                                                 
+                if (cb_Gerente.Checked)
+                {
+                    funcioMod.Tipo = 1;
+                }
+                else
+                {
+                    funcioMod.Tipo = 2;
+                }
+                FuncionarioBLL funcBLL = new FuncionarioBLL();
+                funcBLL.EditFuncionario(funcioMod);
+
+                MessageBox.Show("Dados do Funcionário editados com sucesso.");
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("Erro ao editar Funcionário" + erro);
+            }           
         }
     }
 }

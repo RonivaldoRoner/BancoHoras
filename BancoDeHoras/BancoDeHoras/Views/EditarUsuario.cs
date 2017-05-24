@@ -47,11 +47,9 @@ namespace BancoDeHoras.Views
         {
             string cpf = tb_CPF_Busca.Text.Replace(",", "").Replace(".", "").Replace("-", "");
             funcMod = funcBLL.ConsultaFuncByCPF(cpf);
-            MessageBox.Show("Usuario localizado--- " + funcMod.Nome);
 
             if (string.IsNullOrEmpty(funcMod.STR_dt_Demissao))
-            {
-                MessageBox.Show("Data de Demissão Vazia " + funcMod.STR_dt_Demissao);
+            {               
                 try
                 {
                     userMod = userBLL.BuscaUsuario(funcMod.ID);
@@ -67,6 +65,8 @@ namespace BancoDeHoras.Views
                 {
                     MessageBox.Show("" + erro.Message);
                 }
+                this.btn_Gravar.Enabled = false;
+
             }
             else
             {

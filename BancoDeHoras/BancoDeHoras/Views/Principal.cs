@@ -58,5 +58,11 @@ namespace BancoDeHoras.Views
             CadRegistros novoRegistro = new CadRegistros();
             novoRegistro.Show();
         }
+
+        private void btn_Reg_Analise_Click(object sender, EventArgs e)
+        {
+            RegEmAnalise regAnalise = new RegEmAnalise();
+            regAnalise.Show();
+        }
     }
 }

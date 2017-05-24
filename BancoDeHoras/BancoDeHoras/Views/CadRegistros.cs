@@ -10,16 +10,19 @@ using System.Windows.Forms;
 using BancoDeHoras.BLL;
 using BancoDeHoras.Models;
 using BancoDeHoras.Uteis;
+using System.Collections;
+
 
 namespace BancoDeHoras.Views
 {
     public partial class CadRegistros : Form
     {
+        ArrayList gerente = new ArrayList();
         EmpresaModel empMod = new EmpresaModel();
         EmpresaBLL empBLL = new EmpresaBLL();
         FuncionarioModel funcMod = new FuncionarioModel();
-        FuncionarioBLL funcBLL = new FuncionarioBLL();        
-        
+        FuncionarioBLL funcBLL = new FuncionarioBLL();
+              
         public CadRegistros()
         {
             InitializeComponent();
@@ -31,6 +34,22 @@ namespace BancoDeHoras.Views
 
             tb_Nome_Func.Text = funcMod.Nome;
             tb_CPF.Text = funcMod.CPF;
+
+            try
+            {                
+                gerente = funcBLL.ALGerente();
+
+                foreach (string nome in gerente)
+                {
+                    int index = nome.IndexOf(" ");
+                    string nomeCurto = nome.Substring(0, index);
+                    cb_Responsavel.Items.Add(nomeCurto);
+                }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("Erro ao localizar resposáveis." + erro.Message);
+            }       
         }
 
         private void CadRegistros_Load(object sender, EventArgs e) { }
@@ -43,8 +62,6 @@ namespace BancoDeHoras.Views
             var inicio = Convert.ToDateTime(tb_Inicio_Reg.Text);
             var final = Convert.ToDateTime(tb_Fim_Reg.Text);
             TimeSpan diferenca = final.Subtract(inicio);
-
-            int minutos = Convert.ToInt32(diferenca.Minutes);
             TimeSpan qtd_HE = CalculaHE.CalcMinutos(diferenca);
 
             regMod.FK_Id_Func = funcMod.ID;
@@ -52,12 +69,25 @@ namespace BancoDeHoras.Views
             regMod.Inicio_HE = TimeSpan.Parse(tb_Inicio_Reg.Text);
             regMod.Fim_HE = TimeSpan.Parse(tb_Fim_Reg.Text);
             regMod.Qtd_Horas = qtd_HE;
+            foreach (string nome in gerente)
+            {
+                int index = nome.IndexOf(" ");
+                string nomeCurto = nome.Substring(0, index);
+                if(nomeCurto == cb_Responsavel.Text)
+                {
+                    
+                }                
+            }
+
             regMod.Responsavel = cb_Responsavel.Text;
             regMod.Descricao = tb_Descricao_Reg.Text;
 
             try
             {
                 regBLL.NovoRegistro(regMod);
+                MessageBox.Show("Registro enviado para o Responsável.");
+                this.Visible = false;
+
             }catch(Exception erro)
             {
                 MessageBox.Show("Erro ao inserir novo Registro. -- " + erro.Message);
@@ -69,6 +99,7 @@ namespace BancoDeHoras.Views
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        }       
+        
     }
 }

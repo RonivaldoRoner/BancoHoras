@@ -54,7 +54,7 @@ namespace BancoDeHoras.Views
             }
             catch(Exception erro)
             {
-                MessageBox.Show("Não foi possivel recuperar informações. --- " + erro);
+                MessageBox.Show("Não foi possivel recuperar informações ou não há funcionário cadastrado. --- " + erro.Message);
             }
 
             

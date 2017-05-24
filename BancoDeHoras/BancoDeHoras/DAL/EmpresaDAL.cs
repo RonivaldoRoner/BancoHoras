@@ -22,7 +22,7 @@ namespace BancoDeHoras.DAL
         SqlConnection conexao = null;
 
 
-        public void creatDB()
+        public void CreatDB()
         { 
             conexao = new SqlConnection(conexao_BD_Master);
             SqlCommand creatDB = new SqlCommand("IF NOT EXISTS(SELECT * FROM sys.databases WHERE name ='BancoDeHoras')CREATE DATABASE BancoDeHoras", conexao);
@@ -65,7 +65,7 @@ namespace BancoDeHoras.DAL
                 
         }
        
-        public void cadEmpresa(EmpresaModel empresa)
+        public void CadEmpresa(EmpresaModel empresa)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace BancoDeHoras.DAL
             
         }
 
-        public void editEmpresa(EmpresaModel empModel)
+        public void EditEmpresa(EmpresaModel empModel)
         {
             try
             {

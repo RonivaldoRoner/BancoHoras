@@ -153,11 +153,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label1.Location = new System.Drawing.Point(75, 15);
+            this.label1.Location = new System.Drawing.Point(138, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 29);
+            this.label1.Size = new System.Drawing.Size(190, 29);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Cadastro de Usuario";
+            this.label1.Text = "Editar Usuario";
             // 
             // pictureBox1
             // 

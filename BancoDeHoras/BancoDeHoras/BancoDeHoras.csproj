@@ -157,6 +157,12 @@
     <Compile Include="Views\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegEmAnalise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RegEmAnalise.Designer.cs">
+      <DependentUpon>RegEmAnalise.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UsuarioDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RegEmAnalise.resx">
+      <DependentUpon>RegEmAnalise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UsuarioDB.resx">
       <DependentUpon>UsuarioDB.cs</DependentUpon>

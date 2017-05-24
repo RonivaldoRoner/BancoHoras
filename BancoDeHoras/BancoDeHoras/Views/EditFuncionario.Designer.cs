@@ -31,6 +31,7 @@
             this.tb_CNPJ = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cb_Gerente = new System.Windows.Forms.CheckBox();
             this.tb_Celular = new System.Windows.Forms.MaskedTextBox();
             this.tb_CPF = new System.Windows.Forms.MaskedTextBox();
             this.tb_Demissao = new System.Windows.Forms.MaskedTextBox();
@@ -86,6 +87,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.cb_Gerente);
             this.panel3.Controls.Add(this.tb_Celular);
             this.panel3.Controls.Add(this.tb_CPF);
             this.panel3.Controls.Add(this.tb_Demissao);
@@ -100,12 +102,23 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(14, 196);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(684, 189);
+            this.panel3.Size = new System.Drawing.Size(684, 234);
             this.panel3.TabIndex = 18;
+            // 
+            // cb_Gerente
+            // 
+            this.cb_Gerente.AutoSize = true;
+            this.cb_Gerente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Gerente.Location = new System.Drawing.Point(313, 203);
+            this.cb_Gerente.Name = "cb_Gerente";
+            this.cb_Gerente.Size = new System.Drawing.Size(87, 24);
+            this.cb_Gerente.TabIndex = 20;
+            this.cb_Gerente.Text = "Gerente";
+            this.cb_Gerente.UseVisualStyleBackColor = true;
             // 
             // tb_Celular
             // 
-            this.tb_Celular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.tb_Celular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tb_Celular.Location = new System.Drawing.Point(490, 86);
             this.tb_Celular.Mask = "(999) 00000-0000";
             this.tb_Celular.Name = "tb_Celular";
@@ -114,7 +127,7 @@
             // 
             // tb_CPF
             // 
-            this.tb_CPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.tb_CPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tb_CPF.Location = new System.Drawing.Point(505, 30);
             this.tb_CPF.Mask = "000,000,000-00";
             this.tb_CPF.Name = "tb_CPF";
@@ -143,7 +156,7 @@
             // 
             // tb_Email
             // 
-            this.tb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.tb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tb_Email.Location = new System.Drawing.Point(20, 86);
             this.tb_Email.Name = "tb_Email";
             this.tb_Email.Size = new System.Drawing.Size(366, 26);
@@ -151,7 +164,7 @@
             // 
             // tb_Nome
             // 
-            this.tb_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.tb_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tb_Nome.Location = new System.Drawing.Point(20, 31);
             this.tb_Nome.Name = "tb_Nome";
             this.tb_Nome.Size = new System.Drawing.Size(363, 26);
@@ -227,7 +240,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(566, 391);
+            this.pictureBox1.Location = new System.Drawing.Point(572, 447);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 50);
@@ -236,7 +249,7 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(212, 391);
+            this.btn_Cancelar.Location = new System.Drawing.Point(235, 447);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar.TabIndex = 22;
@@ -246,12 +259,13 @@
             // 
             // btn_Gravar
             // 
-            this.btn_Gravar.Location = new System.Drawing.Point(420, 391);
+            this.btn_Gravar.Location = new System.Drawing.Point(406, 447);
             this.btn_Gravar.Name = "btn_Gravar";
             this.btn_Gravar.Size = new System.Drawing.Size(75, 23);
             this.btn_Gravar.TabIndex = 21;
             this.btn_Gravar.Text = "Gravar";
             this.btn_Gravar.UseVisualStyleBackColor = true;
+            this.btn_Gravar.Click += new System.EventHandler(this.btn_Gravar_Click);
             // 
             // panel1
             // 
@@ -332,7 +346,7 @@
             // 
             // tb_CPF_Pesquisa
             // 
-            this.tb_CPF_Pesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.tb_CPF_Pesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tb_CPF_Pesquisa.Location = new System.Drawing.Point(409, 19);
             this.tb_CPF_Pesquisa.Mask = "000,000,000-00";
             this.tb_CPF_Pesquisa.Name = "tb_CPF_Pesquisa";
@@ -373,7 +387,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 454);
+            this.ClientSize = new System.Drawing.Size(713, 504);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -431,5 +445,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tb_Nome_Emp;
+        private System.Windows.Forms.CheckBox cb_Gerente;
     }
 }

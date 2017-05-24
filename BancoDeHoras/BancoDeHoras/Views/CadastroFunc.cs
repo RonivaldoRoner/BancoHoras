@@ -68,12 +68,8 @@ namespace BancoDeHoras.Views
                 
             }
 
-            CadUsuario cadUser = new CadUsuario(funcMod.CPF);
-            
-            cadUser.Show();
-
-            this.Visible = false;          
-                       
+            CadUsuario cadUser = new CadUsuario(funcMod.CPF);            
+            cadUser.Show();                                         
         }
 
         private void cadastrar_Func()
@@ -84,6 +80,13 @@ namespace BancoDeHoras.Views
             funcMod.Email = tb_Email.Text;
             funcMod.Telefone = tb_Telefone.Text.Replace("(", "").Replace(")", "").Replace("-", "");
             funcMod.Dt_Admissao = Convert.ToDateTime(tb_Data_Admissao.Text);
+            if (cb_Gerente.Checked)
+            {
+                funcMod.Tipo = 1;
+            }else
+            {
+                funcMod.Tipo = 2;
+            }
             try
             {
                 funcBLL.CadFuncionarioBLL(funcMod);

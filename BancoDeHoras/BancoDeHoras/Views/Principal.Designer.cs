@@ -160,6 +160,7 @@
             this.btn_Reg_Analise.Name = "btn_Reg_Analise";
             this.btn_Reg_Analise.Size = new System.Drawing.Size(176, 30);
             this.btn_Reg_Analise.Text = "Em Análise";
+            this.btn_Reg_Analise.Click += new System.EventHandler(this.btn_Reg_Analise_Click);
             // 
             // consultasToolStripMenuItem
             // 

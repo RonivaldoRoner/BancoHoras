@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rb_Gerente = new System.Windows.Forms.RadioButton();
+            this.rb_Gerente = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tb_CPF = new System.Windows.Forms.MaskedTextBox();
             this.btn_Gravar = new System.Windows.Forms.Button();
             this.tb_senha = new System.Windows.Forms.TextBox();
             this.tb_usuario = new System.Windows.Forms.TextBox();
@@ -37,8 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tb_CPF = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btn_Voltar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,9 +47,10 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btn_Voltar);
+            this.panel1.Controls.Add(this.rb_Gerente);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.tb_CPF);
-            this.panel1.Controls.Add(this.rb_Gerente);
             this.panel1.Controls.Add(this.btn_Gravar);
             this.panel1.Controls.Add(this.tb_senha);
             this.panel1.Controls.Add(this.tb_usuario);
@@ -62,17 +64,35 @@
             // rb_Gerente
             // 
             this.rb_Gerente.AutoSize = true;
-            this.rb_Gerente.Location = new System.Drawing.Point(207, 177);
+            this.rb_Gerente.Location = new System.Drawing.Point(206, 177);
             this.rb_Gerente.Name = "rb_Gerente";
-            this.rb_Gerente.Size = new System.Drawing.Size(63, 17);
-            this.rb_Gerente.TabIndex = 7;
-            this.rb_Gerente.TabStop = true;
+            this.rb_Gerente.Size = new System.Drawing.Size(64, 17);
+            this.rb_Gerente.TabIndex = 10;
             this.rb_Gerente.Text = "Gerente";
             this.rb_Gerente.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(36, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "CPF:";
+            // 
+            // tb_CPF
+            // 
+            this.tb_CPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CPF.Location = new System.Drawing.Point(36, 32);
+            this.tb_CPF.Mask = "000,000,000-00";
+            this.tb_CPF.Name = "tb_CPF";
+            this.tb_CPF.Size = new System.Drawing.Size(122, 26);
+            this.tb_CPF.TabIndex = 8;
+            // 
             // btn_Gravar
             // 
-            this.btn_Gravar.Location = new System.Drawing.Point(161, 210);
+            this.btn_Gravar.Location = new System.Drawing.Point(161, 215);
             this.btn_Gravar.Name = "btn_Gravar";
             this.btn_Gravar.Size = new System.Drawing.Size(109, 23);
             this.btn_Gravar.TabIndex = 4;
@@ -139,24 +159,15 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // tb_CPF
+            // btn_Voltar
             // 
-            this.tb_CPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_CPF.Location = new System.Drawing.Point(36, 32);
-            this.tb_CPF.Mask = "000,000,000-00";
-            this.tb_CPF.Name = "tb_CPF";
-            this.tb_CPF.Size = new System.Drawing.Size(122, 26);
-            this.tb_CPF.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "CPF:";
+            this.btn_Voltar.Location = new System.Drawing.Point(36, 214);
+            this.btn_Voltar.Name = "btn_Voltar";
+            this.btn_Voltar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Voltar.TabIndex = 11;
+            this.btn_Voltar.Text = "Voltar";
+            this.btn_Voltar.UseVisualStyleBackColor = true;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // CadUsuario
             // 
@@ -190,8 +201,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RadioButton rb_Gerente;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox tb_CPF;
+        private System.Windows.Forms.CheckBox rb_Gerente;
+        private System.Windows.Forms.Button btn_Voltar;
     }
 }

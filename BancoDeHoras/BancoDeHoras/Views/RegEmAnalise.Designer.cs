@@ -39,6 +39,8 @@
             this.tb_Nome = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tb_Qtd_HE = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cb_Func_Reg = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,8 +56,8 @@
             this.tb_Descricao_Reg = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tb_Qtd_HE = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btn_Negar_Reg = new System.Windows.Forms.Button();
+            this.btn_Confirmar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -187,6 +189,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(684, 348);
             this.panel2.TabIndex = 20;
+            // 
+            // tb_Qtd_HE
+            // 
+            this.tb_Qtd_HE.Enabled = false;
+            this.tb_Qtd_HE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Qtd_HE.Location = new System.Drawing.Point(587, 137);
+            this.tb_Qtd_HE.Mask = "00:00";
+            this.tb_Qtd_HE.Name = "tb_Qtd_HE";
+            this.tb_Qtd_HE.Size = new System.Drawing.Size(56, 26);
+            this.tb_Qtd_HE.TabIndex = 37;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(587, 116);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 17);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Total:";
             // 
             // panel3
             // 
@@ -342,39 +365,40 @@
             // 
             this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(560, 513);
+            this.pictureBox1.Location = new System.Drawing.Point(564, 528);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 50);
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
-            // tb_Qtd_HE
+            // btn_Negar_Reg
             // 
-            this.tb_Qtd_HE.Enabled = false;
-            this.tb_Qtd_HE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Qtd_HE.Location = new System.Drawing.Point(587, 137);
-            this.tb_Qtd_HE.Mask = "00:00";
-            this.tb_Qtd_HE.Name = "tb_Qtd_HE";
-            this.tb_Qtd_HE.Size = new System.Drawing.Size(56, 26);
-            this.tb_Qtd_HE.TabIndex = 37;
+            this.btn_Negar_Reg.Location = new System.Drawing.Point(236, 528);
+            this.btn_Negar_Reg.Name = "btn_Negar_Reg";
+            this.btn_Negar_Reg.Size = new System.Drawing.Size(75, 23);
+            this.btn_Negar_Reg.TabIndex = 23;
+            this.btn_Negar_Reg.Text = "Negar";
+            this.btn_Negar_Reg.UseVisualStyleBackColor = true;
+            this.btn_Negar_Reg.Click += new System.EventHandler(this.btn_Negar_Reg_Click);
             // 
-            // label7
+            // btn_Confirmar
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(587, 116);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 17);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Total:";
+            this.btn_Confirmar.Location = new System.Drawing.Point(398, 528);
+            this.btn_Confirmar.Name = "btn_Confirmar";
+            this.btn_Confirmar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Confirmar.TabIndex = 24;
+            this.btn_Confirmar.Text = "Confirmar";
+            this.btn_Confirmar.UseVisualStyleBackColor = true;
+            this.btn_Confirmar.Click += new System.EventHandler(this.btn_Confirmar_Click);
             // 
             // RegEmAnalise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 572);
+            this.ClientSize = new System.Drawing.Size(701, 585);
+            this.Controls.Add(this.btn_Confirmar);
+            this.Controls.Add(this.btn_Negar_Reg);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel2);
@@ -430,5 +454,7 @@
         private System.Windows.Forms.TextBox tb_Descricao_Reg;
         private System.Windows.Forms.MaskedTextBox tb_Qtd_HE;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_Negar_Reg;
+        private System.Windows.Forms.Button btn_Confirmar;
     }
 }

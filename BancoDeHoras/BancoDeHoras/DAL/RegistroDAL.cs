@@ -74,6 +74,7 @@ namespace BancoDeHoras.DAL
                 conexao.Close();
             }
         }
+
         public ArrayList RegAnalise(string responsavel)
         {
             conexao = new SqlConnection(conexao_BD);
@@ -144,6 +145,27 @@ namespace BancoDeHoras.DAL
             {
                 conexao.Close();
             }
+        }
+
+        public void ApagaRegistro(int id_Reg)
+        {
+            try
+            {
+                conexao = new SqlConnection(conexao_BD);
+                SqlCommand deleteReg = new SqlCommand("DELETE FROM Registros WHERE id_Reg like @id_Reg", conexao);
+                deleteReg.Parameters.AddWithValue("@id_Reg", id_Reg);
+
+                conexao.Open();
+                deleteReg.ExecuteNonQuery();
+            }catch(Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
         }
     }
 }

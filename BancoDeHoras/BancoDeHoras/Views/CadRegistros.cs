@@ -28,7 +28,7 @@ namespace BancoDeHoras.Views
             InitializeComponent();
             empMod = empBLL.DadosEmpresaBLL();
             funcMod = funcBLL.ConsultaFuncByID(Login.id_user);
-
+            
             tb_Nome_Emp.Text = empMod.Nome;
             tb_CNPJ.Text = empMod.CNPJ;
 
@@ -58,39 +58,30 @@ namespace BancoDeHoras.Views
         {
             RegistroBLL regBLL = new RegistroBLL();
             RegistroModel regMod = new RegistroModel();
-
-            var inicio = Convert.ToDateTime(tb_Inicio_Reg.Text);
-            var final = Convert.ToDateTime(tb_Fim_Reg.Text);
-            TimeSpan diferenca = final.Subtract(inicio);
-            TimeSpan qtd_HE = CalculaHE.CalcMinutos(diferenca);
-
-            regMod.FK_Id_Func = funcMod.ID;
-            regMod.Data_Reg = Convert.ToDateTime(tb_Data_Reg.Text);
-            regMod.Inicio_HE = TimeSpan.Parse(tb_Inicio_Reg.Text);
-            regMod.Fim_HE = TimeSpan.Parse(tb_Fim_Reg.Text);
-            regMod.Qtd_Horas = qtd_HE;
-            foreach (string nome in gerente)
-            {
-                int index = nome.IndexOf(" ");
-                string nomeCurto = nome.Substring(0, index);
-                if(nomeCurto == cb_Responsavel.Text)
-                {
-                    
-                }                
-            }
-
-            regMod.Responsavel = cb_Responsavel.Text;
-            regMod.Descricao = tb_Descricao_Reg.Text;
+            
 
             try
             {
+                var inicio = Convert.ToDateTime(tb_Inicio_Reg.Text);
+                var final = Convert.ToDateTime(tb_Fim_Reg.Text);
+                TimeSpan diferenca = final.Subtract(inicio);
+                TimeSpan qtd_HE = CalculaHE.CalcMinutos(diferenca);
+                
+                regMod.FK_Id_Func = funcMod.ID;
+                regMod.Data_Reg = Convert.ToDateTime(tb_Data_Reg.Text);
+                regMod.Inicio_HE = TimeSpan.Parse(tb_Inicio_Reg.Text);
+                regMod.Fim_HE = TimeSpan.Parse(tb_Fim_Reg.Text);
+                regMod.Qtd_Horas = qtd_HE;           
+                regMod.Responsavel = cb_Responsavel.Text;
+                regMod.Descricao = tb_Descricao_Reg.Text;
+
                 regBLL.NovoRegistro(regMod);
                 MessageBox.Show("Registro enviado para o Responsável.");
                 this.Visible = false;
 
             }catch(Exception erro)
             {
-                MessageBox.Show("Erro ao inserir novo Registro. -- " + erro.Message);
+                MessageBox.Show("Erro ao inserir novo Registro. Verifique se todos os campos estão preenchidos corretamente. --- " + erro.Message);
             }
             
             

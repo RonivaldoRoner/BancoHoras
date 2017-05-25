@@ -1,0 +1,31 @@
+diff a/BancoDeHoras/BancoDeHoras/Views/CadRegistros.Designer.cs b/BancoDeHoras/BancoDeHoras/Views/CadRegistros.Designer.cs	(rejected hunks)
+@@ -39,20 +39,20 @@
+             this.label3 = new System.Windows.Forms.Label();
+             this.label4 = new System.Windows.Forms.Label();
+             this.panel3 = new System.Windows.Forms.Panel();
+-            this.tb_Descricao_Reg = new System.Windows.Forms.TextBox();
++            this.label10 = new System.Windows.Forms.Label();
++            this.tb_Fim_Reg = new System.Windows.Forms.MaskedTextBox();
++            this.tb_Inicio_Reg = new System.Windows.Forms.MaskedTextBox();
++            this.cb_Responsavel = new System.Windows.Forms.ComboBox();
++            this.label9 = new System.Windows.Forms.Label();
++            this.label8 = new System.Windows.Forms.Label();
++            this.label6 = new System.Windows.Forms.Label();
++            this.tb_Data_Reg = new System.Windows.Forms.MaskedTextBox();
+             this.label5 = new System.Windows.Forms.Label();
++            this.tb_Descricao_Reg = new System.Windows.Forms.TextBox();
+             this.label7 = new System.Windows.Forms.Label();
+-            this.tb_Data_Reg = new System.Windows.Forms.MaskedTextBox();
+-            this.label6 = new System.Windows.Forms.Label();
+-            this.label8 = new System.Windows.Forms.Label();
+-            this.label9 = new System.Windows.Forms.Label();
+-            this.cb_Responsavel = new System.Windows.Forms.ComboBox();
+-            this.tb_Fim_Reg = new System.Windows.Forms.MaskedTextBox();
+-            this.label10 = new System.Windows.Forms.Label();
+             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+             this.btn_Gravar = new System.Windows.Forms.Button();
+             this.btn_Cancelar = new System.Windows.Forms.Button();
+-            this.tb_Inicio_Reg = new System.Windows.Forms.MaskedTextBox();
+             this.panel1.SuspendLayout();
+             this.panel2.SuspendLayout();
+             this.panel3.SuspendLayout();

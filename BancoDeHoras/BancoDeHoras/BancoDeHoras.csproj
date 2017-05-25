@@ -51,11 +51,13 @@
     <Compile Include="BLL\EmpresaBLL.cs" />
     <Compile Include="BLL\FuncionarioBLL.cs" />
     <Compile Include="BLL\RegistroBLL.cs" />
+    <Compile Include="BLL\RegistroDefinitivoBLL.cs" />
     <Compile Include="BLL\ResponsavelBLL.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="DAL\EmpresaDAL.cs" />
     <Compile Include="DAL\FuncionarioDAL.cs" />
     <Compile Include="DAL\RegistroDAL.cs" />
+    <Compile Include="DAL\RegistroDefinitivoDAL.cs" />
     <Compile Include="DAL\ResponsavelDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="Models\FuncionarioModel.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Uteis\CalculaHE.cs" />
     <Compile Include="Uteis\Criptografia.cs" />
+    <Compile Include="Uteis\ScanObjectModel.cs" />
     <Compile Include="Views\Administrador.cs">
       <SubType>Form</SubType>
     </Compile>

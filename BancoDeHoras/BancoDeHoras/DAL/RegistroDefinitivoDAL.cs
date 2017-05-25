@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BancoDeHoras.DAL
 {
-    class RegistroDefinitivo
+    class RegistroDefinitivoDAL
     {
     }
 }

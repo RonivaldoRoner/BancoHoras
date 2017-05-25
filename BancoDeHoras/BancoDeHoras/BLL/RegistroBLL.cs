@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BancoDeHoras.Models;
 using BancoDeHoras.DAL;
 using System.Collections;
+using BancoDeHoras.Uteis;
 
 namespace BancoDeHoras.BLL
 {
@@ -28,13 +29,22 @@ namespace BancoDeHoras.BLL
         public void NovoRegistro(RegistroModel regMod)
         {
             regDAL = new RegistroDAL();
-            try
+            ScanObjectModel scanObject = new ScanObjectModel();
+            if (scanObject.OMRegistros(regMod))
             {
-                regDAL.AddRegistro(regMod);
-            }catch(Exception erro)
+                try
+                {
+                    regDAL.AddRegistro(regMod);
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+            }else
             {
-                throw erro;
+                throw new Exception("Todos os campos devem ser preenchidos.");
             }
+            
         }
 
         public ArrayList AnaliseReg(string responsavel)
@@ -55,6 +65,18 @@ namespace BancoDeHoras.BLL
             {
                 regDAL = new RegistroDAL();
                 return regDAL.InfoRegistro(id_Func);
+            }catch(Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+        public void DeleteReg(int id_Reg)
+        {
+            try
+            {
+                regDAL = new RegistroDAL();
+                regDAL.ApagaRegistro(id_Reg);
             }catch(Exception erro)
             {
                 throw erro;

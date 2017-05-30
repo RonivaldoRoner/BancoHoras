@@ -39,6 +39,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.rb_Compensacao = new System.Windows.Forms.RadioButton();
+            this.rb_Hora_Extra = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tb_Fim_Reg = new System.Windows.Forms.MaskedTextBox();
             this.tb_Inicio_Reg = new System.Windows.Forms.MaskedTextBox();
@@ -56,6 +60,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,6 +173,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.tb_Fim_Reg);
             this.panel3.Controls.Add(this.tb_Inicio_Reg);
@@ -180,15 +186,61 @@
             this.panel3.Controls.Add(this.tb_Descricao_Reg);
             this.panel3.Location = new System.Drawing.Point(14, 172);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(684, 282);
+            this.panel3.Size = new System.Drawing.Size(684, 286);
             this.panel3.TabIndex = 13;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.rb_Compensacao);
+            this.panel4.Controls.Add(this.rb_Hora_Extra);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Location = new System.Drawing.Point(-2, -2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(684, 42);
+            this.panel4.TabIndex = 26;
+            // 
+            // rb_Compensacao
+            // 
+            this.rb_Compensacao.AutoSize = true;
+            this.rb_Compensacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_Compensacao.Location = new System.Drawing.Point(423, 8);
+            this.rb_Compensacao.Name = "rb_Compensacao";
+            this.rb_Compensacao.Size = new System.Drawing.Size(116, 21);
+            this.rb_Compensacao.TabIndex = 29;
+            this.rb_Compensacao.TabStop = true;
+            this.rb_Compensacao.Text = "Compensação";
+            this.rb_Compensacao.UseVisualStyleBackColor = true;
+            // 
+            // rb_Hora_Extra
+            // 
+            this.rb_Hora_Extra.AutoSize = true;
+            this.rb_Hora_Extra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_Hora_Extra.Location = new System.Drawing.Point(303, 8);
+            this.rb_Hora_Extra.Name = "rb_Hora_Extra";
+            this.rb_Hora_Extra.Size = new System.Drawing.Size(93, 21);
+            this.rb_Hora_Extra.TabIndex = 28;
+            this.rb_Hora_Extra.TabStop = true;
+            this.rb_Hora_Extra.Text = "Hora Extra";
+            this.rb_Hora_Extra.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label11.Location = new System.Drawing.Point(124, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(146, 20);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Tipo de Registro:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(23, 111);
+            this.label10.Location = new System.Drawing.Point(23, 122);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 17);
             this.label10.TabIndex = 25;
@@ -197,7 +249,7 @@
             // tb_Fim_Reg
             // 
             this.tb_Fim_Reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Fim_Reg.Location = new System.Drawing.Point(340, 53);
+            this.tb_Fim_Reg.Location = new System.Drawing.Point(340, 64);
             this.tb_Fim_Reg.Mask = "00:00";
             this.tb_Fim_Reg.Name = "tb_Fim_Reg";
             this.tb_Fim_Reg.Size = new System.Drawing.Size(56, 26);
@@ -206,7 +258,7 @@
             // tb_Inicio_Reg
             // 
             this.tb_Inicio_Reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Inicio_Reg.Location = new System.Drawing.Point(202, 55);
+            this.tb_Inicio_Reg.Location = new System.Drawing.Point(202, 66);
             this.tb_Inicio_Reg.Mask = "00:00";
             this.tb_Inicio_Reg.Name = "tb_Inicio_Reg";
             this.tb_Inicio_Reg.Size = new System.Drawing.Size(53, 26);
@@ -216,7 +268,7 @@
             // 
             this.cb_Responsavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Responsavel.FormattingEnabled = true;
-            this.cb_Responsavel.Location = new System.Drawing.Point(452, 53);
+            this.cb_Responsavel.Location = new System.Drawing.Point(452, 64);
             this.cb_Responsavel.Name = "cb_Responsavel";
             this.cb_Responsavel.Size = new System.Drawing.Size(183, 28);
             this.cb_Responsavel.TabIndex = 4;
@@ -226,7 +278,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(452, 32);
+            this.label9.Location = new System.Drawing.Point(452, 43);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(94, 17);
             this.label9.TabIndex = 21;
@@ -237,7 +289,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(340, 32);
+            this.label8.Location = new System.Drawing.Point(340, 43);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 17);
             this.label8.TabIndex = 19;
@@ -248,7 +300,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(202, 32);
+            this.label6.Location = new System.Drawing.Point(202, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 17);
             this.label6.TabIndex = 17;
@@ -257,7 +309,7 @@
             // tb_Data_Reg
             // 
             this.tb_Data_Reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Data_Reg.Location = new System.Drawing.Point(23, 53);
+            this.tb_Data_Reg.Location = new System.Drawing.Point(23, 64);
             this.tb_Data_Reg.Mask = "00/00/0000";
             this.tb_Data_Reg.Name = "tb_Data_Reg";
             this.tb_Data_Reg.Size = new System.Drawing.Size(92, 26);
@@ -268,7 +320,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(23, 32);
+            this.label5.Location = new System.Drawing.Point(23, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 17);
             this.label5.TabIndex = 15;
@@ -277,7 +329,7 @@
             // tb_Descricao_Reg
             // 
             this.tb_Descricao_Reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Descricao_Reg.Location = new System.Drawing.Point(23, 131);
+            this.tb_Descricao_Reg.Location = new System.Drawing.Point(23, 142);
             this.tb_Descricao_Reg.MaxLength = 420;
             this.tb_Descricao_Reg.Multiline = true;
             this.tb_Descricao_Reg.Name = "tb_Descricao_Reg";
@@ -287,10 +339,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(292, 145);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 24);
+            this.label7.Size = new System.Drawing.Size(142, 24);
             this.label7.TabIndex = 16;
             this.label7.Text = "Novo Registro";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -299,7 +351,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::BancoDeHoras.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(572, 481);
+            this.pictureBox1.Location = new System.Drawing.Point(572, 464);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 50);
@@ -308,7 +360,7 @@
             // 
             // btn_Gravar
             // 
-            this.btn_Gravar.Location = new System.Drawing.Point(400, 481);
+            this.btn_Gravar.Location = new System.Drawing.Point(400, 464);
             this.btn_Gravar.Name = "btn_Gravar";
             this.btn_Gravar.Size = new System.Drawing.Size(75, 23);
             this.btn_Gravar.TabIndex = 18;
@@ -318,7 +370,7 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(238, 481);
+            this.btn_Cancelar.Location = new System.Drawing.Point(238, 464);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar.TabIndex = 19;
@@ -330,7 +382,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 542);
+            this.ClientSize = new System.Drawing.Size(713, 522);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Gravar);
             this.Controls.Add(this.pictureBox1);
@@ -351,6 +403,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -384,5 +438,9 @@
         private System.Windows.Forms.Button btn_Gravar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.MaskedTextBox tb_Inicio_Reg;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton rb_Compensacao;
+        private System.Windows.Forms.RadioButton rb_Hora_Extra;
+        private System.Windows.Forms.Label label11;
     }
 }

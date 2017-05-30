@@ -33,5 +33,32 @@ namespace BancoDeHoras.Uteis
 
             return horaExtra;
         }
+
+        public static TimeSpan SomaHoras(TimeSpan ant, TimeSpan entrada)
+        {
+            try
+            {
+                TimeSpan total;
+                total = ant.Add(entrada);
+                return total;
+            }catch(Exception erro)
+            {
+                throw erro;
+            }
+            
+        }
+
+        public static TimeSpan SubtraiHoras(TimeSpan ant, TimeSpan entrada)
+        {
+            try
+            {
+                TimeSpan total;
+                total = ant.Subtract(entrada);
+                return total;
+            }catch(Exception erro)
+            {
+                throw erro;
+            }
+        }
     }
 }

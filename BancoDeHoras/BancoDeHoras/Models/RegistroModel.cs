@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BancoDeHoras.Models
 {
     class RegistroModel
     {
         DateTime data_Reg;
-        TimeSpan qtd_Horas, inicio_HE, fim_HE;
-        string responsavel, descricao;
+        TimeSpan qtd_Horas, inicio_HE, fim_HE, total_Horas;
+        string responsavel, descricao, tipo_Reg;
         int fk_id_Func, id_Reg;
+
 
         public DateTime Data_Reg
         {
@@ -37,6 +39,12 @@ namespace BancoDeHoras.Models
             set { fim_HE = value; }
         }
 
+        public TimeSpan Total_Horas
+        {
+            get { return total_Horas; }
+            set { total_Horas = value; }
+        }
+
         public string Responsavel
         {
             get { return responsavel; }
@@ -48,7 +56,7 @@ namespace BancoDeHoras.Models
             get { return descricao; }
             set { descricao = value; }
         }
-       
+
         public int FK_Id_Func
         {
             get { return fk_id_Func; }
@@ -60,6 +68,11 @@ namespace BancoDeHoras.Models
             get { return id_Reg; }
             set { id_Reg = value; }
         }
-        
+
+        public string Tipo_Reg
+        {
+            get { return tipo_Reg; }
+            set { tipo_Reg = value; }
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BancoDeHoras.Models;
 using BancoDeHoras.BLL;
+using System.Collections;
 
 namespace BancoDeHoras.Views
 {
@@ -37,41 +38,63 @@ namespace BancoDeHoras.Views
         {
             FuncionarioBLL funcBLL = new FuncionarioBLL();
             
-            string cpf = tb_CPF_Pesquisa.Text.Replace(",", "").Replace(".", "").Replace("-", "");
+            string cpf = tb_CPF_Pesquisa.Text.Replace(",", "").Replace(".", "").Replace("-", "").Replace(" ","");
             try
             {
 
                 if (string.IsNullOrEmpty(cpf))
-                {
-                    funcMod = funcBLL.ConsultaFuncByNome(tb_Nome_Pesquisa.Text);
+                {                    
+                    ArrayList listaFunc = new ArrayList();
+                    listaFunc = funcBLL.ListaFuncionarios();
+                    int index;
+                    string nomeCurto;
+                    foreach(string nome in listaFunc)
+                    {                        
+                        index = nome.IndexOf(" ");
+                        nomeCurto = nome.Substring(0, index);
+                        if(nomeCurto == tb_Nome_Pesquisa.Text)
+                        {
+                            funcMod = funcBLL.ConsultaFuncByNome(nome);
+                        }                                          
+                    }
                 }else
                 {
                     funcMod = funcBLL.ConsultaFuncByCPF(cpf);
+                }
+                if (!string.IsNullOrEmpty(funcMod.Nome))
+                {                           
+                    idFunc = funcMod.ID;
+
+                    tb_Nome.Text = funcMod.Nome;
+                    tb_CPF.Text = funcMod.CPF;
+                    tb_Email.Text = funcMod.Email;
+                    tb_Celular.Text = funcMod.Telefone.Replace(" ", "");
+                    tb_Admissao.Text = funcMod.Dt_Admissao.ToString("ddMMyyyy").Replace("-", "/");
+
+                    if (!string.IsNullOrEmpty(funcMod.STR_dt_Demissao))
+                    {
+                        tb_Demissao.Text = funcMod.Dt_Demissao.ToString("ddMMyyyy").Replace("-", "/");
+                    }
+                    else
+                    {
+                        tb_Demissao.Text = null;
+                    }
+                }else
+                {
+                    MessageBox.Show("Funcionário não encontrado.");
                 }
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Funcionário não encontrado. --- " + erro.Message);
             }
-            idFunc = funcMod.ID;
-
-            tb_Nome.Text = funcMod.Nome;
-            tb_CPF.Text = funcMod.CPF;
-            tb_Email.Text = funcMod.Email;
-            tb_Celular.Text = funcMod.Telefone.Replace(" ", "");
-            tb_Admissao.Text = funcMod.Dt_Admissao.ToString("ddMMyyyy").Replace("-", "/");
-
-            if (!string.IsNullOrEmpty(funcMod.STR_dt_Demissao))
-            {
-                tb_Demissao.Text = funcMod.Dt_Demissao.ToString("ddMMyyyy").Replace("-", "/");
-            }else
-            {
-                tb_Demissao.Text = null;
-            }                     
+                                
         }
         
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
+            DadosFuncionario dadosFunc = new DadosFuncionario();
+            dadosFunc.Show();
             this.Close();
         }
 

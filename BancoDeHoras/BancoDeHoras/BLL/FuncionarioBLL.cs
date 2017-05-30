@@ -7,6 +7,7 @@ using BancoDeHoras.DAL;
 using BancoDeHoras.Models;
 using System.Data;
 using System.Collections;
+using BancoDeHoras.Uteis;
 
 
 namespace BancoDeHoras.BLL
@@ -23,17 +24,24 @@ namespace BancoDeHoras.BLL
 
         public void CadFuncionarioBLL(FuncionarioModel funcModel)
         {
-
-            try
+            ScanObjectModel scanFunc = new ScanObjectModel();
+            if (scanFunc.VerificaFuncBranco(funcModel))
             {
-                funcDAL = new FuncionarioDAL();
-                funcDAL.AddUser(funcModel);
+                try
+                {
+                    funcDAL = new FuncionarioDAL();
+                    funcDAL.AddUser(funcModel);
 
-            }
-            catch (Exception erro)
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+            }else
             {
-                throw erro;
+                throw new Exception("Todos os campos devem ser preenchidos.");
             }
+
         }
 
         public FuncionarioModel ConsultaFuncByID(int id_Func)
@@ -95,16 +103,38 @@ namespace BancoDeHoras.BLL
             }
         }
 
-        public void EditFuncionario(FuncionarioModel funcMod)
+        public ArrayList ListaFuncionarios()
         {
             try
             {
                 funcDAL = new FuncionarioDAL();
-                funcDAL.EditFunc(funcMod);
+                return funcDAL.ListaFuncionarios();
             }catch(Exception erro)
             {
                 throw erro;
             }
+        }
+
+        public void EditFuncionario(FuncionarioModel funcMod)
+        {
+            ScanObjectModel scanFunc = new ScanObjectModel();
+            if (scanFunc.VerificaFuncBranco(funcMod))
+            {
+                try
+                {
+                    funcDAL = new FuncionarioDAL();
+                    funcDAL.EditFunc(funcMod);
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+            }
+            else
+            {
+                throw new Exception("Todos os campos devem ser preenchidos.");
+            }
+            
         }
     }
 }

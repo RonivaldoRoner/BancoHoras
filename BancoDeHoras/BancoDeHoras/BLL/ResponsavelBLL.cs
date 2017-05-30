@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BancoDeHoras.DAL;
 using BancoDeHoras.Models;
+using BancoDeHoras.Uteis;
 
 namespace BancoDeHoras.BLL
 {
@@ -20,15 +21,23 @@ namespace BancoDeHoras.BLL
 
         public void cadResponsavelBLL(ResponsavelModel respModel)
         {
-            try
+            ScanObjectModel scanResp = new ScanObjectModel();
+            if (scanResp.VerificaRespBranco(respModel))
             {
-                respDAL = new ResponsavelDAL();
-                respDAL.cadResponsavel(respModel);
-            }
-            catch (Exception erro)
+                try
+                {
+                    respDAL = new ResponsavelDAL();
+                    respDAL.cadResponsavel(respModel);
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+            }else
             {
-                throw erro;
+                throw new Exception("Todos os campos devem ser preenchidos.");
             }
+
         }
 
         public ResponsavelModel consultResponsavel()
@@ -49,15 +58,23 @@ namespace BancoDeHoras.BLL
 
         public void edtResponsBLL(ResponsavelModel respMod)
         {
-            try
+            ScanObjectModel scanResp = new ScanObjectModel();
+            if (scanResp.VerificaRespBranco(respMod))
             {
-                respDAL = new ResponsavelDAL();
-                respDAL.editResponsavel(respMod);
-
-            }catch(Exception erro)
+                try
+                {
+                    respDAL = new ResponsavelDAL();
+                    respDAL.editResponsavel(respMod);
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+            }else
             {
-                throw erro;
+                throw new Exception("Todos os campos devem ser preenchidos.");
             }
+
         }
     }
 }

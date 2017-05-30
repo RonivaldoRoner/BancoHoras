@@ -41,6 +41,8 @@
             this.btn_Novo_Reg = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Reg_Analise = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Individual = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Geral = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -164,9 +166,25 @@
             // 
             // consultasToolStripMenuItem
             // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_Individual,
+            this.btn_Geral});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
             this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // btn_Individual
+            // 
+            this.btn_Individual.Name = "btn_Individual";
+            this.btn_Individual.Size = new System.Drawing.Size(167, 30);
+            this.btn_Individual.Text = "Individual";
+            this.btn_Individual.Click += new System.EventHandler(this.btn_Individual_Click);
+            // 
+            // btn_Geral
+            // 
+            this.btn_Geral.Name = "btn_Geral";
+            this.btn_Geral.Size = new System.Drawing.Size(167, 30);
+            this.btn_Geral.Text = "Geral";
             // 
             // Principal
             // 
@@ -206,5 +224,8 @@
         private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btn_Novo_Reg;
         private System.Windows.Forms.ToolStripMenuItem btn_Reg_Analise;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem btn_Individual;
+        private System.Windows.Forms.ToolStripMenuItem btn_Geral;
     }
 }

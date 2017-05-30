@@ -60,11 +60,7 @@ namespace BancoDeHoras
                     {
                         Principal principal = new Principal();
                         principal.Show();
-                        this.Visible = false;
-
-                        //MessageBox.Show("Teste Instancia --- " + Properties.Settings.Default.InstanciaSQLServer);
-                        //MessageBox.Show("Teste Usuario ---" + Properties.Settings.Default.UserSQL);
-                        //MessageBox.Show("Teste Senha ---" + Properties.Settings.Default.PWSQL);
+                        this.Visible = false;                        
 
                         EmpresaBLL empBLL = new EmpresaBLL();
                         empBLL.CreatDB();
@@ -81,6 +77,9 @@ namespace BancoDeHoras
 
                         RegistroBLL regBLL = new RegistroBLL();
                         regBLL.CreateTableReg();
+
+                        RegistroDefinitivoBLL regDefBLL = new RegistroDefinitivoBLL();
+                        regDefBLL.CreateTableRegDefinitivo();
                         
                     }
                     catch(Exception erro)

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BancoDeHoras.BLL;
 using BancoDeHoras.Models;
 using System.Collections;
+using BancoDeHoras.Uteis;
 
 namespace BancoDeHoras.Views
 {
@@ -54,7 +55,6 @@ namespace BancoDeHoras.Views
             {
                 MessageBox.Show("" + erro.Message);
             }
-
         }
 
         private void cb_Func_Reg_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,6 +77,7 @@ namespace BancoDeHoras.Views
                     tb_Fim_Reg.Text = regMod.Fim_HE.ToString(); //3052017/16/05/2010
                     tb_Qtd_HE.Text = regMod.Qtd_Horas.ToString();
                     tb_Descricao_Reg.Text = regMod.Descricao;
+                    tb_Tipo_Registro.Text = regMod.Tipo_Reg;
 
                     id_Registro = regMod.ID_Reg;                    
                 }
@@ -90,7 +91,7 @@ namespace BancoDeHoras.Views
                 regBLL.DeleteReg(id_Registro);
                 string itemSelecionado = cb_Func_Reg.SelectedItem.ToString();
                 cb_Func_Reg.Items.Remove(itemSelecionado);
-                if(cb_Func_Reg.Items.Count <= 0)
+                if(cb_Func_Reg.Items.Count < 0)
                 {
                     this.Close();
                 }
@@ -104,7 +105,39 @@ namespace BancoDeHoras.Views
 
         private void btn_Confirmar_Click(object sender, EventArgs e)
         {
+            RegistroModel ultiRegistro = new RegistroModel();
+            RegistroDefinitivoBLL regDefinBLL = new RegistroDefinitivoBLL();
 
+            ultiRegistro = regDefinBLL.UltimoRegistroBLL(regMod.FK_Id_Func);          
+            
+
+            try
+            {
+                try
+                {
+                    switch (regMod.Tipo_Reg)
+                    {
+                        case "Hora Extra":
+                            regMod.Total_Horas = CalculaHE.SomaHoras(ultiRegistro.Total_Horas, regMod.Qtd_Horas);
+                            break;
+                        case "Compensaçao":
+                            regMod.Total_Horas = CalculaHE.SubtraiHoras(ultiRegistro.Total_Horas, regMod.Qtd_Horas);
+                            break;
+                    }
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro ao calculas horas" + erro.Message);
+                }
+
+                regDefinBLL.AddRegDefinitivo(regMod);
+                regBLL.DeleteReg(regMod.ID_Reg);
+                MessageBox.Show("Registro inserido com sucesso.");                                          
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao gravar dados na tabela de Registro. -- " + erro.Message);
+            }
         }
     }
 }

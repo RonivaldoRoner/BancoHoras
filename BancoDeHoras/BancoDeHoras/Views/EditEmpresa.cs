@@ -58,7 +58,9 @@ namespace BancoDeHoras.Views
             {
                 MessageBox.Show("Erro na edição de dados." + erro);
             }
-
+            DadosEmpresa dadosEmp = new DadosEmpresa();
+            dadosEmp.Show();
+            this.Visible = false;
 
         }
 

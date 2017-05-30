@@ -355,7 +355,7 @@
             // 
             // tb_Nome_Pesquisa
             // 
-            this.tb_Nome_Pesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.tb_Nome_Pesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tb_Nome_Pesquisa.Location = new System.Drawing.Point(20, 20);
             this.tb_Nome_Pesquisa.Name = "tb_Nome_Pesquisa";
             this.tb_Nome_Pesquisa.Size = new System.Drawing.Size(363, 26);

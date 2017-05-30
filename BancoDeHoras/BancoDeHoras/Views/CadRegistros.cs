@@ -58,7 +58,16 @@ namespace BancoDeHoras.Views
         {
             RegistroBLL regBLL = new RegistroBLL();
             RegistroModel regMod = new RegistroModel();
-            
+            if (rb_Hora_Extra.Checked)
+            {
+                regMod.Tipo_Reg = "Hora Extra";
+                MessageBox.Show("Hora Extra --" + regMod.Tipo_Reg);
+            }
+            if (rb_Compensacao.Checked)
+            {
+                regMod.Tipo_Reg = "Compensaçao";
+                MessageBox.Show("Compensação --" + regMod.Tipo_Reg);
+            }
 
             try
             {

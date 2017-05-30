@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BancoDeHoras.DAL;
 using BancoDeHoras.Models;
 using System.Data;
+using BancoDeHoras.Uteis;
 
 namespace BancoDeHoras.BLL
 {
@@ -15,8 +16,16 @@ namespace BancoDeHoras.BLL
 
         public void CreatDB()
         {
-            empresaDAL = new EmpresaDAL();
-            empresaDAL.CreatDB();            
+            try
+            {
+                empresaDAL = new EmpresaDAL();
+                empresaDAL.CreatDB();
+            }
+            catch(Exception erro)
+            {
+                throw erro;
+            }
+                      
         }
         
         public void CreatTbEmpresa()
@@ -27,14 +36,22 @@ namespace BancoDeHoras.BLL
        
         public void cadEmpresaBLL(EmpresaModel empModel)
         {
-            try
+            ScanObjectModel scanMod = new ScanObjectModel();
+
+            if (scanMod.VerificaEmpresaBranco(empModel))
             {
-                empresaDAL = new EmpresaDAL();
-                empresaDAL.CadEmpresa(empModel);                
-                
-            }catch(Exception erro)
+                try
+                {
+                    empresaDAL = new EmpresaDAL();
+                    empresaDAL.CadEmpresa(empModel);
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+            }else
             {
-                throw erro;
+                throw new Exception("Todos os campos devem ser preenchidos.");
             }
         }              
 
@@ -59,15 +76,24 @@ namespace BancoDeHoras.BLL
 
         public void editEmpresaBLL(EmpresaModel empModel)
         {
-            try
+            ScanObjectModel scanMod = new ScanObjectModel();
+
+            if (scanMod.VerificaEmpresaBranco(empModel))
             {
-                empresaDAL = new EmpresaDAL();
-                empresaDAL.EditEmpresa(empModel); 
-                
-            }catch(Exception erro)
+                try
+                {
+                    empresaDAL = new EmpresaDAL();
+                    empresaDAL.EditEmpresa(empModel);
+                }
+                catch (Exception erro)
+                {
+                    throw erro;
+                }
+            }else
             {
-                throw erro; 
+                throw new Exception("Todos os campos devem ser preenchidos.");
             }
+
         }
         
     }

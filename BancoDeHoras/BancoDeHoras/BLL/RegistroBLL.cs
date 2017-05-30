@@ -30,7 +30,7 @@ namespace BancoDeHoras.BLL
         {
             regDAL = new RegistroDAL();
             ScanObjectModel scanObject = new ScanObjectModel();
-            if (scanObject.OMRegistros(regMod))
+            if (scanObject.VerificaRegBranco(regMod))
             {
                 try
                 {
@@ -84,3 +84,4 @@ namespace BancoDeHoras.BLL
         }
     }
 }
+

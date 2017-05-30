@@ -216,7 +216,7 @@ namespace BancoDeHoras.DAL
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE nome LIKE %@nome%", conexao);
+                SqlCommand selectFunc = new SqlCommand("SELECT * FROM Funcionarios WHERE nome LIKE @nome", conexao);
                 selectFunc.Parameters.AddWithValue("@nome", nome);
                 conexao.Open();
 
@@ -267,6 +267,34 @@ namespace BancoDeHoras.DAL
 
             conexao = new SqlConnection(conexao_BD);
             SqlCommand selectGer = new SqlCommand("SELECT * FROM Funcionarios WHERE tipo = 1", conexao);
+            SqlDataReader leitor;
+            conexao.Open();
+            leitor = selectGer.ExecuteReader(CommandBehavior.CloseConnection);
+            ArrayList gerente = new ArrayList();
+
+            try
+            {
+                while (leitor.Read())
+                {
+                    gerente.Add(leitor["nome"].ToString());
+                }
+
+                return gerente;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public ArrayList ListaFuncionarios()
+        {
+            conexao = new SqlConnection(conexao_BD);
+            SqlCommand selectGer = new SqlCommand("SELECT nome FROM Funcionarios", conexao);
             SqlDataReader leitor;
             conexao.Open();
             leitor = selectGer.ExecuteReader(CommandBehavior.CloseConnection);

@@ -10,9 +10,9 @@ namespace BancoDeHoras.Models
     class RegistroModel
     {
         DateTime data_Reg;
-        TimeSpan qtd_Horas, inicio_HE, fim_HE, total_Horas;
-        string responsavel, descricao, tipo_Reg;
-        int fk_id_Func, id_Reg;
+        TimeSpan qtd_Horas, inicio_HE, fim_HE;
+        string responsavel, descricao, tipo_Reg, saldo_Horas;
+        int fk_id_Func, id_Reg, saldo_Dias;
 
 
         public DateTime Data_Reg
@@ -37,13 +37,7 @@ namespace BancoDeHoras.Models
         {
             get { return fim_HE; }
             set { fim_HE = value; }
-        }
-
-        public TimeSpan Total_Horas
-        {
-            get { return total_Horas; }
-            set { total_Horas = value; }
-        }
+        }        
 
         public string Responsavel
         {
@@ -73,6 +67,18 @@ namespace BancoDeHoras.Models
         {
             get { return tipo_Reg; }
             set { tipo_Reg = value; }
+        }
+
+       public string Saldo_Horas
+        {
+            get { return saldo_Horas; }
+            set { saldo_Horas = value; }
+        }
+
+        public int Saldo_Dias
+        {
+            get { return saldo_Dias; }
+            set { saldo_Dias = value; }
         }
     }
 }

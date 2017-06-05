@@ -33,7 +33,8 @@ namespace BancoDeHoras.DAL
                                                         "qtd_HE TIME NOT NULL," +
                                                         "responsavel VARCHAR(40) NOT NULL," +                                                        
                                                         "descricao VARCHAR(420) NOT NULL," +
-                                                        "total_Horas TIME " +
+                                                        "saldo_Dias int, " +
+                                                        "saldo_Horas varchar(20) " +
                                                         ");", conexao);
                 conexao.Open();
                 createTable.ExecuteNonQuery();
@@ -53,8 +54,8 @@ namespace BancoDeHoras.DAL
             try
             {
                 conexao = new SqlConnection(conexao_BD);
-                SqlCommand inseriReg = new SqlCommand("INSERT INTO RegDefinitivo(fk_id_Func, dt_Reg, tipo_Reg, inicio_HE, fim_HE, qtd_HE, total_Horas, responsavel, descricao)" +
-                                                                    "VALUES(@fk_id_Func, @dt_Reg, @tipo_Reg, @inicio_HE, @fim_HE, @qtd_HE, @total_Horas, @responsavel, @descricao)", conexao);
+                SqlCommand inseriReg = new SqlCommand("INSERT INTO RegDefinitivo(fk_id_Func, dt_Reg, tipo_Reg, inicio_HE, fim_HE, qtd_HE, saldo_Dias, saldo_Horas, responsavel, descricao)" +
+                                                                    "VALUES(@fk_id_Func, @dt_Reg, @tipo_Reg, @inicio_HE, @fim_HE, @qtd_HE, @saldo_Dias, @saldo_Horas, @responsavel, @descricao)", conexao);
 
                 inseriReg.Parameters.AddWithValue("@fk_id_Func", regMod.FK_Id_Func);
                 inseriReg.Parameters.AddWithValue("@dt_Reg", regMod.Data_Reg);
@@ -63,7 +64,8 @@ namespace BancoDeHoras.DAL
                 inseriReg.Parameters.AddWithValue("@fim_HE", regMod.Fim_HE);
                 inseriReg.Parameters.AddWithValue("@qtd_HE", regMod.Qtd_Horas);
                 inseriReg.Parameters.AddWithValue("@responsavel", regMod.Responsavel);
-                inseriReg.Parameters.AddWithValue("@total_Horas", regMod.Total_Horas);
+                inseriReg.Parameters.AddWithValue("@saldo_Dias", regMod.Saldo_Dias);
+                inseriReg.Parameters.AddWithValue("@saldo_Horas", regMod.Saldo_Horas);
                 inseriReg.Parameters.AddWithValue("@descricao", regMod.Descricao);
 
                 conexao.Open();
@@ -106,7 +108,8 @@ namespace BancoDeHoras.DAL
                         regMod.Qtd_Horas = TimeSpan.Parse(leitor["qtd_HE"].ToString());
                         regMod.Responsavel = leitor["responsavel"].ToString();
                         regMod.Descricao = leitor["descricao"].ToString();
-                        regMod.Total_Horas = TimeSpan.Parse(leitor["total_Horas"].ToString());
+                        regMod.Saldo_Dias = Convert.ToInt32(leitor["saldo_Dias"]);
+                        regMod.Saldo_Horas = leitor["saldo_Horas"].ToString();
                         regMod.ID_Reg = Convert.ToInt32(leitor["id_Reg"]);
                         i = Convert.ToInt32(leitor["id_Reg"]);
                     }
@@ -151,7 +154,8 @@ namespace BancoDeHoras.DAL
                         regMod.Qtd_Horas = TimeSpan.Parse(leitor["qtd_HE"].ToString());
                         regMod.Responsavel = leitor["responsavel"].ToString();
                         regMod.Descricao = leitor["descricao"].ToString();
-                        regMod.Total_Horas = TimeSpan.Parse(leitor["total_Horas"].ToString());
+                        regMod.Saldo_Horas = leitor["saldo_Horas"].ToString();
+                        regMod.Saldo_Dias = Convert.ToInt32(leitor["saldo_Dias"]);
                         regMod.ID_Reg = Convert.ToInt32(leitor["id_Reg"]);
                         i = Convert.ToInt32(leitor["id_Reg"]);
                     }

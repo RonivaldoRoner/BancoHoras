@@ -185,6 +185,7 @@
             this.btn_Geral.Name = "btn_Geral";
             this.btn_Geral.Size = new System.Drawing.Size(167, 30);
             this.btn_Geral.Text = "Geral";
+            this.btn_Geral.Click += new System.EventHandler(this.btn_Geral_Click);
             // 
             // Principal
             // 

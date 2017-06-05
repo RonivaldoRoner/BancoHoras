@@ -22,7 +22,8 @@ namespace BancoDeHoras.Views
         FuncionarioModel funcMod = new FuncionarioModel();
         RegistroBLL regBLL = new RegistroBLL();
         ArrayList registros = new ArrayList();
-        RegistroModel regMod = new RegistroModel();
+        RegistroModel regMod = new RegistroModel();   
+
 
         int id_Registro;     
 
@@ -107,37 +108,80 @@ namespace BancoDeHoras.Views
         {
             RegistroModel ultiRegistro = new RegistroModel();
             RegistroDefinitivoBLL regDefinBLL = new RegistroDefinitivoBLL();
+            ultiRegistro = regDefinBLL.UltimoRegistroBLL(regMod.FK_Id_Func);            
+            TimeSpan difHoras = CalculaHE.CalcMinutos(TimeSpan.Parse(tb_Fim_Reg.Text).Subtract(TimeSpan.Parse(tb_Inicio_Reg.Text)));
+            TimeSpan somaSaldoHrs;
+            TimeSpan saldoAnt = TimeSpan.Parse(ultiRegistro.Saldo_Horas);          
 
-            ultiRegistro = regDefinBLL.UltimoRegistroBLL(regMod.FK_Id_Func);          
-            
-
-            try
+            if (ultiRegistro.ID_Reg > 0)
             {
+                TimeSpan saldo = TimeSpan.Parse(ultiRegistro.Saldo_Horas);
                 try
                 {
-                    switch (regMod.Tipo_Reg)
+                    try
                     {
-                        case "Hora Extra":
-                            regMod.Total_Horas = CalculaHE.SomaHoras(ultiRegistro.Total_Horas, regMod.Qtd_Horas);
-                            break;
-                        case "Compensaçao":
-                            regMod.Total_Horas = CalculaHE.SubtraiHoras(ultiRegistro.Total_Horas, regMod.Qtd_Horas);
-                            break;
+                        TimeSpan horaDia = TimeSpan.Parse("23:59");
+                        if (regMod.Tipo_Reg == "Hora Extra")
+                        {
+                            somaSaldoHrs = saldo.Add(difHoras);
+
+                            if (somaSaldoHrs > horaDia)
+                            {
+                                regMod.Saldo_Horas = CalculaHE.Qtd_Horas_Superior_24(somaSaldoHrs, ultiRegistro.Saldo_Dias).Item2;
+                                regMod.Saldo_Dias = CalculaHE.Qtd_Horas_Superior_24(somaSaldoHrs, ultiRegistro.Saldo_Dias).Item1;
+                            }
+                            else
+                            {
+                                regMod.Saldo_Horas = somaSaldoHrs.ToString();
+                                regMod.Saldo_Dias = ultiRegistro.Saldo_Dias;
+                            }                                             
+                        }
+                        if (regMod.Tipo_Reg == "Compensaçao")
+                        {                            
+                            if(saldo < difHoras)
+                            {
+                                somaSaldoHrs = saldo.Subtract(difHoras);
+                                regMod.Saldo_Horas = CalculaHE.Qtd_Horas_Inferior_24(somaSaldoHrs, ultiRegistro.Saldo_Dias).Item2;
+                                regMod.Saldo_Dias = CalculaHE.Qtd_Horas_Inferior_24(somaSaldoHrs, ultiRegistro.Saldo_Dias).Item1;
+                            }
+                            else
+                            {
+                                somaSaldoHrs = saldo.Subtract(difHoras);
+                                regMod.Saldo_Horas = saldoAnt.Subtract(difHoras).ToString();
+                                regMod.Saldo_Dias = ultiRegistro.Saldo_Dias;
+                            }                                                       
+                        }
+
                     }
+                    catch (Exception erro)
+                    {
+                        MessageBox.Show("Erro ao calculas horas" + erro.Message);
+                    }
+
+                    regDefinBLL.AddRegDefinitivo(regMod);
+                    regBLL.DeleteReg(regMod.ID_Reg);
+                    MessageBox.Show("Registro inserido com sucesso.");
                 }
                 catch (Exception erro)
                 {
-                    MessageBox.Show("Erro ao calculas horas" + erro.Message);
+                    MessageBox.Show("Erro ao gravar dados na tabela de Registro. -- " + erro.Message);
                 }
-
-                regDefinBLL.AddRegDefinitivo(regMod);
-                regBLL.DeleteReg(regMod.ID_Reg);
-                MessageBox.Show("Registro inserido com sucesso.");                                          
-            }
-            catch (Exception erro)
+            }else
             {
-                MessageBox.Show("Erro ao gravar dados na tabela de Registro. -- " + erro.Message);
+                try
+                {
+                    regMod.Saldo_Horas = difHoras.ToString();
+                    regDefinBLL.AddRegDefinitivo(regMod);
+                    regBLL.DeleteReg(regMod.ID_Reg);
+                    MessageBox.Show("Registro inserido com sucesso.");
+                }
+                catch(Exception erro)
+                {
+                    MessageBox.Show("Erro ao gravar registro no Banco de Dados. --- " + erro.Message);
+                }
             }
+            cb_Func_Reg.SelectedItem = -1;
         }
+            
     }
 }

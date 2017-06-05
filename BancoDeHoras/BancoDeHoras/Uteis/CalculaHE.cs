@@ -12,53 +12,74 @@ namespace BancoDeHoras.Uteis
         public static TimeSpan CalcMinutos(TimeSpan he)
         {
             int horas = Convert.ToInt32(he.Hours);
-            int minutos = Convert.ToInt32(he.Minutes);            
+            int minutos = Convert.ToInt32(he.Minutes);
 
-            if((minutos > 14) && (minutos < 45))
+            if ((minutos > 14) && (minutos < 45))
             {
                 minutos = 30;
-            }else
+            }
+            else
             {
-                if(minutos > 44)
+                if (minutos > 44)
                 {
                     horas += 1;
                     minutos = 0;
-                }else
+                }
+                else
                 {
                     minutos = 0;
                 }
-            }          
+            }
 
             TimeSpan horaExtra = new TimeSpan(0, horas, minutos, 0);
-
             return horaExtra;
         }
 
-        public static TimeSpan SomaHoras(TimeSpan ant, TimeSpan entrada)
+        public static Tuple<int, string> Qtd_Horas_Superior_24(TimeSpan qtdHoras, int qtdDias)
         {
             try
-            {
-                TimeSpan total;
-                total = ant.Add(entrada);
-                return total;
-            }catch(Exception erro)
+            {                                
+                TimeSpan diaHoras = TimeSpan.Parse("23:59");
+
+                while (qtdHoras > diaHoras)
+                {
+                    qtdDias++;
+                    qtdHoras = qtdHoras.Subtract(diaHoras);
+                    qtdHoras = qtdHoras.Subtract(TimeSpan.Parse("00:01"));
+                }
+
+                string strQtdHoras = qtdHoras.ToString();
+
+
+                return new Tuple<int, string>(qtdDias, strQtdHoras);
+            }
+            catch (Exception erro)
             {
                 throw erro;
             }
-            
         }
 
-        public static TimeSpan SubtraiHoras(TimeSpan ant, TimeSpan entrada)
+        public static Tuple<int, string> Qtd_Horas_Inferior_24(TimeSpan qtdHoras, int qtdDias)
         {
             try
-            {
-                TimeSpan total;
-                total = ant.Subtract(entrada);
-                return total;
-            }catch(Exception erro)
+            {                                             
+                TimeSpan diaHoras = TimeSpan.Parse("23:59");
+                
+                while (qtdHoras < TimeSpan.Parse("00:00"))
+                {
+                    qtdDias--;
+                    qtdHoras = qtdHoras.Add(diaHoras);
+                    qtdHoras = qtdHoras.Add(TimeSpan.Parse("00:01"));
+                }
+
+                string strQtdHoras = qtdHoras.ToString();
+                return new Tuple<int, string>(qtdDias, strQtdHoras);
+            }
+            catch (Exception erro)
             {
                 throw erro;
             }
         }
+
     }
 }

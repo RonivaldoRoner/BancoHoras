@@ -70,5 +70,10 @@ namespace BancoDeHoras.Views
         {
 
         }
+
+        private void btn_Geral_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

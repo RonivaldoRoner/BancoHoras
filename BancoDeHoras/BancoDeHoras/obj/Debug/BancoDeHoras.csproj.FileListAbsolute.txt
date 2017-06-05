@@ -1,4 +1,7 @@
-D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.csprojResolveAssemblyReference.cache
+D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\bin\Debug\BancoDeHoras.exe.config
+D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\bin\Debug\BancoDeHoras.exe
+D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\bin\Debug\BancoDeHoras.pdb
+D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\bin\Debug\pt-BR\BancoDeHoras.resources.dll
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.Administrador.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.CadastroEmp.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.CadastroFunc.resources
@@ -19,10 +22,7 @@ D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.R
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Usuario.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.Views.CadastroFunc.pt-BR.resources
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.csproj.GenerateResource.Cache
-D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\bin\Debug\BancoDeHoras.exe.config
-D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\bin\Debug\BancoDeHoras.exe
-D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\bin\Debug\BancoDeHoras.pdb
-D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\bin\Debug\pt-BR\BancoDeHoras.resources.dll
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\pt-BR\BancoDeHoras.resources.dll
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.exe
 D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.pdb
+D:\ProjectVS\BancoHoras\BancoDeHoras\BancoDeHoras\obj\Debug\BancoDeHoras.csprojResolveAssemblyReference.cache

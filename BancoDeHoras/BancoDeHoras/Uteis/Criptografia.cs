@@ -14,7 +14,7 @@ namespace BancoDeHoras.Uteis
         public static string Criptografar(string Message)
         {
             byte[] Results;
-            System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
+            UTF8Encoding UTF8 = new UTF8Encoding();
             MD5CryptoServiceProvider HashProvider = new MD5CryptoServiceProvider();
             byte[] TDESKey = HashProvider.ComputeHash(UTF8.GetBytes(senha));
             TripleDESCryptoServiceProvider TDESAlgorithm = new TripleDESCryptoServiceProvider();
@@ -38,7 +38,7 @@ namespace BancoDeHoras.Uteis
         public static string Descriptografar(string Message)
         {
             byte[] Results;
-            System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
+            UTF8Encoding UTF8 = new UTF8Encoding();
             MD5CryptoServiceProvider HashProvider = new MD5CryptoServiceProvider();
             byte[] TDESKey = HashProvider.ComputeHash(UTF8.GetBytes(senha));
             TripleDESCryptoServiceProvider TDESAlgorithm = new TripleDESCryptoServiceProvider();

@@ -21,7 +21,7 @@ namespace BancoDeHoras.Views
             if(Login.tipo_usuario != 1)
             {
                 btn_Reg_Analise.Enabled = false;
-                btn_Geral.Enabled = false;
+                btn_Geral.Enabled = false;                
             }                  
         }
         //cadastro de empresa
@@ -68,7 +68,8 @@ namespace BancoDeHoras.Views
 
         private void btn_Individual_Click(object sender, EventArgs e)
         {
-
+            ConsultaIndividual consIndividual = new ConsultaIndividual();
+            consIndividual.Show();
         }
 
         private void btn_Geral_Click(object sender, EventArgs e)

@@ -38,7 +38,7 @@ namespace BancoDeHoras.Uteis
         public static Tuple<int, string> Qtd_Horas_Superior_24(TimeSpan qtdHoras, int qtdDias)
         {
             try
-            {                                
+            {
                 TimeSpan diaHoras = TimeSpan.Parse("23:59");
 
                 while (qtdHoras > diaHoras)
@@ -49,8 +49,6 @@ namespace BancoDeHoras.Uteis
                 }
 
                 string strQtdHoras = qtdHoras.ToString();
-
-
                 return new Tuple<int, string>(qtdDias, strQtdHoras);
             }
             catch (Exception erro)
@@ -62,9 +60,9 @@ namespace BancoDeHoras.Uteis
         public static Tuple<int, string> Qtd_Horas_Inferior_24(TimeSpan qtdHoras, int qtdDias)
         {
             try
-            {                                             
+            {
                 TimeSpan diaHoras = TimeSpan.Parse("23:59");
-                
+
                 while (qtdHoras < TimeSpan.Parse("00:00"))
                 {
                     qtdDias--;

@@ -143,8 +143,15 @@ namespace BancoDeHoras.Views
                             if (saldo < difHoras)
                             {
                                 somaSaldoHrs = saldo.Subtract(difHoras);
-                                regMod.Saldo_Horas = CalculaHE.Qtd_Horas_Inferior_24(somaSaldoHrs, ultiRegistro.Saldo_Dias).Item2;
-                                regMod.Saldo_Dias = CalculaHE.Qtd_Horas_Inferior_24(somaSaldoHrs, ultiRegistro.Saldo_Dias).Item1;
+                                if(ultiRegistro.Saldo_Dias > 0)
+                                {
+                                    regMod.Saldo_Horas = CalculaHE.Qtd_Horas_Inferior_24(somaSaldoHrs, ultiRegistro.Saldo_Dias).Item2;
+                                    regMod.Saldo_Dias = CalculaHE.Qtd_Horas_Inferior_24(somaSaldoHrs, ultiRegistro.Saldo_Dias).Item1;
+                                }else
+                                {
+                                    regMod.Saldo_Dias = ultiRegistro.Saldo_Dias;
+                                    regMod.Saldo_Horas = somaSaldoHrs.ToString();
+                                }                                
                             }
                             else
                             {
@@ -153,7 +160,6 @@ namespace BancoDeHoras.Views
                                 regMod.Saldo_Dias = ultiRegistro.Saldo_Dias;
                             }
                         }
-
                     }
                     catch (Exception erro)
                     {

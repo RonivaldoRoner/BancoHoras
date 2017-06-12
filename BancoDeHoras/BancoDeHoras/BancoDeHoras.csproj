@@ -54,6 +54,7 @@
     <Compile Include="BLL\RegistroDefinitivoBLL.cs" />
     <Compile Include="BLL\ResponsavelBLL.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
+    <Compile Include="DAL\ConsultasDAL.cs" />
     <Compile Include="DAL\EmpresaDAL.cs" />
     <Compile Include="DAL\FuncionarioDAL.cs" />
     <Compile Include="DAL\RegistroDAL.cs" />
@@ -102,6 +103,12 @@
     </Compile>
     <Compile Include="Views\CadUsuario.Designer.cs">
       <DependentUpon>CadUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConsultaIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConsultaIndividual.Designer.cs">
+      <DependentUpon>ConsultaIndividual.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\DadosEmpresa.cs">
       <SubType>Form</SubType>
@@ -192,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CadUsuario.resx">
       <DependentUpon>CadUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConsultaIndividual.resx">
+      <DependentUpon>ConsultaIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DadosEmpresa.resx">
       <DependentUpon>DadosEmpresa.cs</DependentUpon>

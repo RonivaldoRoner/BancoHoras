@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BancoDeHoras.Models;
 
 namespace BancoDeHoras.DAL
 {
@@ -55,6 +56,79 @@ namespace BancoDeHoras.DAL
             }
 
 
+        }
+
+        public ArrayList Consult_Id_Registros(int id)
+        {
+            try
+            {
+                conexao = new SqlConnection(conexao_BD);
+                SqlCommand selectIdRegistros = new SqlCommand("SELECT id_Reg FROM RegDefinitivo WHERE fk_id_Func LIKE @fk_id_Func ORDER BY id_Reg DESC;", conexao);
+                selectIdRegistros.Parameters.AddWithValue("@fk_id_Func", id);
+
+                SqlDataReader leitor;
+                conexao.Open();
+
+                leitor = selectIdRegistros.ExecuteReader(CommandBehavior.CloseConnection);
+                ArrayList listaIdReg = new ArrayList();
+
+                while (leitor.Read())
+                {
+                    listaIdReg.Add(leitor["id_Reg"].ToString());
+                }
+
+                return listaIdReg;
+            }
+            catch(Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                conexao.Close();
+            }    
+        }
+
+        public RegistroModel Consult_Registro(int id_Reg)
+        {
+            try
+            {
+                conexao = new SqlConnection(conexao_BD);
+                SqlCommand selectRegistro = new SqlCommand("SELECT * FROM RegDefinitivo WHERE id_Reg like @id_Reg;", conexao);
+                selectRegistro.Parameters.AddWithValue("@id_Reg", id_Reg);
+
+                SqlDataReader leitor;
+                conexao.Open();
+
+                leitor = selectRegistro.ExecuteReader(CommandBehavior.CloseConnection);
+                RegistroModel regMod = new RegistroModel();
+
+                while (leitor.Read())
+                {
+                    regMod.Data_Reg = Convert.ToDateTime(leitor["dt_Reg"]);
+                    regMod.Tipo_Reg = leitor["tipo_Reg"].ToString();
+                    regMod.Inicio_HE = TimeSpan.Parse(leitor["inicio_HE"].ToString());
+                    regMod.Fim_HE = TimeSpan.Parse(leitor["fim_HE"].ToString());
+                    regMod.Qtd_Horas = TimeSpan.Parse(leitor["qtd_HE"].ToString());
+                    regMod.Responsavel = leitor["responsavel"].ToString();
+                    regMod.Descricao = leitor["descricao"].ToString();
+                    regMod.Saldo_Dias = Convert.ToInt32(leitor["saldo_Dias"]);
+                    regMod.Saldo_Horas = leitor["saldo_Horas"].ToString();
+                    regMod.ID_Reg = Convert.ToInt32(leitor["id_Reg"]);
+
+                }
+
+                return regMod;
+
+            }
+            catch(Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                conexao.Close();
+            }
         }
     }
 }

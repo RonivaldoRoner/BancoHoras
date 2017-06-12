@@ -9,6 +9,38 @@ namespace BancoDeHoras.Uteis
 {
     class CalculaHE
     {
+        public static string FormataHora(TimeSpan Registro)
+        {
+            string hrFormat;
+            try
+            {
+                int horas = Registro.Hours;
+                int minut = Registro.Minutes;
+                
+
+                if((horas < 10)&&(horas > -10))
+                {
+                    hrFormat = "0" + horas;
+                }else
+                {
+                    hrFormat = horas.ToString();
+                }
+                if(minut < 10)
+                {
+                    hrFormat += ":00";
+                }else
+                {
+                    hrFormat += ":"+minut;
+                }
+
+            }catch(Exception erro)
+            {
+                throw erro;
+            }
+
+            return hrFormat;
+        }                    
+
         public static TimeSpan CalcMinutos(TimeSpan he)
         {
             int horas = Convert.ToInt32(he.Hours);

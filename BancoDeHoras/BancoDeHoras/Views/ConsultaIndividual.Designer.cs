@@ -40,27 +40,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dg_Lista_Registros = new System.Windows.Forms.DataGridView();
+            this.btn_Filtra_Data = new System.Windows.Forms.Button();
+            this.tb_Data_Filtro_Final = new System.Windows.Forms.MaskedTextBox();
+            this.tb_Data_Filtro_Inicio = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lv_Cons_Individual = new System.Windows.Forms.ListView();
-            this.col_Data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.col_Tipo_Reg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.col_Reg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.col_Saldo_Horas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.col_Saldo_Dias = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.col_Detalhes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lb_TotalDias = new System.Windows.Forms.Label();
             this.lb_TotalHoras = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tb_Data_Filtro_Inicio = new System.Windows.Forms.MaskedTextBox();
-            this.tb_Data_Filtro_Final = new System.Windows.Forms.MaskedTextBox();
-            this.btn_Filtra_Data = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_Lista_Registros)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -183,17 +178,54 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.dg_Lista_Registros);
             this.panel2.Controls.Add(this.btn_Filtra_Data);
             this.panel2.Controls.Add(this.tb_Data_Filtro_Final);
             this.panel2.Controls.Add(this.tb_Data_Filtro_Inicio);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.lv_Cons_Individual);
             this.panel2.Location = new System.Drawing.Point(12, 138);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(684, 385);
             this.panel2.TabIndex = 24;
+            // 
+            // dg_Lista_Registros
+            // 
+            this.dg_Lista_Registros.AllowUserToOrderColumns = true;
+            this.dg_Lista_Registros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_Lista_Registros.Location = new System.Drawing.Point(20, 64);
+            this.dg_Lista_Registros.Name = "dg_Lista_Registros";
+            this.dg_Lista_Registros.Size = new System.Drawing.Size(621, 314);
+            this.dg_Lista_Registros.TabIndex = 14;
+            // 
+            // btn_Filtra_Data
+            // 
+            this.btn_Filtra_Data.Location = new System.Drawing.Point(566, 35);
+            this.btn_Filtra_Data.Name = "btn_Filtra_Data";
+            this.btn_Filtra_Data.Size = new System.Drawing.Size(75, 23);
+            this.btn_Filtra_Data.TabIndex = 13;
+            this.btn_Filtra_Data.Text = "Filtrar";
+            this.btn_Filtra_Data.UseVisualStyleBackColor = true;
+            this.btn_Filtra_Data.Click += new System.EventHandler(this.btn_Filtra_Data_Click);
+            // 
+            // tb_Data_Filtro_Final
+            // 
+            this.tb_Data_Filtro_Final.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Data_Filtro_Final.Location = new System.Drawing.Point(330, 32);
+            this.tb_Data_Filtro_Final.Mask = "00/00/0000";
+            this.tb_Data_Filtro_Final.Name = "tb_Data_Filtro_Final";
+            this.tb_Data_Filtro_Final.Size = new System.Drawing.Size(94, 26);
+            this.tb_Data_Filtro_Final.TabIndex = 12;
+            // 
+            // tb_Data_Filtro_Inicio
+            // 
+            this.tb_Data_Filtro_Inicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Data_Filtro_Inicio.Location = new System.Drawing.Point(91, 32);
+            this.tb_Data_Filtro_Inicio.Mask = "00/00/0000";
+            this.tb_Data_Filtro_Inicio.Name = "tb_Data_Filtro_Inicio";
+            this.tb_Data_Filtro_Inicio.Size = new System.Drawing.Size(94, 26);
+            this.tb_Data_Filtro_Inicio.TabIndex = 11;
             // 
             // label4
             // 
@@ -209,59 +241,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 38);
+            this.label3.Location = new System.Drawing.Point(31, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Inicial:";
-            // 
-            // lv_Cons_Individual
-            // 
-            this.lv_Cons_Individual.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.col_Data,
-            this.col_Tipo_Reg,
-            this.col_Reg,
-            this.col_Saldo_Horas,
-            this.col_Saldo_Dias,
-            this.col_Detalhes});
-            this.lv_Cons_Individual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lv_Cons_Individual.GridLines = true;
-            this.lv_Cons_Individual.Location = new System.Drawing.Point(3, 64);
-            this.lv_Cons_Individual.Name = "lv_Cons_Individual";
-            this.lv_Cons_Individual.Size = new System.Drawing.Size(672, 314);
-            this.lv_Cons_Individual.TabIndex = 0;
-            this.lv_Cons_Individual.UseCompatibleStateImageBehavior = false;
-            this.lv_Cons_Individual.View = System.Windows.Forms.View.Details;
-            // 
-            // col_Data
-            // 
-            this.col_Data.Text = "Data";
-            this.col_Data.Width = 122;
-            // 
-            // col_Tipo_Reg
-            // 
-            this.col_Tipo_Reg.Text = "Tipo";
-            this.col_Tipo_Reg.Width = 153;
-            // 
-            // col_Reg
-            // 
-            this.col_Reg.Text = "Registro";
-            this.col_Reg.Width = 92;
-            // 
-            // col_Saldo_Horas
-            // 
-            this.col_Saldo_Horas.Text = "Saldo Horas";
-            this.col_Saldo_Horas.Width = 102;
-            // 
-            // col_Saldo_Dias
-            // 
-            this.col_Saldo_Dias.Text = "Saldo Dias";
-            this.col_Saldo_Dias.Width = 90;
-            // 
-            // col_Detalhes
-            // 
-            this.col_Detalhes.Text = "Detalhes";
-            this.col_Detalhes.Width = 107;
             // 
             // label7
             // 
@@ -311,34 +295,6 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Filtrar por Data";
             // 
-            // tb_Data_Filtro_Inicio
-            // 
-            this.tb_Data_Filtro_Inicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Data_Filtro_Inicio.Location = new System.Drawing.Point(82, 32);
-            this.tb_Data_Filtro_Inicio.Mask = "00/00/0000";
-            this.tb_Data_Filtro_Inicio.Name = "tb_Data_Filtro_Inicio";
-            this.tb_Data_Filtro_Inicio.Size = new System.Drawing.Size(94, 26);
-            this.tb_Data_Filtro_Inicio.TabIndex = 11;
-            // 
-            // tb_Data_Filtro_Final
-            // 
-            this.tb_Data_Filtro_Final.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Data_Filtro_Final.Location = new System.Drawing.Point(330, 32);
-            this.tb_Data_Filtro_Final.Mask = "00/00/0000";
-            this.tb_Data_Filtro_Final.Name = "tb_Data_Filtro_Final";
-            this.tb_Data_Filtro_Final.Size = new System.Drawing.Size(94, 26);
-            this.tb_Data_Filtro_Final.TabIndex = 12;
-            // 
-            // btn_Filtra_Data
-            // 
-            this.btn_Filtra_Data.Location = new System.Drawing.Point(566, 35);
-            this.btn_Filtra_Data.Name = "btn_Filtra_Data";
-            this.btn_Filtra_Data.Size = new System.Drawing.Size(75, 23);
-            this.btn_Filtra_Data.TabIndex = 13;
-            this.btn_Filtra_Data.Text = "Filtrar";
-            this.btn_Filtra_Data.UseVisualStyleBackColor = true;
-            this.btn_Filtra_Data.Click += new System.EventHandler(this.btn_Filtra_Data_Click);
-            // 
             // ConsultaIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_Lista_Registros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,13 +341,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView lv_Cons_Individual;
-        private System.Windows.Forms.ColumnHeader col_Data;
-        private System.Windows.Forms.ColumnHeader col_Tipo_Reg;
-        private System.Windows.Forms.ColumnHeader col_Reg;
-        private System.Windows.Forms.ColumnHeader col_Saldo_Horas;
-        private System.Windows.Forms.ColumnHeader col_Saldo_Dias;
-        private System.Windows.Forms.ColumnHeader col_Detalhes;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
@@ -400,6 +350,7 @@
         private System.Windows.Forms.Button btn_Filtra_Data;
         private System.Windows.Forms.MaskedTextBox tb_Data_Filtro_Final;
         private System.Windows.Forms.MaskedTextBox tb_Data_Filtro_Inicio;
+        private System.Windows.Forms.DataGridView dg_Lista_Registros;
         private System.Windows.Forms.Label label9;
     }
 }
